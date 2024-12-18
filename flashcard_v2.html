@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CompTIA Security+ Flashcards</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				min-height: 100vh;
+				background: #f0f2f5;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 2rem;
+			}
+
+			.container {
+				max-width: 800px;
+				width: 100%;
+				text-align: center;
+			}
+
+			h1 {
+				color: #1a1a1a;
+				margin-bottom: 1rem;
+				font-size: 2.5rem;
+			}
+
+			.progress {
+				color: #666;
+				margin-bottom: 2rem;
+			}
+
+			.card-container {
+				perspective: 1000px;
+				height: 400px;
+				margin-bottom: 2rem;
+				cursor: pointer;
+			}
+
+			.card {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+
+			.card.flipped {
+				transform: rotateY(180deg);
+			}
+
+			.card-face {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 2rem;
+				background: white;
+				border-radius: 1rem;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			.card-back {
+				transform: rotateY(180deg);
+			}
+
+			.card.switching .card-face {
+				opacity: 0;
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			.acronym {
+				font-size: 3.5rem;
+				font-weight: bold;
+				color: #1a1a1a;
+				margin-bottom: 1rem;
+				white-space: pre-line;
+			}
+
+			.definition {
+				font-size: 1.2rem;
+				color: #444;
+				line-height: 1.5;
+			}
+
+			.controls {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-bottom: 1rem;
+			}
+
+			.search-container {
+				width: 100%;
+				max-width: 400px;
+				margin: 1rem auto;
+			}
+
+			.search-box {
+				display: flex;
+				gap: 0.5rem;
+			}
+
+			.search-input {
+				flex: 1;
+				padding: 0.75rem;
+				border: 1px solid #d1d5db;
+				border-radius: 0.5rem;
+				font-size: 1rem;
+			}
+
+			.search-results {
+				position: absolute;
+				width: 100%;
+				max-width: 400px;
+				margin-top: 0.5rem;
+				background: white;
+				border-radius: 0.5rem;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				max-height: 200px;
+				overflow-y: auto;
+				display: none;
+				text-align: left;
+			}
+
+			.search-results.active {
+				display: block;
+			}
+
+			.search-result-item {
+				padding: 0.75rem;
+				cursor: pointer;
+				border-bottom: 1px solid #f0f0f0;
+			}
+
+			.search-result-item:hover {
+				background: #f8f9fa;
+			}
+
+			.search-result-item:last-child {
+				border-bottom: none;
+			}
+
+			.search-feedback {
+				margin-top: 0.5rem;
+				color: #666;
+				font-size: 0.9rem;
+			}
+
+			button {
+				padding: 0.75rem 1.5rem;
+				border: none;
+				border-radius: 0.5rem;
+				cursor: pointer;
+				font-size: 1rem;
+				transition: all 0.2s;
+			}
+
+			button:hover {
+				transform: translateY(-2px);
+			}
+
+			.btn-primary {
+				background: #2563eb;
+				color: white;
+			}
+
+			.btn-primary:hover {
+				background: #1d4ed8;
+			}
+
+			.btn-secondary {
+				background: #e5e7eb;
+				color: #1a1a1a;
+			}
+
+			.btn-secondary:hover {
+				background: #d1d5db;
+			}
+
+			input[type='number'] {
+				padding: 0.75rem;
+				border: 1px solid #d1d5db;
+				border-radius: 0.5rem;
+				width: 80px;
+				text-align: center;
+			}
+
+			.card-container {
+				animation: cardEnter 0.5s ease-out;
+			}
+
+			@keyframes cardEnter {
+				from {
+					transform: translateY(20px);
+					opacity: 0;
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+
+			.footer {
+				margin-top: auto;
+				padding: 1rem;
+				color: black;
+				text-align: center;
+				font-size: 0.9rem;
+			}
+
+			/* Audio Styles */
+			.audio-controls {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				margin-bottom: 1rem;
+			}
+
+			.btn-audio {
+				background: #22c55e;
+				color: white;
+			}
+
+			.btn-audio:hover {
+				background: #16a34a;
+			}
+
+			.btn-audio.playing {
+				background: #ef4444;
+			}
+
+			.btn-audio.playing:hover {
+				background: #dc2626;
+			}
+
+			.voice-select {
+				padding: 0.75rem;
+				border: 1px solid #d1d5db;
+				border-radius: 0.5rem;
+				font-size: 1rem;
+				min-width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>CompTIA Security+ Flashcards</h1>
+			<p class="progress">
+				Card <span id="currentCard">1</span> of <span id="totalCards">0</span>
+			</p>
+
+			<div class="audio-controls">
+				<select id="voiceSelect" class="voice-select">
+					<option value="alloy">Alloy (Balanced)</option>
+					<option value="echo">Echo (Warm)</option>
+					<option value="fable">Fable (Expressive)</option>
+					<option value="onyx">Onyx (Authoritative)</option>
+					<option value="nova">Nova (Friendly)</option>
+					<option value="shimmer">Shimmer (Clear)</option>
+				</select>
+				<button class="btn-audio" id="audioBtn">Start Audio Playback</button>
+			</div>
+
+			<div class="card-container" id="cardContainer">
+				<div class="card" id="card">
+					<div class="card-face card-front">
+						<div class="acronym" id="cardAcronym"></div>
+					</div>
+					<div class="card-face card-back">
+						<div class="definition" id="cardDefinition"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="controls">
+				<button class="btn-secondary" id="resetBtn">Reset Deck</button>
+				<button class="btn-primary" id="shuffleBtn">Shuffle Cards</button>
+				<div>
+					<input type="number" id="jumpInput" min="1" placeholder="Card #" />
+					<button class="btn-secondary" id="jumpBtn">Jump To</button>
+				</div>
+			</div>
+
+			<div class="search-container">
+				<div class="search-box">
+					<input
+						type="text"
+						id="searchInput"
+						class="search-input"
+						placeholder="Search acronyms..." />
+					<button class="btn-primary" id="searchBtn">Search</button>
+				</div>
+				<div id="searchResults" class="search-results"></div>
+				<div id="searchFeedback" class="search-feedback"></div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			Copyright 2024:
+			<a
+				href="https://www.dgcdigital.co"
+				target="_blank"
+				style="color: #ff385c; text-decoration: none"
+				>DGC Digital</a
+			>
+		</footer>
+
+		<script>
+			// Flashcards array remains the same
+			const flashcards = [
+				{
+					acronym: 'ABAC - Attribute-Based Access Control',
+					definition:
+						'Security model that grants access based on specific attributes.<br><br>It ensures users can only access resources if they meet specific attribute criteria, improving granular control over permissions.',
+				},
+				{
+					acronym: 'ACL - Access Control List',
+					definition:
+						'Filters network traffic based on predefined security rules.<br><br>ACLs are implemented on routers or switches to enforce policies for allowing or denying traffic.<br><br><b>OSI Layer:</b> <b>Network (Layer 3)</b>',
+				},
+				{
+					acronym: 'AES - Advanced Encryption Standard',
+					definition:
+						'A symmetric encryption algorithm widely used for securing data.<br><br>Known for its speed and security, AES is commonly used in applications like VPNs and file encryption.<br><br><b>OSI Layer:</b> <b>Presentation (Layer 6)</b>',
+				},
+				{
+					acronym:
+						'AES-GCM - Advanced Encryption Standard - Galois/Counter Mode',
+					definition:
+						'A secure encryption mode providing both confidentiality and authentication.<br><br>AES-GCM is commonly used for encrypting data at rest and in transit, offering high performance and security.',
+				},
+				{
+					acronym: 'AP - Access Point',
+					definition:
+						'A device that allows wireless devices to connect to a wired network.<br><br>Access Points extend network coverage and enable wireless communication in local area networks (LANs).<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2) / Physical (Layer 1)</b>',
+				},
+				{
+					acronym: 'API - Application Programming Interface',
+					definition:
+						'A set of protocols and tools for building software applications.<br><br>APIs enable communication between different software systems, streamlining integration and functionality.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'APT - Advanced Persistent Threat',
+					definition:
+						'A sophisticated, long-term targeted cyberattack often backed by nation-states or organized groups.<br><br>These threats focus on stealth and persistence to achieve espionage or sabotage objectives.',
+				},
+				{
+					acronym: 'ARF - Asset Reporting Format',
+					definition:
+						'A data model to express the transport format of information about assets, and the relationships between assets and reports. Part of the SCAP specification framework.',
+				},
+				{
+					acronym: 'BEC - Business Email Compromise',
+					definition:
+						'An attack that spoofs high-level employee emails for financial fraud.<br><br>Often targeting executives, it uses social engineering tactics to manipulate victims into transferring funds or sharing sensitive information.',
+				},
+				{
+					acronym: 'BIA - Business Impact Analysis',
+					definition:
+						'A process that identifies critical operations and acceptable downtimes to ensure continuity during disasters.',
+				},
+				{
+					acronym: 'Burp Suite',
+					definition:
+						'A comprehensive web application security testing tool.<br><br>Burp Suite is used for penetration testing, vulnerability scanning, and manual testing of web applications.',
+				},
+				{
+					acronym: 'CA - Certificate Authority',
+					definition:
+						'A trusted entity that issues and manages digital certificates.<br><br>These certificates are used to verify the identity of entities and enable secure communication through encryption.',
+				},
+				{
+					acronym: 'CAC - Common Access Card',
+					definition:
+						'The primary identity credential used by US military personnel.<br><br>It provides secure access to systems and serves as a multi-factor authentication device.',
+				},
+				{
+					acronym: 'CASB - Cloud Access Security Broker',
+					definition:
+						'A service that ensures cloud application security policies are enforced.<br><br>CASBs monitor cloud activity, enforce compliance, and protect sensitive data.',
+				},
+				{
+					acronym: 'CCFL - Cold Cathode Fluorescent Lamp',
+					definition:
+						'A legacy technology used for LCD display backlighting.<br><br>CCFL has been largely replaced by LED backlighting due to energy efficiency and durability.',
+				},
+				{
+					acronym: 'CDNSKEY - Child DNS Key Record',
+					definition:
+						"A DNSSEC record type containing the public key of a child zone, used to request updates to its parent zone's DS record.",
+				},
+				{
+					acronym: 'CDS - Child Delegation Signer Record',
+					definition:
+						'A DNSSEC record containing the hash of a DNSKEY record in a child zone, used to automate updates to the DS record in the parent zone.',
+				},
+				{
+					acronym: 'CIS - Center for Internet Security',
+					definition:
+						'A nonprofit organization that provides cybersecurity guidance.<br><br>CIS offers configuration benchmarks, tools, and best practices to improve system security and reduce risks.',
+				},
+				{
+					acronym: 'CMDB - Configuration Management Database',
+					definition:
+						'A repository storing information about hardware and software assets.<br><br>It helps organizations track and manage configurations, ensuring system consistency.',
+				},
+				{
+					acronym: 'CMS - Configuration Management System',
+					definition:
+						"A system for managing an organization's configuration information.<br><br>It facilitates automation and monitoring of IT infrastructure changes.",
+				},
+				{
+					acronym: 'COOP - Continuity of Operations',
+					definition:
+						'A strategy ensuring that essential functions continue during disasters.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'COPE - Corporate-Owned, Personally-Enabled',
+					definition:
+						'A mobile device deployment model where the organization owns the device.<br><br>COPE allows personal use while maintaining corporate control over security policies and configurations.',
+				},
+				{
+					acronym: 'CPE - Customer Premises Equipment',
+					definition:
+						"Hardware located at the customer's location for network services.<br><br>Examples include routers, modems, and VoIP devices.",
+				},
+				{
+					acronym: 'CRL - Certificate Revocation List',
+					definition:
+						'A list of revoked digital certificates maintained by a Certificate Authority.<br><br>It ensures that expired or compromised certificates cannot be used maliciously.',
+				},
+				{
+					acronym: 'CSP - Cloud Service Provider',
+					definition:
+						'A company offering cloud computing services and infrastructure.<br><br>CSPs provide platforms, software, or infrastructure as a service, enabling flexible and scalable IT solutions.',
+				},
+				{
+					acronym: 'CSRF - Cross-Site Request Forgery',
+					definition:
+						"An attack tricking users into executing unwanted actions.<br><br>It exploits the trust a website has in the user's browser.",
+				},
+				{
+					acronym: 'CVE - Common Vulnerability Enumeration',
+					definition:
+						'A system for assigning unique identifiers to publicly known vulnerabilities.<br><br>CVE entries include details about the vulnerability, its impact, and references for further research.',
+				},
+				{
+					acronym: 'CVSS - Common Vulnerability Scoring System',
+					definition:
+						'A standardized scoring system for assessing the severity of vulnerabilities.<br><br>Scores range from 0 to 10, with categories like Critical, High, Medium, and Low to prioritize remediation efforts.',
+				},
+				{
+					acronym: 'CYOD - Choose Your Own Device',
+					definition:
+						'A mobile device deployment model where employees choose from a list of approved devices.<br><br>CYOD ensures compatibility and security while offering some personal flexibility.',
+				},
+				{
+					acronym: 'DBMS - Database Management System',
+					definition:
+						'A system software for creating, managing, and interacting with databases.<br><br>DBMS ensures data consistency, integrity, and security while supporting multiple users.',
+				},
+				{
+					acronym: 'DDoS - Distributed Denial of Service',
+					definition:
+						'An attack that overwhelms systems with traffic from multiple sources.<br><br>DDoS attacks aim to disrupt service availability by exhausting resources.',
+				},
+				{
+					acronym: 'DH - Diffie-Hellman',
+					definition:
+						'A method for securely exchanging cryptographic keys over a public channel.<br><br>Often used in VPNs, DH ensures secure key generation without sharing sensitive data.',
+				},
+				{
+					acronym: 'DIMM - Dual Inline Memory Module',
+					definition:
+						'A standard type of computer memory module.<br><br>DIMMs are used in desktops, servers, and workstations for volatile memory.',
+				},
+				{
+					acronym: 'DKIM - DomainKeys Identified Mail',
+					definition:
+						'An email authentication method that uses cryptographic signatures to verify the sender and ensure message integrity.',
+				},
+				{
+					acronym:
+						'DMARC - Domain-based Message Authentication, Reporting, and Conformance',
+					definition:
+						'An email authentication protocol that builds on SPF and DKIM to reduce phishing and spam while providing domain owners feedback on email security issues.',
+				},
+				{
+					acronym: 'DLP - Data Loss Prevention',
+					definition:
+						'Technology preventing sensitive data from leaving an organization.<br><br>DLP solutions monitor and control data flows to prevent unauthorized sharing or exposure.',
+				},
+				{
+					acronym: 'DMZ - Demilitarized Zone',
+					definition:
+						'A network segment that contains and exposes external-facing services.<br><br>It acts as a buffer between untrusted networks and internal systems.',
+				},
+				{
+					acronym: 'DNS - Domain Name System',
+					definition:
+						'A system that translates domain names into IP addresses.<br><br>DNS is essential for internet functionality, enabling human-readable web addresses.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'DNSKEY - DNS Public Key Record',
+					definition:
+						'A DNSSEC record type that stores a public signing key, used to verify DNS record authenticity.',
+				},
+				{
+					acronym: 'DNSSEC - DNS Security Extensions',
+					definition:
+						'A suite of specifications that adds a layer of authentication to DNS, protecting against certain types of attacks, such as DNS spoofing.',
+				},
+				{
+					acronym: 'DRP - Disaster Recovery Plan',
+					definition:
+						'Technical steps and procedures for restoring systems after a disaster.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'EAP - Extensible Authentication Protocol',
+					definition:
+						'A framework for authentication used in wireless networks.<br><br>EAP supports multiple methods like EAP-TLS for secure credential exchange.',
+				},
+				{
+					acronym: 'ECC - Elliptic Curve Cryptography',
+					definition:
+						'A cryptographic approach using elliptic curves.<br><br>ECC offers strong security with smaller key sizes, making it efficient for mobile devices and IoT.',
+				},
+				{
+					acronym: 'EDR - Endpoint Detection and Response',
+					definition:
+						'Advanced security tools that monitor and respond to endpoint threats.<br><br>EDR systems provide real-time detection, analysis, and remediation.',
+				},
+				{
+					acronym: 'EMM - Enterprise Mobility Management',
+					definition:
+						'A platform for managing mobile devices in an organization.<br><br>EMM ensures security and compliance for devices accessing corporate resources.',
+				},
+				{
+					acronym: 'ESP - Encapsulating Security Payload',
+					definition:
+						'A protocol providing encryption and authentication in IPsec.<br><br>ESP secures data by encrypting payloads and verifying integrity.',
+				},
+				{
+					acronym: 'FaaS - Function as a Service',
+					definition:
+						'A serverless computing model for running individual functions.<br><br>FaaS enables developers to deploy code without managing servers, billed per execution.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'FDE - Full Disk Encryption',
+					definition:
+						'A technology that encrypts all user data on a storage device.<br><br>FDE protects against unauthorized access to data, even if the device is lost or stolen.',
+				},
+				{
+					acronym: 'FIM - File Integrity Monitoring',
+					definition:
+						'A security process that checks files for unauthorized changes, ensuring system and application integrity.',
+				},
+				{
+					acronym: 'FPS - Frames Per Second',
+					definition:
+						'A measurement of display refresh rate or video playback smoothness.<br><br>Higher FPS ensures better visual quality, crucial for gaming and video applications.',
+				},
+				{
+					acronym: 'GCMP - Galois/Counter Mode Protocol',
+					definition:
+						'A cryptographic mode combining Galois field multiplication and counter mode.<br><br>GCMP provides both confidentiality and authentication, widely used in WPA3 for secure wireless communication.<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2)</b>',
+				},
+				{
+					acronym: 'GMAC - Galois Message Authentication Code',
+					definition:
+						'A cryptographic method that ensures data authenticity and integrity.<br><br>GMAC is integrated into AES-GCM, eliminating the need for separate hashing mechanisms.',
+				},
+				{
+					acronym: 'HIDS - Host-based Intrusion Detection System',
+					definition:
+						'A system monitoring host activities for suspicious behavior.<br><br>HIDS focuses on detecting anomalies on individual devices.',
+				},
+				{
+					acronym: 'HIPS - Host-based Intrusion Prevention System',
+					definition:
+						'An active security system that blocks detected threats on a host.<br><br>HIPS combines monitoring with proactive threat prevention.',
+				},
+				{
+					acronym: 'HMAC - Hash-based Message Authentication Code',
+					definition:
+						'A cryptographic method for message authentication.<br><br>HMAC uses a hash function and a secret key to ensure data integrity and authenticity.',
+				},
+				{
+					acronym: 'HPC - High-Performance Cluster',
+					definition:
+						'A group of servers working together for data-intensive tasks.<br><br>Used for real-time processing and complex computational operations.',
+				},
+				{
+					acronym: 'HTTP - HyperText Transfer Protocol',
+					definition:
+						'A protocol for transferring hypertext documents.<br><br>HTTP is the foundation of data communication on the web.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'HTTPS - HyperText Transfer Protocol Secure',
+					definition:
+						'An encrypted version of HTTP.<br><br>HTTPS secures web communication using TLS or SSL for encryption.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'IaC - Infrastructure as Code',
+					definition:
+						'Managing infrastructure using configuration files.<br><br>IaC promotes automation and consistency in infrastructure deployment.',
+				},
+				{
+					acronym: 'IAM - Identity and Access Management',
+					definition:
+						'A framework for managing digital identities and access rights.<br><br>IAM ensures that only authorized users can access specific resources.',
+				},
+				{
+					acronym: 'IDS - Intrusion Detection System',
+					definition:
+						'A system monitoring for malicious activities.<br><br>IDS systems alert administrators about potential security breaches.',
+				},
+				{
+					acronym: 'IKE - Internet Key Exchange',
+					definition:
+						'A protocol for setting up security associations in IPsec.<br><br>IKE automates the negotiation of cryptographic keys.',
+				},
+				{
+					acronym: 'IMAP - Internet Message Access Protocol',
+					definition:
+						'A protocol for accessing email on a server.<br><br>IMAP allows users to manage email directly on the server, enabling synchronization across devices.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'IoC - Indicator of Compromise',
+					definition:
+						'Evidence suggesting a security breach has occurred.<br><br>Examples include unusual network traffic patterns or unauthorized file access.',
+				},
+				{
+					acronym: 'IoT - Internet of Things',
+					definition:
+						'A network of internet-connected physical devices and sensors.<br><br>IoT devices collect and exchange data, enhancing automation and analytics.',
+				},
+				{
+					acronym: 'IPS - In-Plane Switching/Intrusion Prevention System',
+					definition:
+						'Dual meaning acronym:<br><br>1. LCD display technology offering superior color and viewing angles for screens<br><br>2. Security system that actively protects networks by blocking threats',
+				},
+				{
+					acronym: 'IPsec - Internet Protocol Security',
+					definition:
+						'A suite of protocols for securing IP communications.<br><br>IPsec ensures data confidentiality, integrity, and authenticity in network communication.',
+				},
+				{
+					acronym: 'IRM - Information Rights Management',
+					definition:
+						'A technology that protects sensitive information from unauthorized access.<br><br>IRM enforces access control policies such as restrictions on copying, printing, or sharing data.',
+				},
+				{
+					acronym: 'JMX - Java Management Extensions',
+					definition:
+						'A Java technology that provides tools for managing and monitoring applications, system objects, devices, and service-oriented networks.',
+				},
+				{
+					acronym: 'JSON - JavaScript Object Notation',
+					definition:
+						'A lightweight data-interchange format.<br><br>JSON is commonly used for data exchange in web applications.',
+				},
+				{
+					acronym: 'LB - Load Balancing',
+					definition:
+						'The distribution of network or application traffic across multiple servers.<br><br>LB optimizes resource use, ensures high availability, and improves performance.',
+				},
+				{
+					acronym: 'MAB - MAC Authentication Bypass',
+					definition:
+						"A method allowing network access based on MAC address.<br><br>MAB is often used as a fallback for devices that don't support 802.1X authentication.",
+				},
+				{
+					acronym: 'MaaS - Malware-as-a-Service',
+					definition:
+						'A business model where malware tools are sold or rented to attackers.<br><br>MaaS platforms provide services like ransomware campaigns, enabling cybercriminals to execute attacks with minimal expertise.',
+				},
+				{
+					acronym: 'MCA - Multicriteria Analysis',
+					definition:
+						'A detection method used in antivirus systems that combines data from multiple detection methods to identify potentially dangerous files.',
+				},
+				{
+					acronym: 'MFA - Multi-Factor Authentication',
+					definition:
+						'A security system requiring multiple forms of verification.<br><br>MFA strengthens access control by combining passwords, biometrics, and device authentication.',
+				},
+				{
+					acronym: 'ML/AI - Machine Learning/Artificial Intelligence',
+					definition:
+						'Technologies for automated learning and decision-making.<br><br>ML/AI are used in applications ranging from predictive analytics to cybersecurity.',
+				},
+				{
+					acronym:
+						'MITRE ATT&CK - MITRE Adversarial Tactics, Techniques, and Common Knowledge',
+					definition:
+						'A framework categorizing adversary behaviors into tactics and techniques.<br><br>It aids in understanding attack patterns to enhance defenses across different stages of the attack lifecycle.',
+				},
+				{
+					acronym: 'MITRE ATT&CK Matrix',
+					definition:
+						'A structured framework that categorizes adversary tactics and techniques.<br><br>It supports security teams in mapping attack behaviors and improving defensive strategies.',
+				},
+				{
+					acronym: 'MP - Megapixel',
+					definition:
+						'A unit of image resolution equal to one million pixels.<br><br>Higher MP values indicate greater image detail, commonly used in cameras and displays.',
+				},
+				{
+					acronym: 'MSSP - Managed Security Service Provider',
+					definition:
+						'A company providing outsourced security monitoring.<br><br>MSSPs offer expertise in threat detection and incident response.',
+				},
+				{
+					acronym: 'MTBF - Mean Time Between Failures',
+					definition:
+						'A metric measuring the average time between hardware or system failures.<br><br>Used to assess reliability and plan maintenance schedules.',
+				},
+				{
+					acronym: 'MTD - Maximum Tolerable Downtime',
+					definition:
+						'The maximum time a system can be offline before causing significant harm.<br><br>Used in business continuity planning and disaster recovery.',
+				},
+				{
+					acronym: 'MTTR - Mean Time to Recovery',
+					definition:
+						'The average time required to restore a system to normal operation after a failure.<br><br>Critical metric for service level agreements and recovery planning.',
+				},
+				{
+					acronym: 'NAC - Network Access Control',
+					definition:
+						'A security approach controlling network access based on device identity.<br><br>NAC ensures compliance with security policies before granting network access.',
+				},
+				{
+					acronym: 'NACL - Network Access Control List',
+					definition:
+						'Stateless firewall rules for subnet traffic control.<br><br>NACLs are used to filter inbound and outbound traffic in cloud environments.',
+				},
+				{
+					acronym: 'NFC - Near Field Communication',
+					definition:
+						'A short-range wireless technology for data exchange.<br><br>NFC is commonly used in contactless payments and device pairing.',
+				},
+				{
+					acronym: 'NGFW - Next-Generation Firewall',
+					definition:
+						'An advanced firewall with additional security features.<br><br>NGFWs provide capabilities like deep packet inspection and intrusion prevention.',
+				},
+				{
+					acronym: 'NNTP - Network News Transfer Protocol',
+					definition:
+						'A protocol for distributing and retrieving news articles.<br><br>NNTP is used for managing Usenet discussions.',
+				},
+				{
+					acronym: 'NSEC - Next Secure Record',
+					definition:
+						'A DNSSEC record type that proves the non-existence of a DNS record, preventing certain types of attacks.',
+				},
+				{
+					acronym: 'NSEC3 - Next Secure Record version 3',
+					definition:
+						'An improved version of NSEC, providing authenticated denial of existence with additional resistance to zone-walking attacks.',
+				},
+				{
+					acronym: 'NTP - Network Time Protocol',
+					definition:
+						'A protocol for clock synchronization between computers.<br><br>NTP ensures accurate timekeeping across distributed systems.',
+				},
+				{
+					acronym: 'NVD - National Vulnerability Database',
+					definition:
+						'A centralized repository managed by NIST for tracking publicly disclosed cybersecurity vulnerabilities.<br><br>Each vulnerability is assigned a unique CVE identifier and a CVSS severity score.',
+				},
+				{
+					acronym: 'OCIL - Open Checklist Interactive Language',
+					definition:
+						'A framework for expressing a set of questions to be presented to a user and corresponding procedures to interpret responses to these questions. Used in SCAP audits.',
+				},
+				{
+					acronym: 'OS - Operating System',
+					definition:
+						'Software that manages hardware and software resources.<br><br>Examples include Windows, macOS, and Linux.',
+				},
+				{
+					acronym: 'OSINT - Open-Source Intelligence',
+					definition:
+						'The collection of publicly available information for analysis and reconnaissance.<br><br>OSINT sources include reports, white papers, public records, and digital media. Often used in penetration testing.',
+				},
+				{
+					acronym: 'OTP - One-Time Password',
+					definition:
+						'A password valid for only one login session.<br><br>OTPs enhance security by preventing password reuse.',
+				},
+				{
+					acronym: 'OWASP ZAP - OWASP Zed Attack Proxy',
+					definition:
+						'An open-source web application vulnerability scanner.<br><br>OWASP ZAP is used to identify common vulnerabilities like SQL injection, cross-site scripting (XSS), and misconfigurations.',
+				},
+				{
+					acronym: 'OVAL - Open Vulnerability Assessment Language',
+					definition:
+						'An information security community effort to standardize how to report upon the machine state of computer systems. Part of the SCAP framework.',
+				},
+				{
+					acronym: 'PAZ - Public Access Zone',
+					definition:
+						'A network segment accessible to the public.<br><br>PAZ is often used for hosting public-facing services.',
+				},
+				{
+					acronym: 'PBKDF2 - Password-Based Key Derivation Function 2',
+					definition:
+						'A key stretching algorithm for password security.<br><br>PBKDF2 increases password complexity, making brute-force attacks more difficult.',
+				},
+				{
+					acronym: 'PE - Policy Engine',
+					definition:
+						'A component making access control decisions.<br><br>PE evaluates requests based on defined policies and attributes.',
+				},
+				{
+					acronym: 'PEP - Policy Enforcement Point',
+					definition:
+						'An entity enforcing policy decisions for resource requests.<br><br>PEPs ensure compliance with access control rules.',
+				},
+				{
+					acronym: 'PHI - Protected Health Information',
+					definition:
+						'Medical and healthcare-related information protected under privacy laws.<br><br>Examples include medical histories, test results, insurance information, and other identifiable health data.',
+				},
+				{
+					acronym: 'PII - Personally Identifiable Information',
+					definition:
+						'Any data that can be used to identify an individual.<br><br>Examples include names, Social Security numbers, email addresses, and biometric records.',
+				},
+				{
+					acronym: 'PKI - Public Key Infrastructure',
+					definition:
+						'A framework for managing digital certificates and encryption.<br><br>PKI supports secure communication through authentication and encryption.',
+				},
+				{
+					acronym: 'PMF - Protected Management Frames',
+					definition:
+						'A security feature that protects management communications in wireless networks.<br><br>PMF enhances WPA3 by securing control packets against spoofing and eavesdropping.<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2)</b>',
+				},
+				{
+					acronym: 'PNAC - Port-based Network Access Control',
+					definition:
+						'A standard for port-based authentication.<br><br>PNAC ensures that only authorized devices can access the network.',
+				},
+				{
+					acronym: 'PUP - Potentially Unwanted Process',
+					definition:
+						'A term for software that may be unwanted despite being legitimately installed, often moved to sandbox environments for analysis.',
+				},
+				{
+					acronym: 'RaaS - Ransomware-as-a-Service',
+					definition:
+						'A business model where ransomware tools are leased to attackers.<br><br>RaaS lowers the barrier to entry for cybercriminals.',
+				},
+				{
+					acronym: 'RAID - Redundant Array of Independent Disks',
+					definition:
+						'A data storage virtualization technology.<br><br>RAID provides redundancy and improves performance by combining multiple disks.',
+				},
+				{
+					acronym: 'RAM - Random Access Memory',
+					definition:
+						'Temporary computer memory for active processes.<br><br>RAM allows fast read/write access for running applications.',
+				},
+				{
+					acronym: 'RAT - Remote Access Trojan',
+					definition:
+						'Malware providing unauthorized remote access.<br><br>RATs are often used for espionage or data theft.',
+				},
+				{
+					acronym: 'RBAC - Role-Based Access Control',
+					definition:
+						'A security model that assigns permissions based on user roles.<br><br>RBAC simplifies access management by grouping permissions according to roles within an organization.',
+				},
+				{
+					acronym: 'RDP - Remote Desktop Protocol',
+					definition:
+						'A protocol for remotely accessing computers.<br><br>RDP enables remote management and troubleshooting of systems.',
+				},
+				{
+					acronym: 'RPO - Recovery Point Objective',
+					definition:
+						'The maximum acceptable amount of data loss measured in time.<br><br>Defines the point in time to which data must be recovered after an incident.',
+				},
+				{
+					acronym: 'RRSIG - Resource Record Signature',
+					definition:
+						'A DNSSEC record type containing the cryptographic signature for a set of DNS records, ensuring their authenticity.',
+				},
+				{
+					acronym: 'RTO - Recovery Time Objective',
+					definition:
+						'The target duration of time a system should take to be restored after a disruption.<br><br>Critical metric for disaster recovery planning.',
+				},
+				{
+					acronym: 'RTOS - Real-Time Operating System',
+					definition:
+						'An operating system guaranteeing real-time response.<br><br>RTOS is commonly used in embedded systems and IoT devices.',
+				},
+				{
+					acronym: 'SaaS - Software as a Service',
+					definition:
+						'A cloud-based software delivery model.<br><br>SaaS eliminates the need for local installations, offering scalability and accessibility.',
+				},
+				{
+					acronym: 'SAN - Storage Area Network',
+					definition:
+						'A dedicated network for data storage.<br><br>SANs provide high-speed access to consolidated storage resources.',
+				},
+				{
+					acronym: 'SASE - Secure Access Service Edge',
+					definition:
+						'A cloud architecture combining network and security functions.<br><br>SASE delivers secure and flexible access to applications and resources.',
+				},
+				{
+					acronym: 'SAST - Static Application Security Testing',
+					definition:
+						'A security testing methodology analyzing application source code.<br><br>SAST identifies vulnerabilities like SQL injection or cross-site scripting during development, improving code security.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'DAST - Dynamic Application Security Testing',
+					definition:
+						'A security testing methodology assessing running applications.<br><br>DAST simulates attacks on live applications to identify runtime vulnerabilities like weak authentication.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'SCAP - Security Content Automation Protocol',
+					definition:
+						'A synthesis of interoperable specifications derived from community ideas. SCAP helps improve cybersecurity posture, streamline vulnerability evaluation, simplify compliance, and boost collaboration in cybersecurity processes.',
+				},
+				{
+					acronym: 'SCP - Secure Copy Protocol',
+					definition:
+						'A protocol for securely transferring files.<br><br>SCP uses SSH for encrypted file transfers.',
+				},
+				{
+					acronym: 'SD-WAN - Software-Defined Wide Area Network',
+					definition:
+						'A software-based WAN management solution.<br><br>SD-WAN optimizes network performance through centralized control and policy enforcement.',
+				},
+				{
+					acronym: 'SDP - Software-Defined Perimeter',
+					definition:
+						'A security framework controlling resource access based on identity.<br><br>SDP reduces the attack surface by requiring authentication before granting access.',
+				},
+				{
+					acronym: 'SEM - Security Event Management',
+					definition:
+						'A component of SIEM systems focused on real-time monitoring, correlation of events, notifications and console views.',
+				},
+				{
+					acronym: 'SIM - Security Information Management',
+					definition:
+						'A component of SIEM systems focused on long-term storage, analysis and reporting of log data.',
+				},
+				{
+					acronym: 'SMI-S - Storage Management Initiative Specification',
+					definition:
+						'A standardized protocol for managing storage devices and ensuring interoperability in storage area networks.',
+				},
+				{
+					acronym: 'SPF - Sender Policy Framework',
+					definition:
+						'An email authentication protocol that allows domain owners to specify which mail servers are authorized to send emails on their behalf.',
+				},
+				{
+					acronym: 'SFTP - SSH File Transfer Protocol',
+					definition:
+						'A secure protocol for file transfer over SSH.<br><br>SFTP provides encryption for data and file integrity during transfer.',
+				},
+				{
+					acronym: 'SIEM - Security Information and Event Management',
+					definition:
+						'A system for aggregating and analyzing security data.<br><br>SIEM helps detect and respond to security threats in real-time.',
+				},
+				{
+					acronym: 'SLA - Service Level Agreement',
+					definition:
+						'A contract defining service provider responsibilities.<br><br>SLAs outline performance expectations and penalties for non-compliance.',
+				},
+				{
+					acronym: 'SMTPS - Simple Mail Transfer Protocol Secure',
+					definition:
+						'An encrypted version of SMTP.<br><br>SMTPS ensures secure email transmission.',
+				},
+				{
+					acronym: 'SOAR - Security Orchestration, Automation and Response',
+					definition:
+						'Tools for automating security operations.<br><br>SOAR improves efficiency and consistency in incident response.',
+				},
+				{
+					acronym: 'SODIMM - Small Outline Dual Inline Memory Module',
+					definition:
+						'A compact memory module for laptops.<br><br>SODIMMs provide the same functionality as DIMMs in a smaller form factor.',
+				},
+				{
+					acronym: 'SoD - Separation of Duties',
+					definition:
+						'A security principle requiring multiple people for sensitive tasks.<br><br>SoD minimizes the risk of fraud or error by distributing responsibilities.',
+				},
+				{
+					acronym: 'SOP - Standard Operating Procedure',
+					definition:
+						'A documented process for routine operations.<br><br>SOPs ensure consistency and compliance across organizational workflows.',
+				},
+				{
+					acronym: 'SQL - Structured Query Language',
+					definition:
+						'A language for managing databases.<br><br>SQL allows users to query, update, and manage relational databases efficiently.',
+				},
+				{
+					acronym: 'SQLi - SQL Injection',
+					definition:
+						'An attack that inserts malicious SQL code into queries.<br><br>SQLi exploits vulnerabilities to access or manipulate databases.',
+				},
+				{
+					acronym: 'SSD - Solid State Drive',
+					definition:
+						'A storage device using flash memory.<br><br>SSDs offer faster performance and durability compared to traditional hard drives.',
+				},
+				{
+					acronym: 'SSL - Secure Sockets Layer',
+					definition:
+						'A deprecated protocol for secure communications.<br><br>SSL has been replaced by TLS due to improved security features.',
+				},
+				{
+					acronym: 'SWID - Software Identification Tagging',
+					definition:
+						'Allows for the proper management of software inventories of managed devices in support of higher-level business, IT security management practices such as configuration management, change management, and problem management.',
+				},
+				{
+					acronym: 'TDE - Transparent Data Encryption',
+					definition:
+						'A technology that encrypts database files at the storage level.<br><br>TDE provides security by encrypting sensitive data without requiring changes to applications.',
+				},
+				{
+					acronym: 'TLS - Transport Layer Security',
+					definition:
+						'A cryptographic protocol for secure communications.<br><br>TLS is widely used to protect data in transit over networks.',
+				},
+				{
+					acronym: 'TMSAD - Trust Model for Security Automation Data',
+					definition:
+						'Describes a community trust model that can be applied to specifications within the security automation domain, such as SCAP.',
+				},
+				{
+					acronym: 'TOR - The Onion Router',
+					definition:
+						'A privacy-focused network that enables anonymous web browsing.<br><br>TOR uses layered encryption to route traffic through multiple volunteer-operated nodes, making it difficult to trace user activity.',
+				},
+				{
+					acronym: 'UBA - User Behavior Analytics',
+					definition:
+						'A cybersecurity approach that uses machine learning to analyze user behavior for detecting insider threats and anomalous activities.',
+				},
+				{
+					acronym: 'UPS - Uninterruptible Power Supply',
+					definition:
+						'A backup power solution providing temporary power during outages.<br><br>Allows for safe system shutdowns during power failures.',
+				},
+				{
+					acronym: 'UTM - Unified Threat Management',
+					definition:
+						'A security appliance combining multiple security features.<br><br>UTM solutions integrate firewall, antivirus, and intrusion detection capabilities.',
+				},
+				{
+					acronym: 'VM - Virtual Machine',
+					definition:
+						'An emulation of a computer system.<br><br>VMs enable multiple operating systems to run on a single hardware platform.',
+				},
+				{
+					acronym: 'VPN - Virtual Private Network',
+					definition:
+						'A secure connection over a public network.<br><br>VPNs encrypt data to ensure privacy and security for remote users.',
+				},
+				{
+					acronym: 'WAF - Web Application Firewall',
+					definition:
+						'A firewall specifically protecting web applications.<br><br>WAFs mitigate threats like SQL injection and cross-site scripting.',
+				},
+				{
+					acronym: 'WMI - Windows Management Interface',
+					definition:
+						'A core Windows infrastructure for management data and operations that enables monitoring and control of system resources.',
+				},
+				{
+					acronym:
+						'XCCDF - Extensible Configuration Checklist Description Format',
+					definition:
+						'A specification language for writing security checklists, benchmarks, and related kinds of documents. Part of the SCAP framework.',
+				},
+				{
+					acronym: 'XDR - Extended Detection and Response',
+					definition:
+						'An advanced security solution that integrates data from multiple sources to detect, investigate, and respond to threats across endpoints, networks, and servers.',
+				},
+				{
+					acronym: 'XSS - Cross-Site Scripting',
+					definition:
+						'An attack injecting malicious scripts into trusted websites.<br><br>XSS exploits vulnerabilities in web applications to execute unauthorized scripts.',
+				},
+				{
+					acronym: 'ZIP - Zone Interface Point',
+					definition:
+						'A connection point between different security zones.<br><br>ZIPs help enforce segmentation and traffic control.',
+				},
+				{
+					acronym: 'ZTNA - Zero Trust Network Access',
+					definition:
+						'A security framework providing secure remote access based on identity.<br><br>ZTNA verifies users and devices before granting access to resources.',
+				},
+				{
+					acronym: 'Port 20',
+					definition:
+						'FTP (Data Transfer) - Used for transferring files in active mode between a client and a server. It handles the actual data movement during file transfers.',
+				},
+				{
+					acronym: 'Port 21',
+					definition:
+						'FTP (Command/Control) - Manages the connection between the client and the server, including authentication and commands like listing files or initiating file transfers.',
+				},
+				{
+					acronym: 'Port 22',
+					definition:
+						'SSH (Secure Shell) - Provides a secure channel for remote login and file transfers (using SCP/SFTP) by encrypting the data, replacing unsecure protocols like Telnet.',
+				},
+				{
+					acronym: 'Port 23',
+					definition:
+						'Telnet - Enables unencrypted remote command-line access to a system. It is outdated and insecure, often replaced by SSH.',
+				},
+				{
+					acronym: 'Port 25',
+					definition:
+						'SMTP (Simple Mail Transfer Protocol) - Handles sending emails between mail servers and client systems. It lacks built-in encryption unless used with STARTTLS or SSL.',
+				},
+				{
+					acronym: 'Port 53',
+					definition:
+						'DNS (Domain Name System) - Resolves human-readable domain names (e.g., www.example.com) into IP addresses for network communication.',
+				},
+				{
+					acronym: 'Port 67',
+					definition:
+						'DHCP (Server to Client) - Assigns IP addresses, subnet masks, and other network configurations to devices when they join a network.',
+				},
+				{
+					acronym: 'Port 68',
+					definition:
+						'DHCP (Client to Server) - Allows a client to request an IP address or network configuration information from the DHCP server.',
+				},
+				{
+					acronym: 'Port 69',
+					definition:
+						"TFTP (Trivial File Transfer Protocol) - A lightweight, simple protocol for file transfers that doesn't require authentication or encryption, often used for bootstrapping devices.",
+				},
+				{
+					acronym: 'Port 80',
+					definition:
+						'HTTP (HyperText Transfer Protocol) - The protocol for transmitting web pages and other content between servers and clients on the World Wide Web.',
+				},
+				{
+					acronym: 'Port 110',
+					definition:
+						'POP3 (Post Office Protocol v3) - Used to retrieve emails from a server, typically removing them from the server and storing them locally.',
+				},
+				{
+					acronym: 'Port 123',
+					definition:
+						'NTP (Network Time Protocol) - Synchronizes the time and date settings of devices across a network to ensure consistent timestamps.',
+				},
+				{
+					acronym: 'Port 143',
+					definition:
+						'IMAP (Internet Message Access Protocol) - Allows users to retrieve and manage emails stored on a server, enabling multi-device synchronization.',
+				},
+				{
+					acronym: 'Port 161',
+					definition:
+						'SNMP (Simple Network Management Protocol) - Monitors and manages devices on a network, collecting performance metrics and configurations.',
+				},
+				{
+					acronym: 'Port 162',
+					definition:
+						'SNMP Trap - Used by managed devices to send alerts and notifications to an SNMP monitoring system.',
+				},
+				{
+					acronym: 'Port 389',
+					definition:
+						'LDAP (Lightweight Directory Access Protocol) - Manages and queries directory information, such as user credentials and network resource locations.',
+				},
+				{
+					acronym: 'Port 443',
+					definition:
+						'HTTPS (HTTP Secure) - Encrypts web traffic using SSL/TLS, ensuring secure communication over the Internet.',
+				},
+				{
+					acronym: 'Port 465',
+					definition:
+						'Secure SMTP - Provides encrypted email sending using SSL/TLS, often replacing port 25 for secure mail transmission.',
+				},
+				{
+					acronym: 'Port 500',
+					definition:
+						'ISAKMP/IKE (Internet Key Exchange) - Establishes secure connections for VPNs by negotiating cryptographic keys.',
+				},
+				{
+					acronym: 'Port 514',
+					definition:
+						'Syslog - Collects and centralizes logging information from network devices like routers, switches, and servers.',
+				},
+				{
+					acronym: 'Port 587',
+					definition:
+						'SMTP (Authenticated) - Similar to port 25 but requires user authentication, typically used for sending emails securely.',
+				},
+				{
+					acronym: 'Port 993',
+					definition:
+						"IMAP over SSL/TLS - Secures email retrieval using encryption, maintaining the IMAP protocol's multi-device synchronization.",
+				},
+				{
+					acronym: 'Port 995',
+					definition:
+						'POP3 over SSL/TLS - Secures email retrieval using encryption while following the POP3 protocol for local storage.',
+				},
+				{
+					acronym: 'Port 1433',
+					definition:
+						'Microsoft SQL Server - Handles communication between client applications and Microsoft SQL Server databases.',
+				},
+				{
+					acronym: 'Port 1521',
+					definition:
+						'Oracle Database - Manages connections and communication to Oracle database servers.',
+				},
+				{
+					acronym: 'Port 1701',
+					definition:
+						'L2TP (Layer 2 Tunneling Protocol) - A VPN tunneling protocol often combined with IPSec for secure data transmission.',
+				},
+				{
+					acronym: 'Port 1723',
+					definition:
+						'PPTP (Point-to-Point Tunneling Protocol) - One of the earliest VPN protocols, providing basic tunneling with limited encryption.',
+				},
+				{
+					acronym: 'Port 3306',
+					definition:
+						'MySQL Database - Supports communication between client applications and MySQL database servers for query execution.',
+				},
+				{
+					acronym: 'Port 3389',
+					definition:
+						"RDP (Remote Desktop Protocol) - Provides remote access to a computer's desktop, allowing full graphical and command-line interaction.",
+				},
+				{
+					acronym: 'Port 4500',
+					definition:
+						'IPSec NAT Traversal - Ensures VPN connections function securely when Network Address Translation (NAT) is in use.',
+				},
+				{
+					acronym: 'Port 5060',
+					definition:
+						'SIP (Session Initiation Protocol) - Initiates, maintains, and terminates multimedia communication sessions such as VoIP calls (unencrypted).',
+				},
+				{
+					acronym: 'Port 5061',
+					definition:
+						'SIP (Secure) - Provides encrypted multimedia communication sessions, typically for secure VoIP.',
+				},
+				{
+					acronym: 'Port 5900',
+					definition:
+						"VNC (Virtual Network Computing) - Allows remote desktop sharing by transmitting keyboard and mouse inputs and displaying the remote system's screen.",
+				},
+				{
+					acronym: 'Port 8080',
+					definition:
+						'HTTP Alternative - Often used as an alternative or for web servers during testing and proxy configurations.',
+				},
+			];
+
+			let currentIndex = 0;
+			let isFlipped = false;
+			let cards = [...flashcards];
+			let isPlaying = false;
+
+			// DOM Elements
+			const cardElement = document.getElementById('card');
+			const cardAcronym = document.getElementById('cardAcronym');
+			const cardDefinition = document.getElementById('cardDefinition');
+			const currentCardElement = document.getElementById('currentCard');
+			const totalCardsElement = document.getElementById('totalCards');
+			const resetBtn = document.getElementById('resetBtn');
+			const shuffleBtn = document.getElementById('shuffleBtn');
+			const jumpInput = document.getElementById('jumpInput');
+			const jumpBtn = document.getElementById('jumpBtn');
+			const searchInput = document.getElementById('searchInput');
+			const searchBtn = document.getElementById('searchBtn');
+			const searchResults = document.getElementById('searchResults');
+			const searchFeedback = document.getElementById('searchFeedback');
+			const audioBtn = document.getElementById('audioBtn');
+
+			function updateCard() {
+				const acronymParts = cards[currentIndex].acronym.split(' - ');
+				if (acronymParts.length > 1) {
+					cardAcronym.innerHTML = `<h2>${acronymParts[0]}</h2><br><h1>${acronymParts[1]}</h1>`;
+				} else {
+					cardAcronym.innerHTML = acronymParts[0];
+				}
+				cardDefinition.innerHTML = cards[currentIndex].definition;
+				currentCardElement.textContent = currentIndex + 1;
+				totalCardsElement.textContent = cards.length;
+			}
+
+			function shuffleCards() {
+				cards = [...cards].sort(() => Math.random() - 0.5);
+				currentIndex = 0;
+				isFlipped = false;
+				cardElement.classList.remove('flipped');
+				updateCard();
+			}
+
+			function resetDeck() {
+				cards = [...flashcards];
+				currentIndex = 0;
+				isFlipped = false;
+				cardElement.classList.remove('flipped');
+				updateCard();
+			}
+
+			function jumpToCard() {
+				const jumpIndex = parseInt(jumpInput.value) - 1;
+				if (jumpIndex >= 0 && jumpIndex < cards.length) {
+					currentIndex = jumpIndex;
+					isFlipped = false;
+					cardElement.classList.remove('flipped');
+					updateCard();
+					jumpInput.value = '';
+				}
+			}
+
+			function searchCards() {
+				const searchTerm = searchInput.value.trim().toLowerCase();
+				searchResults.innerHTML = '';
+
+				if (searchTerm === '') {
+					searchResults.classList.remove('active');
+					searchFeedback.textContent = 'Please enter a search term';
+					return;
+				}
+
+				const matches = cards.filter(
+					(card) =>
+						card.acronym.toLowerCase().includes(searchTerm) ||
+						card.definition.toLowerCase().includes(searchTerm)
+				);
+
+				if (matches.length > 0) {
+					searchResults.classList.add('active');
+					matches.forEach((card, index) => {
+						const div = document.createElement('div');
+						div.className = 'search-result-item';
+						div.textContent = `${card.acronym}: ${card.definition.substring(
+							0,
+							60
+						)}...`;
+						div.addEventListener('click', () => {
+							currentIndex = cards.findIndex((c) => c.acronym === card.acronym);
+							isFlipped = false;
+							cardElement.classList.remove('flipped');
+							updateCard();
+							searchInput.value = '';
+							searchResults.classList.remove('active');
+							searchFeedback.textContent = `Showing card for ${card.acronym}`;
+						});
+						searchResults.appendChild(div);
+					});
+					searchFeedback.textContent = `Found ${matches.length} matches`;
+				} else {
+					searchResults.classList.remove('active');
+					searchFeedback.textContent = 'No matches found';
+				}
+			}
+
+			// Audio Script
+			let currentAudio = null;
+
+			function stopAudio() {
+				if (currentAudio) {
+					currentAudio.pause();
+					currentAudio.currentTime = 0;
+				}
+				isPlaying = false;
+				audioBtn.textContent = 'Start Audio Playback';
+				audioBtn.classList.remove('playing');
+			}
+
+			async function getAudioForText(text) {
+				try {
+					const selectedVoice = document.getElementById('voiceSelect').value;
+					const response = await fetch(
+						'http://localhost:3000/api/text-to-speech',
+						{
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify({
+								text: text.trim(),
+								voice: selectedVoice,
+							}),
+						}
+					);
+
+					if (!response.ok) {
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+
+					const data = await response.json();
+					if (!data.audio) {
+						throw new Error('No audio data received');
+					}
+
+					return `data:audio/mpeg;base64,${data.audio}`;
+				} catch (error) {
+					console.error('Error getting audio:', error);
+					alert('Failed to get audio. Please try again.');
+					stopAudio();
+					return null;
+				}
+			}
+
+			async function playCurrentCard() {
+				if (!isPlaying) return;
+
+				try {
+					// Ensure card is showing front side
+					cardElement.classList.remove('flipped');
+					isFlipped = false;
+
+					// Split the acronym and prepare text
+					const acronymParts = cards[currentIndex].acronym.split(' - ');
+					const acronymText = acronymParts.join('. ');
+
+					// Get front audio
+					const frontAudioSrc = await getAudioForText(acronymText);
+					if (!frontAudioSrc) return;
+
+					// Create and play front audio
+					currentAudio = new Audio(frontAudioSrc);
+
+					// When front audio ends, flip card and play back
+					currentAudio.onended = async () => {
+						if (!isPlaying) return;
+
+						// Flip card to back
+						cardElement.classList.add('flipped');
+						isFlipped = true;
+
+						// Clean up any HTML tags and prepare back text
+						const backText = cards[currentIndex].definition
+							.replace(/<br><br>/g, '. ')
+							.replace(/<[^>]*>/g, '')
+							.trim();
+
+						const backAudioSrc = await getAudioForText(backText);
+						if (!backAudioSrc) return;
+
+						currentAudio = new Audio(backAudioSrc);
+
+						// When back audio ends, move to next card
+						currentAudio.onended = () => {
+							if (!isPlaying) return;
+
+							// Move to next card
+							currentIndex = (currentIndex + 1) % cards.length;
+							updateCard();
+
+							// Start playing next card
+							setTimeout(() => {
+								if (isPlaying) {
+									playCurrentCard();
+								}
+							}, 1000); // Add a brief pause between cards
+						};
+
+						try {
+							await currentAudio.play();
+						} catch (error) {
+							console.error('Error playing back audio:', error);
+							stopAudio();
+						}
+					};
+
+					try {
+						await currentAudio.play();
+					} catch (error) {
+						console.error('Error playing front audio:', error);
+						stopAudio();
+					}
+				} catch (error) {
+					console.error('Error in playCurrentCard:', error);
+					stopAudio();
+				}
+			}
+
+			// Event Listeners
+			cardElement.addEventListener('click', () => {
+				stopAudio();
+
+				if (!isFlipped) {
+					// First click - flip to show definition
+					cardElement.classList.add('flipped');
+					isFlipped = true;
+				} else {
+					// Second click - move to next card
+					cardElement.classList.add('switching');
+
+					setTimeout(() => {
+						// Move to next card
+						currentIndex = (currentIndex + 1) % cards.length;
+						updateCard();
+
+						// Reset to front of new card
+						cardElement.classList.remove('flipped');
+
+						setTimeout(() => {
+							cardElement.classList.remove('switching');
+							isFlipped = false;
+						}, 50);
+					}, 300);
+				}
+			});
+
+			audioBtn.addEventListener('click', () => {
+				if (isPlaying) {
+					stopAudio();
+				} else {
+					isPlaying = true;
+					audioBtn.textContent = 'Stop Audio Playback';
+					audioBtn.classList.add('playing');
+					playCurrentCard();
+				}
+			});
+
+			resetBtn.addEventListener('click', () => {
+				stopAudio();
+				resetDeck();
+			});
+
+			shuffleBtn.addEventListener('click', () => {
+				stopAudio();
+				shuffleCards();
+			});
+
+			jumpBtn.addEventListener('click', () => {
+				stopAudio();
+				jumpToCard();
+			});
+
+			jumpInput.addEventListener('keypress', (e) => {
+				if (e.key === 'Enter') jumpToCard();
+			});
+
+			searchBtn.addEventListener('click', searchCards);
+			searchInput.addEventListener('keyup', searchCards);
+
+			// Hide search results when clicking outside
+			document.addEventListener('click', (e) => {
+				if (!searchResults.contains(e.target) && e.target !== searchInput) {
+					searchResults.classList.remove('active');
+				}
+			});
+
+			// Initialize
+			updateCard();
+		</script>
+	</body>
+</html>
