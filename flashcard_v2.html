@@ -470,6 +470,11 @@
 						'A mobile device deployment model where employees choose from a list of approved devices.<br><br>CYOD ensures compatibility and security while offering some personal flexibility.',
 				},
 				{
+					acronym: 'DAC - Discretionary Access Control',
+					definition:
+						"A security model where access control is at the discretion of the object's owner.<br><br>DAC allows owners to determine who should have access rights to an object and what those rights should be. Common in Windows operating systems.",
+				},
+				{
 					acronym: 'DBMS - Database Management System',
 					definition:
 						'A system software for creating, managing, and interacting with databases.<br><br>DBMS ensures data consistency, integrity, and security while supporting multiple users.',
@@ -571,6 +576,11 @@
 						'A security process that checks files for unauthorized changes, ensuring system and application integrity.',
 				},
 				{
+					acronym: 'FOB - Frequency Operated Button',
+					definition:
+						'A small hardware security token that can store authentication credentials.<br><br>FOBs are used for secure physical or digital access control and are a common form of multi-factor authentication.',
+				},
+				{
 					acronym: 'FPS - Frames Per Second',
 					definition:
 						'A measurement of display refresh rate or video playback smoothness.<br><br>Higher FPS ensures better visual quality, crucial for gaming and video applications.',
@@ -606,6 +616,11 @@
 						'A group of servers working together for data-intensive tasks.<br><br>Used for real-time processing and complex computational operations.',
 				},
 				{
+					acronym: 'HSM - Hardware Security Module',
+					definition:
+						'A physical computing device that safeguards and manages digital keys, performs encryption and decryption functions.<br><br>HSMs provide additional security for sensitive data and cryptographic operations.',
+				},
+				{
 					acronym: 'HTTP - HyperText Transfer Protocol',
 					definition:
 						'A protocol for transferring hypertext documents.<br><br>HTTP is the foundation of data communication on the web.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
@@ -624,6 +639,16 @@
 					acronym: 'IAM - Identity and Access Management',
 					definition:
 						'A framework for managing digital identities and access rights.<br><br>IAM ensures that only authorized users can access specific resources.',
+				},
+				{
+					acronym: 'IdM - Identity Management',
+					definition:
+						'A framework for ensuring that the right individuals have appropriate access to technology resources.<br><br>IdM systems manage digital identities, credentials, and access rights within an organization.',
+				},
+				{
+					acronym: 'IdP - Identity Provider',
+					definition:
+						'A system that creates, maintains, and manages identity information while providing authentication services.<br><br>IdPs are crucial components in federated identity management systems.',
 				},
 				{
 					acronym: 'IDS - Intrusion Detection System',
@@ -684,6 +709,11 @@
 					acronym: 'MAB - MAC Authentication Bypass',
 					definition:
 						"A method allowing network access based on MAC address.<br><br>MAB is often used as a fallback for devices that don't support 802.1X authentication.",
+				},
+				{
+					acronym: 'MAC - Mandatory Access Control',
+					definition:
+						'A security model where access control policies are uniformly enforced across all subjects and objects.<br><br>MAC uses strict classification levels and is commonly used in military and high-security environments.',
 				},
 				{
 					acronym: 'MaaS - Malware-as-a-Service',
@@ -867,9 +897,24 @@
 						'A term for software that may be unwanted despite being legitimately installed, often moved to sandbox environments for analysis.',
 				},
 				{
+					acronym: 'PCA - Principal Component Analysis',
+					definition:
+						'A statistical method used in facial recognition systems.<br><br>PCA reduces data complexity while maintaining essential features, making it effective for modeling facial images.',
+				},
+				{
+					acronym: 'QR - Quick Response',
+					definition:
+						'A two-dimensional barcode that can be quickly read by digital devices.<br><br>QR codes are used for authentication, payments, and accessing information, particularly in mobile applications.',
+				},
+				{
 					acronym: 'RaaS - Ransomware-as-a-Service',
 					definition:
 						'A business model where ransomware tools are leased to attackers.<br><br>RaaS lowers the barrier to entry for cybercriminals.',
+				},
+				{
+					acronym: 'RADIUS - Remote Authentication Dial-In User Service',
+					definition:
+						'A networking protocol providing centralized Authentication, Authorization, and Accounting (AAA) management.<br><br>Commonly used for network access control and VPN authentication.',
 				},
 				{
 					acronym: 'RAID - Redundant Array of Independent Disks',
@@ -935,6 +980,21 @@
 					acronym: 'SAST - Static Application Security Testing',
 					definition:
 						'A security testing methodology analyzing application source code.<br><br>SAST identifies vulnerabilities like SQL injection or cross-site scripting during development, improving code security.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+				},
+				{
+					acronym: 'SAS - Security Assertion Service',
+					definition:
+						'A service that generates security tokens or assertions for authentication and authorization.<br><br>Used in federated identity systems, particularly in cloud environments like Microsoft Azure.',
+				},
+				{
+					acronym: 'SDP - Service Delivery Platform',
+					definition:
+						'A set of components that provides a service delivery architecture.<br><br>Enables the rapid development and deployment of new services while managing user authentication and access.',
+				},
+				{
+					acronym: 'STS - Security Token Service',
+					definition:
+						'A web service that issues security tokens used for federated identity management.<br><br>STS validates credentials and issues tokens that can be used to access protected resources.',
 				},
 				{
 					acronym: 'DAST - Dynamic Application Security Testing',
@@ -1045,6 +1105,12 @@
 					acronym: 'SWID - Software Identification Tagging',
 					definition:
 						'Allows for the proper management of software inventories of managed devices in support of higher-level business, IT security management practices such as configuration management, change management, and problem management.',
+				},
+				{
+					acronym:
+						'TACACS+ - Terminal Access Controller Access Control System Plus',
+					definition:
+						'A protocol providing centralized authentication, authorization, and accounting for network access control.<br><br>Often used in network devices and remote access scenarios.',
 				},
 				{
 					acronym: 'TDE - Transparent Data Encryption',
@@ -1592,7 +1658,7 @@
 				}
 			});
 
-			// Initialize the flashcard
+			// Initialize the flashcard`
 			updateCard();
 		</script>
 	</body>
