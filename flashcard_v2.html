@@ -3,259 +3,18 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta
+			http-equiv="Referrer-Policy"
+			content="strict-origin-when-cross-origin" />
+		<meta
+			http-equiv="Permissions-Policy"
+			content="camera=(), microphone=(), geolocation=()" />
 		<title>CompTIA Security+ Flashcards</title>
-		<style>
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-				font-family: Arial, sans-serif;
-			}
-
-			body {
-				min-height: 100vh;
-				background: #f0f2f5;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				padding: 2rem;
-			}
-
-			.container {
-				max-width: 800px;
-				width: 100%;
-				text-align: center;
-			}
-
-			h1 {
-				color: #1a1a1a;
-				margin-bottom: 1rem;
-				font-size: 2.5rem;
-			}
-
-			.progress {
-				color: #666;
-				margin-bottom: 2rem;
-			}
-
-			.card-container {
-				perspective: 1000px;
-				height: 400px;
-				margin-bottom: 2rem;
-				cursor: pointer;
-			}
-
-			.card {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				transform-style: preserve-3d;
-				transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-			}
-
-			.card.flipped {
-				transform: rotateY(180deg);
-			}
-
-			.card-face {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				backface-visibility: hidden;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding: 2rem;
-				background: white;
-				border-radius: 1rem;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				transition: opacity 0.3s ease-in-out;
-			}
-
-			.card-back {
-				transform: rotateY(180deg);
-			}
-
-			.card.switching .card-face {
-				opacity: 0;
-				transition: opacity 0.3s ease-in-out;
-			}
-
-			.acronym {
-				font-size: 3.5rem;
-				font-weight: bold;
-				color: #1a1a1a;
-				margin-bottom: 1rem;
-				white-space: pre-line;
-			}
-
-			.definition {
-				font-size: 1.2rem;
-				color: #444;
-				line-height: 1.5;
-			}
-
-			.controls {
-				display: flex;
-				gap: 1rem;
-				justify-content: center;
-				flex-wrap: wrap;
-				margin-bottom: 1rem;
-			}
-
-			.search-container {
-				width: 100%;
-				max-width: 400px;
-				margin: 1rem auto;
-			}
-
-			.search-box {
-				display: flex;
-				gap: 0.5rem;
-			}
-
-			.search-input {
-				flex: 1;
-				padding: 0.75rem;
-				border: 1px solid #d1d5db;
-				border-radius: 0.5rem;
-				font-size: 1rem;
-			}
-
-			.search-results {
-				position: absolute;
-				width: 100%;
-				max-width: 400px;
-				margin-top: 0.5rem;
-				background: white;
-				border-radius: 0.5rem;
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				max-height: 200px;
-				overflow-y: auto;
-				display: none;
-				text-align: left;
-			}
-
-			.search-results.active {
-				display: block;
-			}
-
-			.search-result-item {
-				padding: 0.75rem;
-				cursor: pointer;
-				border-bottom: 1px solid #f0f0f0;
-			}
-
-			.search-result-item:hover {
-				background: #f8f9fa;
-			}
-
-			.search-result-item:last-child {
-				border-bottom: none;
-			}
-
-			.search-feedback {
-				margin-top: 0.5rem;
-				color: #666;
-				font-size: 0.9rem;
-			}
-
-			button {
-				padding: 0.75rem 1.5rem;
-				border: none;
-				border-radius: 0.5rem;
-				cursor: pointer;
-				font-size: 1rem;
-				transition: all 0.2s;
-			}
-
-			button:hover {
-				transform: translateY(-2px);
-			}
-
-			.btn-primary {
-				background: #2563eb;
-				color: white;
-			}
-
-			.btn-primary:hover {
-				background: #1d4ed8;
-			}
-
-			.btn-secondary {
-				background: #e5e7eb;
-				color: #1a1a1a;
-			}
-
-			.btn-secondary:hover {
-				background: #d1d5db;
-			}
-
-			input[type='number'] {
-				padding: 0.75rem;
-				border: 1px solid #d1d5db;
-				border-radius: 0.5rem;
-				width: 80px;
-				text-align: center;
-			}
-
-			.card-container {
-				animation: cardEnter 0.5s ease-out;
-			}
-
-			@keyframes cardEnter {
-				from {
-					transform: translateY(20px);
-					opacity: 0;
-				}
-				to {
-					transform: translateY(0);
-					opacity: 1;
-				}
-			}
-
-			.footer {
-				margin-top: auto;
-				padding: 1rem;
-				color: black;
-				text-align: center;
-				font-size: 0.9rem;
-			}
-
-			/* Audio Styles */
-			.audio-controls {
-				display: flex;
-				gap: 1rem;
-				justify-content: center;
-				margin-bottom: 1rem;
-			}
-
-			.btn-audio {
-				background: #22c55e;
-				color: white;
-			}
-
-			.btn-audio:hover {
-				background: #16a34a;
-			}
-
-			.btn-audio.playing {
-				background: #ef4444;
-			}
-
-			.btn-audio.playing:hover {
-				background: #dc2626;
-			}
-
-			.voice-select {
-				padding: 0.75rem;
-				border: 1px solid #d1d5db;
-				border-radius: 0.5rem;
-				font-size: 1rem;
-				min-width: 200px;
-			}
-		</style>
+		<link rel="stylesheet" href="styles.css" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" />
 	</head>
 	<body>
 		<div class="container">
@@ -276,13 +35,22 @@
 				<button class="btn-audio" id="audioBtn">Start Audio Playback</button>
 			</div>
 
-			<div class="card-container" id="cardContainer">
-				<div class="card" id="card">
-					<div class="card-face card-front">
-						<div class="acronym" id="cardAcronym"></div>
+			<div
+				class="card-container"
+				id="cardContainer"
+				role="region"
+				aria-label="Flashcard">
+				<div
+					class="card"
+					id="card"
+					role="button"
+					tabindex="0"
+					aria-label="Click to flip card">
+					<div class="card-face card-front" aria-label="Card front">
+						<div class="acronym" id="cardAcronym" role="heading"></div>
 					</div>
-					<div class="card-face card-back">
-						<div class="definition" id="cardDefinition"></div>
+					<div class="card-face card-back" aria-label="Card back">
+						<div class="definition" id="cardDefinition" role="article"></div>
 					</div>
 				</div>
 			</div>
@@ -1425,6 +1193,9 @@
 				},
 			];
 
+			console.log('Flashcards loaded:', flashcards.length);
+			console.log('First card:', flashcards[0]);
+
 			let currentIndex = 0;
 			let isFlipped = false;
 			let cards = [...flashcards];
@@ -1446,14 +1217,39 @@
 			const searchFeedback = document.getElementById('searchFeedback');
 			const audioBtn = document.getElementById('audioBtn');
 
+			function sanitizeHTML(str) {
+				const div = document.createElement('div');
+				div.textContent = str;
+				return div.innerHTML;
+			}
+
 			function updateCard() {
+				// Add debug logging
+				console.log('Current index:', currentIndex);
+				console.log('Current card:', cards[currentIndex]);
+
 				const acronymParts = cards[currentIndex].acronym.split(' - ');
 				if (acronymParts.length > 1) {
-					cardAcronym.innerHTML = `<h2>${acronymParts[0]}</h2><br><h1>${acronymParts[1]}</h1>`;
+					const sanitizedAcronym = sanitizeHTML(acronymParts[0]);
+					const sanitizedTitle = sanitizeHTML(acronymParts[1]);
+					cardAcronym.innerHTML = `<h2>${sanitizedAcronym}</h2><br><h1>${sanitizedTitle}</h1>`;
 				} else {
-					cardAcronym.innerHTML = acronymParts[0];
+					cardAcronym.textContent = acronymParts[0];
 				}
-				cardDefinition.innerHTML = cards[currentIndex].definition;
+
+				const tempDiv = document.createElement('div');
+				tempDiv.innerHTML = cards[currentIndex].definition;
+				const allowedTags = ['br', 'b'];
+
+				const sanitizedDefinition = tempDiv.innerHTML.replace(
+					/<[^>]*>/g,
+					(match) => {
+						const tag = match.replace(/[<>/]/g, '').split(' ')[0];
+						return allowedTags.includes(tag) ? match : '';
+					}
+				);
+
+				cardDefinition.innerHTML = sanitizedDefinition;
 				currentCardElement.textContent = currentIndex + 1;
 				totalCardsElement.textContent = cards.length;
 			}
@@ -1476,17 +1272,24 @@
 
 			function jumpToCard() {
 				const jumpIndex = parseInt(jumpInput.value) - 1;
-				if (jumpIndex >= 0 && jumpIndex < cards.length) {
-					currentIndex = jumpIndex;
-					isFlipped = false;
-					cardElement.classList.remove('flipped');
-					updateCard();
-					jumpInput.value = '';
+				if (isNaN(jumpIndex) || jumpIndex < 0 || jumpIndex >= cards.length) {
+					// Add error feedback
+					const feedback = document.createElement('div');
+					feedback.className = 'error-feedback';
+					feedback.textContent = `Please enter a number between 1 and ${cards.length}`;
+					jumpInput.parentNode.appendChild(feedback);
+					setTimeout(() => feedback.remove(), 3000);
+					return;
 				}
+				currentIndex = jumpIndex;
+				isFlipped = false;
+				cardElement.classList.remove('flipped');
+				updateCard();
+				jumpInput.value = '';
 			}
 
 			function searchCards() {
-				const searchTerm = searchInput.value.trim().toLowerCase();
+				const searchTerm = sanitizeHTML(searchInput.value.trim().toLowerCase());
 				searchResults.innerHTML = '';
 
 				if (searchTerm === '') {
@@ -1497,8 +1300,8 @@
 
 				const matches = cards.filter(
 					(card) =>
-						card.acronym.toLowerCase().includes(searchTerm) ||
-						card.definition.toLowerCase().includes(searchTerm)
+						sanitizeHTML(card.acronym.toLowerCase()).includes(searchTerm) ||
+						sanitizeHTML(card.definition.toLowerCase()).includes(searchTerm)
 				);
 
 				if (matches.length > 0) {
@@ -1506,10 +1309,10 @@
 					matches.forEach((card, index) => {
 						const div = document.createElement('div');
 						div.className = 'search-result-item';
-						div.textContent = `${card.acronym}: ${card.definition.substring(
-							0,
-							60
-						)}...`;
+						const previewText = sanitizeHTML(
+							`${card.acronym}: ${card.definition.substring(0, 60)}...`
+						);
+						div.textContent = previewText;
 						div.addEventListener('click', () => {
 							currentIndex = cards.findIndex((c) => c.acronym === card.acronym);
 							isFlipped = false;
@@ -1544,6 +1347,10 @@
 			async function getAudioForText(text) {
 				try {
 					const selectedVoice = document.getElementById('voiceSelect').value;
+					if (!text || typeof text !== 'string') {
+						throw new Error('Invalid text input');
+					}
+
 					const response = await fetch(
 						'http://localhost:3000/api/text-to-speech',
 						{
@@ -1570,7 +1377,14 @@
 					return `data:audio/mpeg;base64,${data.audio}`;
 				} catch (error) {
 					console.error('Error getting audio:', error);
-					alert('Failed to get audio. Please try again.');
+					// Add visual feedback for errors
+					const audioBtn = document.getElementById('audioBtn');
+					audioBtn.classList.add('error');
+					audioBtn.textContent = 'Error: Try Again';
+					setTimeout(() => {
+						audioBtn.classList.remove('error');
+						audioBtn.textContent = 'Start Audio Playback';
+					}, 3000);
 					stopAudio();
 					return null;
 				}
@@ -1580,6 +1394,9 @@
 				if (!isPlaying) return;
 
 				try {
+					if (!navigator.onLine) {
+						throw new Error('No internet connection');
+					}
 					// Ensure card is showing front side
 					cardElement.classList.remove('flipped');
 					isFlipped = false;
@@ -1646,8 +1463,21 @@
 					}
 				} catch (error) {
 					console.error('Error in playCurrentCard:', error);
+					const errorMessage =
+						error.message === 'No internet connection'
+							? 'Please check your internet connection'
+							: 'An error occurred while playing audio';
+					showError(errorMessage);
 					stopAudio();
 				}
+			}
+
+			function showError(message) {
+				const errorDiv = document.createElement('div');
+				errorDiv.className = 'error-message';
+				errorDiv.textContent = message;
+				document.querySelector('.audio-controls').appendChild(errorDiv);
+				setTimeout(() => errorDiv.remove(), 3000);
 			}
 
 			// Event Listeners
@@ -1709,7 +1539,23 @@
 			});
 
 			searchBtn.addEventListener('click', searchCards);
-			searchInput.addEventListener('keyup', searchCards);
+
+			// Add debouncing for search function to prevent excessive filtering
+			function debounce(func, wait) {
+				let timeout;
+				return function executedFunction(...args) {
+					const later = () => {
+						clearTimeout(timeout);
+						func(...args);
+					};
+					clearTimeout(timeout);
+					timeout = setTimeout(later, wait);
+				};
+			}
+
+			// Use debounced search
+			const debouncedSearch = debounce(searchCards, 300);
+			searchInput.addEventListener('keyup', debouncedSearch);
 
 			// Hide search results when clicking outside
 			document.addEventListener('click', (e) => {
@@ -1718,8 +1564,87 @@
 				}
 			});
 
-			// Initialize the flashcard`
+			// Initialize the flashcard
 			updateCard();
+
+			// Add keyboard controls
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'ArrowRight' || e.key === 'Space') {
+					// Next card
+					currentIndex = (currentIndex + 1) % cards.length;
+					isFlipped = false;
+					cardElement.classList.remove('flipped');
+					updateCard();
+				} else if (e.key === 'ArrowLeft') {
+					// Previous card
+					currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+					isFlipped = false;
+					cardElement.classList.remove('flipped');
+					updateCard();
+				} else if (e.key === 'Enter') {
+					// Flip card
+					cardElement.classList.toggle('flipped');
+					isFlipped = !isFlipped;
+				}
+			});
+
+			// Save progress to localStorage
+			function saveProgress() {
+				const progress = {
+					currentIndex,
+					isFlipped,
+					cards,
+				};
+				localStorage.setItem('flashcardProgress', JSON.stringify(progress));
+			}
+
+			// Load progress from localStorage
+			function loadProgress() {
+				const saved = localStorage.getItem('flashcardProgress');
+				if (saved) {
+					const progress = JSON.parse(saved);
+					currentIndex = progress.currentIndex;
+					isFlipped = progress.isFlipped;
+					cards = progress.cards;
+					updateCard();
+				}
+			}
+
+			// Add event listener for saving progress
+			window.addEventListener('beforeunload', saveProgress);
+
+			// Load progress when page loads
+			document.addEventListener('DOMContentLoaded', loadProgress);
+
+			let touchStartX = 0;
+			let touchEndX = 0;
+
+			cardElement.addEventListener('touchstart', (e) => {
+				touchStartX = e.changedTouches[0].screenX;
+			});
+
+			cardElement.addEventListener('touchend', (e) => {
+				touchEndX = e.changedTouches[0].screenX;
+				handleSwipe();
+			});
+
+			function handleSwipe() {
+				const swipeThreshold = 50;
+				const diff = touchEndX - touchStartX;
+
+				if (Math.abs(diff) > swipeThreshold) {
+					if (diff > 0) {
+						// Swipe right - previous card
+						currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+					} else {
+						// Swipe left - next card
+						currentIndex = (currentIndex + 1) % cards.length;
+					}
+					isFlipped = false;
+					cardElement.classList.remove('flipped');
+					updateCard();
+				}
+			}
 		</script>
 	</body>
 </html>
