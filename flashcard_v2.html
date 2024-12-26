@@ -113,6 +113,12 @@
 						'A secure encryption mode providing both confidentiality and authentication.<br><br>AES-GCM is commonly used for encrypting data at rest and in transit, offering high performance and security.',
 				},
 				{
+					acronym: 'ALE - Annualized Loss Expectancy',
+					definition:
+						'A calculation used to estimate the yearly cost of a specific risk.<br><br>ALE is determined by multiplying the Single Loss Expectancy (SLE) by the Annualized Rate of Occurrence (ARO).',
+				},
+
+				{
 					acronym: 'AP - Access Point',
 					definition:
 						'A device that allows wireless devices to connect to a wired network.<br><br>Access Points extend network coverage and enable wireless communication in local area networks (LANs).<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2) / Physical (Layer 1)</b>',
@@ -131,6 +137,16 @@
 					acronym: 'ARF - Asset Reporting Format',
 					definition:
 						'A data model to express the transport format of information about assets, and the relationships between assets and reports. Part of the SCAP specification framework.',
+				},
+				{
+					acronym: 'ARO - Annualized Rate of Occurrence',
+					definition:
+						'The expected frequency of a risk occurring within a year.<br><br>ARO is a key input in calculating Annualized Loss Expectancy (ALE).',
+				},
+				{
+					acronym: 'AV - Asset Value',
+					definition:
+						'The value of an asset as determined by an organization.<br><br>AV is used to estimate potential losses during risk analysis and prioritize safeguards.',
 				},
 				{
 					acronym: 'AWS - Amazon Web Services',
@@ -196,6 +212,11 @@
 					acronym: 'CIS - Center for Internet Security',
 					definition:
 						'A nonprofit organization that provides cybersecurity guidance.<br><br>CIS offers configuration benchmarks, tools, and best practices to improve system security and reduce risks.',
+				},
+				{
+					acronym: 'CISO - Chief Information Security Officer',
+					definition:
+						'An executive responsible for an organization’s information and data security.<br><br>The CISO manages strategies to safeguard assets against cyber threats.',
 				},
 				{
 					acronym: 'CMDB - Configuration Management Database',
@@ -334,6 +355,11 @@
 						'Advanced security tools that monitor and respond to endpoint threats.<br><br>EDR systems provide real-time detection, analysis, and remediation.',
 				},
 				{
+					acronym: 'EF - Exposure Factor',
+					definition:
+						"The percentage of an asset's value likely to be lost due to a specific risk.<br><br>EF is a critical component in determining the Single Loss Expectancy (SLE).",
+				},
+				{
 					acronym: 'EMM - Enterprise Mobility Management',
 					definition:
 						'A platform for managing mobile devices in an organization.<br><br>EMM ensures security and compliance for devices accessing corporate resources.',
@@ -372,6 +398,11 @@
 					acronym: 'FTK - Forensic Toolkit',
 					definition:
 						'A software suite used for digital forensics investigations.<br><br>FTK enables evidence collection, analysis, and reporting for legal and investigative purposes.',
+				},
+				{
+					acronym: 'FTP - File Transfer Protocol',
+					definition:
+						'A standard protocol used to transfer files between a client and server over a network.<br><br>FTP lacks encryption, making it less secure than alternatives like SFTP.',
 				},
 				{
 					acronym: 'GCMP - Galois/Counter Mode Protocol',
@@ -499,6 +530,11 @@
 						'A lightweight data-interchange format.<br><br>JSON is commonly used for data exchange in web applications.',
 				},
 				{
+					acronym: 'KRIs - Key Risk Indicators',
+					definition:
+						'Metrics used to measure the likelihood or impact of a potential risk.<br><br>KRIs help organizations monitor risks and align with their risk appetite.',
+				},
+				{
 					acronym: 'LAN - Local Area Network',
 					definition:
 						'A network connecting devices within a small geographical area.<br><br>LANs enable communication and resource sharing in homes or offices.',
@@ -507,6 +543,11 @@
 					acronym: 'LB - Load Balancing',
 					definition:
 						'The distribution of network or application traffic across multiple servers.<br><br>LB optimizes resource use, ensures high availability, and improves performance.',
+				},
+				{
+					acronym: 'LDAP - Lightweight Directory Access Protocol',
+					definition:
+						'A protocol for accessing and maintaining distributed directory information.<br><br>LDAP is commonly used for centralized authentication and directory services.',
 				},
 				{
 					acronym: 'MAB - MAC Authentication Bypass',
@@ -595,6 +636,12 @@
 						'An advanced firewall with additional security features.<br><br>NGFWs provide capabilities like deep packet inspection and intrusion prevention.',
 				},
 				{
+					acronym:
+						'NIST SPs - National Institute of Standards and Technology Special Publications',
+					definition:
+						'Guidelines and best practices published by NIST for information security.<br><br>NIST SPs provide frameworks for risk management, cybersecurity, and compliance.',
+				},
+				{
 					acronym: 'NNTP - Network News Transfer Protocol',
 					definition:
 						'A protocol for distributing and retrieving news articles.<br><br>NNTP is used for managing Usenet discussions.',
@@ -623,6 +670,11 @@
 					acronym: 'OCIL - Open Checklist Interactive Language',
 					definition:
 						'A framework for expressing a set of questions to be presented to a user and corresponding procedures to interpret responses to these questions. Used in SCAP audits.',
+				},
+				{
+					acronym: 'OEM - Original Equipment Manufacturer',
+					definition:
+						"A company that produces parts or equipment used in another company's products.<br><br>OEMs often provide hardware or software with tailored branding or functionality.",
 				},
 				{
 					acronym: 'OS - Operating System',
@@ -794,10 +846,26 @@
 					definition:
 						'A service that generates security tokens or assertions for authentication and authorization.<br><br>Used in federated identity systems, particularly in cloud environments like Microsoft Azure.',
 				},
+
 				{
 					acronym: 'SDP - Service Delivery Platform',
 					definition:
 						'A set of components that provides a service delivery architecture.<br><br>Enables the rapid development and deployment of new services while managing user authentication and access.',
+				},
+				{
+					acronym: 'SLE - Single Loss Expectancy',
+					definition:
+						'The expected monetary loss from a single risk event.<br><br>SLE is calculated as Asset Value (AV) × Exposure Factor (EF).',
+				},
+				{
+					acronym: 'SMTP - Simple Mail Transfer Protocol',
+					definition:
+						'A protocol for sending emails between servers.<br><br>SMTP is widely used for email transmission but requires additional security measures like SSL/TLS.',
+				},
+				{
+					acronym: 'SRM - Shared Responsibility Model',
+					definition:
+						'A framework that outlines security responsibilities between cloud service providers and users.<br><br>SRM clarifies the division of duties for managing data, systems, and applications.',
 				},
 				{
 					acronym: 'STS - Security Token Service',
@@ -989,6 +1057,16 @@
 					acronym: 'WMI - Windows Management Interface',
 					definition:
 						'A core Windows infrastructure for management data and operations that enables monitoring and control of system resources.',
+				},
+				{
+					acronym: 'WPA2 - Wi-Fi Protected Access 2',
+					definition:
+						'A security protocol for wireless networks that uses advanced encryption and authentication.<br><br>WPA2 improves over its predecessor (WPA) with stronger data protection.',
+				},
+				{
+					acronym: 'WPA3 - Wi-Fi Protected Access 3',
+					definition:
+						'The latest security protocol for wireless networks, offering enhanced encryption and authentication.<br><br>WPA3 introduces protections against brute-force attacks and improved security for public networks.',
 				},
 				{
 					acronym:
