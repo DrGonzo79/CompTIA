@@ -1341,11 +1341,13 @@
 			}
 
 			function resetDeck() {
-				cards = [...flashcards];
+				localStorage.removeItem('flashcardProgress');
+				cards = [...flashcards]; // Reset to original array
 				currentIndex = 0;
 				isFlipped = false;
 				cardElement.classList.remove('flipped');
 				updateCard();
+				console.log('Deck reset with', cards.length, 'cards'); // Debug log
 			}
 
 			function jumpToCard() {
