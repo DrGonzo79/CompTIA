@@ -92,221 +92,306 @@
 			// Flashcards array remains the same
 			const flashcards = [
 				{
-					acronym: 'ABAC - Attribute-Based Access Control',
+					acronym: 'AAA - Authentication, Authorization, and Accounting',
 					definition:
-						'Security model that grants access based on specific attributes.<br><br>It ensures users can only access resources if they meet specific attribute criteria, improving granular control over permissions.',
+						'A security framework ensuring that users are authenticated, authorized, and that their activities are logged and accounted for.',
 				},
 				{
 					acronym: 'ACL - Access Control List',
 					definition:
-						'Filters network traffic based on predefined security rules.<br><br>ACLs are implemented on routers or switches to enforce policies for allowing or denying traffic.<br><br><b>OSI Layer:</b> <b>Network (Layer 3)</b>',
+						'A set of rules that controls incoming and outgoing network traffic. ACLs are used for filtering traffic at the network layer.',
 				},
 				{
 					acronym: 'AES - Advanced Encryption Standard',
 					definition:
-						'A symmetric encryption algorithm widely used for securing data.<br><br>Known for its speed and security, AES is commonly used in applications like VPNs and file encryption.<br><br><b>OSI Layer:</b> <b>Presentation (Layer 6)</b>',
+						'A symmetric encryption algorithm used widely for securing data due to its high performance and security.',
 				},
 				{
-					acronym:
-						'AES-GCM - Advanced Encryption Standard - Galois/Counter Mode',
+					acronym: 'AES-256 - Advanced Encryption Standards 256-bit',
 					definition:
-						'A secure encryption mode providing both confidentiality and authentication.<br><br>AES-GCM is commonly used for encrypting data at rest and in transit, offering high performance and security.',
+						'A robust version of AES that uses 256-bit keys for encryption, providing enhanced security against brute-force attacks.',
+				},
+				{
+					acronym: 'AH - Authentication Header',
+					definition:
+						'A protocol used in IPsec to provide data integrity and authentication of IP packets.',
+				},
+				{
+					acronym: 'AI - Artificial Intelligence',
+					definition:
+						'The simulation of human intelligence processes by machines, used in applications like cybersecurity to detect threats.',
+				},
+				{
+					acronym: 'AIS - Automated Indicator Sharing',
+					definition:
+						'A system for sharing cybersecurity threat indicators between organizations in real time.',
 				},
 				{
 					acronym: 'ALE - Annualized Loss Expectancy',
 					definition:
-						'A calculation used to estimate the yearly cost of a specific risk.<br><br>ALE is determined by multiplying the Single Loss Expectancy (SLE) by the Annualized Rate of Occurrence (ARO).',
+						'An estimate of the annual cost of a risk. Calculated by multiplying the Single Loss Expectancy (SLE) by the Annualized Rate of Occurrence (ARO).',
 				},
-
 				{
 					acronym: 'AP - Access Point',
 					definition:
-						'A device that allows wireless devices to connect to a wired network.<br><br>Access Points extend network coverage and enable wireless communication in local area networks (LANs).<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2) / Physical (Layer 1)</b>',
+						'A device that allows wireless devices to connect to a wired network, extending network coverage.',
 				},
 				{
 					acronym: 'API - Application Programming Interface',
 					definition:
-						'A set of protocols and tools for building software applications.<br><br>APIs enable communication between different software systems, streamlining integration and functionality.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A set of rules and protocols for building and interacting with software applications.',
 				},
 				{
 					acronym: 'APT - Advanced Persistent Threat',
 					definition:
-						'A sophisticated, long-term targeted cyberattack often backed by nation-states or organized groups.<br><br>These threats focus on stealth and persistence to achieve espionage or sabotage objectives.',
-				},
-				{
-					acronym: 'ARF - Asset Reporting Format',
-					definition:
-						'A data model to express the transport format of information about assets, and the relationships between assets and reports. Part of the SCAP specification framework.',
+						'A prolonged and targeted cyberattack often carried out by nation-states or organized groups to steal sensitive data.',
 				},
 				{
 					acronym: 'ARO - Annualized Rate of Occurrence',
 					definition:
-						'The expected frequency of a risk occurring within a year.<br><br>ARO is a key input in calculating Annualized Loss Expectancy (ALE).',
+						'The expected frequency of a specific risk occurring within a year.',
 				},
 				{
-					acronym: 'AV - Asset Value',
+					acronym: 'ARP - Address Resolution Protocol',
 					definition:
-						'The value of an asset as determined by an organization.<br><br>AV is used to estimate potential losses during risk analysis and prioritize safeguards.',
+						'A protocol used to map an IP address to a MAC address on a local area network.',
 				},
 				{
-					acronym: 'AWS - Amazon Web Services',
+					acronym: 'ASLR - Address Space Layout Randomization',
 					definition:
-						'A cloud platform offering computing power, storage, and other services.<br><br>AWS enables scalable, on-demand infrastructure for businesses and developers.',
+						'A security technique that randomly arranges the address space positions of key data areas to prevent exploitation.',
 				},
 				{
-					acronym: 'BEC - Business Email Compromise',
+					acronym:
+						'ATT&CK - Adversarial Tactics, Techniques, and Common Knowledge',
 					definition:
-						'An attack that spoofs high-level employee emails for financial fraud.<br><br>Often targeting executives, it uses social engineering tactics to manipulate victims into transferring funds or sharing sensitive information.',
+						'A framework for understanding and analyzing adversary tactics and techniques across the cyberattack lifecycle.',
+				},
+				{
+					acronym: 'AUP - Acceptable Use Policy',
+					definition:
+						'A set of rules that outline acceptable use of organizational resources, such as IT systems and data.',
+				},
+				{
+					acronym: 'AV - Antivirus',
+					definition:
+						'A software application designed to detect, prevent, and remove malware.',
+				},
+				{
+					acronym: 'BASH - Bourne Again Shell',
+					definition:
+						'A command-line shell and scripting language widely used in Unix-based systems.',
+				},
+				{
+					acronym: 'BCP - Business Continuity Planning',
+					definition:
+						'The process of creating systems of prevention and recovery to deal with potential threats to an organization.',
+				},
+				{
+					acronym: 'BGP - Border Gateway Protocol',
+					definition:
+						'A protocol for exchanging routing information between gateways in different networks on the internet.',
 				},
 				{
 					acronym: 'BIA - Business Impact Analysis',
 					definition:
-						'A process that identifies critical operations and acceptable downtimes to ensure continuity during disasters.',
+						'A process for identifying critical business operations and the impact of their disruption.',
 				},
 				{
-					acronym: 'BPA - Business Partnership Agreement',
+					acronym: 'BIOS - Basic Input/Output System',
 					definition:
-						'A legally binding document that outlines the rules and details of a business partnership.<br><br>BPA defines the ownership, financials, roles, and responsibilities of parties involved in a partnership.',
+						'Firmware used to perform hardware initialization during the booting process of a computer.',
 				},
 				{
-					acronym: 'Burp Suite',
+					acronym: 'BPA - Business Partners Agreement',
 					definition:
-						'A comprehensive web application security testing tool.<br><br>Burp Suite is used for penetration testing, vulnerability scanning, and manual testing of web applications.',
+						'A legal document that outlines the responsibilities and obligations between two business entities.',
+				},
+				{
+					acronym: 'BPDU - Bridge Protocol Data Unit',
+					definition:
+						'Messages exchanged by switches to detect loops and maintain spanning tree protocol topology.',
+				},
+				{
+					acronym: 'BYOD - Bring Your Own Device',
+					definition:
+						'A policy allowing employees to use their personal devices for work purposes, often requiring additional security measures.',
 				},
 				{
 					acronym: 'CA - Certificate Authority',
 					definition:
-						'A trusted entity that issues and manages digital certificates.<br><br>These certificates are used to verify the identity of entities and enable secure communication through encryption.',
+						'An entity that issues digital certificates, which are used to verify the authenticity of public keys in secure communications.',
 				},
 				{
-					acronym: 'CAC - Common Access Card',
+					acronym:
+						'CAPTCHA - Completely Automated Public Turing Test to Tell Computers and Humans Apart',
 					definition:
-						'The primary identity credential used by US military personnel.<br><br>It provides secure access to systems and serves as a multi-factor authentication device.',
+						'A challenge-response test used to determine if a user is human, helping to prevent automated attacks such as bots.',
+				},
+				{
+					acronym: 'CAR - Corrective Action Report',
+					definition:
+						'A document that outlines steps to fix issues or deficiencies identified during an incident or audit.',
 				},
 				{
 					acronym: 'CASB - Cloud Access Security Broker',
 					definition:
-						'A service that ensures cloud application security policies are enforced.<br><br>CASBs monitor cloud activity, enforce compliance, and protect sensitive data.',
+						'A security tool that provides visibility and control over data and applications used in the cloud.',
 				},
 				{
-					acronym: 'CCFL - Cold Cathode Fluorescent Lamp',
+					acronym: 'CBC - Cipher Block Chaining',
 					definition:
-						'A legacy technology used for LCD display backlighting.<br><br>CCFL has been largely replaced by LED backlighting due to energy efficiency and durability.',
+						'An encryption mode where each plaintext block is XORed with the previous ciphertext block before being encrypted.',
 				},
 				{
-					acronym: 'CDNSKEY - Child DNS Key Record',
+					acronym: 'CCMP - Counter Mode/CBC-MAC Protocol',
 					definition:
-						"A DNSSEC record type containing the public key of a child zone, used to request updates to its parent zone's DS record.",
+						'An encryption protocol used in WPA2 to provide data confidentiality and integrity for wireless networks.',
 				},
 				{
-					acronym: 'CDS - Child Delegation Signer Record',
+					acronym: 'CCTV - Closed-Circuit Television',
 					definition:
-						'A DNSSEC record containing the hash of a DNSKEY record in a child zone, used to automate updates to the DS record in the parent zone.',
+						'A video surveillance system used for monitoring and security purposes.',
 				},
 				{
-					acronym: 'CI/CD - Continuous Integration/Continuous Deployment',
+					acronym: 'CERT - Computer Emergency Response Team',
 					definition:
-						'A methodology that automates software development and delivery.<br><br>CI/CD ensures fast, reliable updates by integrating and deploying code frequently.',
+						'A group responsible for responding to cybersecurity incidents, often providing coordination and guidance during an attack.',
 				},
 				{
-					acronym: 'CISA - Cybersecurity Infrastructure Security Agency',
+					acronym: 'CFB - Cipher Feedback',
 					definition:
-						'A U.S. government agency that leads national cybersecurity efforts.<br><br>CISA provides guidance, resources, and incident response for critical infrastructure protection.',
+						'An encryption mode that encrypts smaller units of plaintext, such as individual bits or bytes, making it suitable for streaming data.',
 				},
 				{
-					acronym: 'CIS - Center for Internet Security',
+					acronym: 'CHAP - Challenge Handshake Authentication Protocol',
 					definition:
-						'A nonprofit organization that provides cybersecurity guidance.<br><br>CIS offers configuration benchmarks, tools, and best practices to improve system security and reduce risks.',
+						'An authentication protocol that uses a three-way handshake to verify the identity of a user or device.',
 				},
 				{
-					acronym: 'CISO - Chief Information Security Officer',
+					acronym: 'CIA - Confidentiality, Integrity, Availability',
 					definition:
-						'An executive responsible for an organization’s information and data security.<br><br>The CISO manages strategies to safeguard assets against cyber threats.',
+						'The three core principles of cybersecurity, ensuring data is protected, accurate, and accessible to authorized users.',
 				},
 				{
-					acronym: 'CMDB - Configuration Management Database',
+					acronym: 'CIO - Chief Information Officer',
 					definition:
-						'A repository storing information about hardware and software assets.<br><br>It helps organizations track and manage configurations, ensuring system consistency.',
+						'An executive responsible for managing an organization’s IT strategy, infrastructure, and security.',
 				},
 				{
-					acronym: 'CMS - Configuration Management System',
+					acronym: 'CIRT - Computer Incident Response Team',
 					definition:
-						"A system for managing an organization's configuration information.<br><br>It facilitates automation and monitoring of IT infrastructure changes.",
+						'A team that handles cybersecurity incidents, such as breaches or malware outbreaks, to mitigate damage and restore operations.',
 				},
 				{
-					acronym: 'COOP - Continuity of Operations',
+					acronym: 'CMS - Content Management System',
 					definition:
-						'A strategy ensuring that essential functions continue during disasters.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'Software used for creating, managing, and publishing digital content, often for websites or applications.',
 				},
 				{
-					acronym: 'COPE - Corporate-Owned, Personally-Enabled',
+					acronym: 'COOP - Continuity of Operations Planning',
 					definition:
-						'A mobile device deployment model where the organization owns the device.<br><br>COPE allows personal use while maintaining corporate control over security policies and configurations.',
+						'A strategy to ensure essential functions and operations continue during and after a disaster.',
 				},
 				{
-					acronym: 'CPE - Customer Premises Equipment',
+					acronym: 'COPE - Corporate Owned, Personally Enabled',
 					definition:
-						"Hardware located at the customer's location for network services.<br><br>Examples include routers, modems, and VoIP devices.",
+						'A mobile device deployment model where the organization owns the device but allows personal use.',
+				},
+				{
+					acronym: 'CRC - Cyclical Redundancy Check',
+					definition:
+						'An error-detecting code used to check the integrity of data during transmission or storage.',
 				},
 				{
 					acronym: 'CRL - Certificate Revocation List',
 					definition:
-						'A list of revoked digital certificates maintained by a Certificate Authority.<br><br>It ensures that expired or compromised certificates cannot be used maliciously.',
+						'A list of digital certificates that have been revoked by a Certificate Authority and are no longer valid.',
+				},
+				{
+					acronym: 'CSO - Chief Security Officer',
+					definition:
+						"An executive responsible for an organization's physical and cybersecurity strategies and operations.",
 				},
 				{
 					acronym: 'CSP - Cloud Service Provider',
 					definition:
-						'A company offering cloud computing services and infrastructure.<br><br>CSPs provide platforms, software, or infrastructure as a service, enabling flexible and scalable IT solutions.',
+						'A company that offers cloud computing services such as storage, software, or infrastructure over the internet.',
 				},
 				{
-					acronym: 'CSR - Corporate Social Responsibility',
+					acronym: 'CSR - Certificate Signing Request',
 					definition:
-						'A business framework that emphasizes ethical practices, community engagement, and sustainability.<br><br>CSR initiatives often focus on environmental impact, philanthropy, and responsible business operations.',
+						'A message sent to a Certificate Authority to request the issuance of a digital certificate.',
 				},
 				{
-					acronym: 'CSRF - Cross-Site Request Forgery',
+					acronym: 'CSRF - Cross-site Request Forgery',
 					definition:
-						"An attack tricking users into executing unwanted actions.<br><br>It exploits the trust a website has in the user's browser.",
+						'A web security vulnerability that tricks users into performing unwanted actions on a trusted website while authenticated.',
 				},
 				{
-					acronym: 'CVE - Common Vulnerability Enumeration',
+					acronym: 'CSU - Channel Service Unit',
 					definition:
-						'A system for assigning unique identifiers to publicly known vulnerabilities.<br><br>CVE entries include details about the vulnerability, its impact, and references for further research.',
+						'A device used to connect a digital circuit to a data terminal, ensuring compatibility and proper signal transmission.',
+				},
+				{
+					acronym: 'CTM - Counter Mode',
+					definition:
+						'An encryption mode that turns a block cipher into a stream cipher, encrypting plaintext by XORing it with a counter value.',
+				},
+				{
+					acronym: 'CTO - Chief Technology Officer',
+					definition:
+						'An executive responsible for overseeing the development and dissemination of technology in an organization.',
+				},
+				{
+					acronym: 'CVE - Common Vulnerabilities and Exposures',
+					definition:
+						'A public database of known cybersecurity vulnerabilities used to identify and mitigate risks in software or systems.',
 				},
 				{
 					acronym: 'CVSS - Common Vulnerability Scoring System',
 					definition:
-						'A standardized scoring system for assessing the severity of vulnerabilities.<br><br>Scores range from 0 to 10, with categories like Critical, High, Medium, and Low to prioritize remediation efforts.',
+						'A standardized method for assessing the severity of cybersecurity vulnerabilities to prioritize remediation.',
 				},
 				{
 					acronym: 'CYOD - Choose Your Own Device',
 					definition:
-						'A mobile device deployment model where employees choose from a list of approved devices.<br><br>CYOD ensures compatibility and security while offering some personal flexibility.',
+						'A mobile device policy allowing employees to select their device from a list of pre-approved options.',
 				},
 				{
 					acronym: 'DAC - Discretionary Access Control',
 					definition:
-						"A security model where access control is at the discretion of the object's owner.<br><br>DAC allows owners to determine who should have access rights to an object and what those rights should be. Common in Windows operating systems.",
+						'A security model where access is determined by the resource owner, who decides which users can access specific resources.',
 				},
 				{
-					acronym: 'DBMS - Database Management System',
+					acronym: 'DBA - Database Administrator',
 					definition:
-						'A system software for creating, managing, and interacting with databases.<br><br>DBMS ensures data consistency, integrity, and security while supporting multiple users.',
+						'A professional responsible for the maintenance, configuration, and security of database systems.',
 				},
 				{
 					acronym: 'DDoS - Distributed Denial of Service',
 					definition:
-						'An attack that overwhelms systems with traffic from multiple sources.<br><br>DDoS attacks aim to disrupt service availability by exhausting resources.',
+						'An attack that overwhelms a network or server with excessive traffic from multiple sources, disrupting normal operations.',
 				},
 				{
-					acronym: 'DH - Diffie-Hellman',
+					acronym: 'DEP - Data Execution Prevention',
 					definition:
-						'A method for securely exchanging cryptographic keys over a public channel.<br><br>Often used in VPNs, DH ensures secure key generation without sharing sensitive data.',
+						'A security feature that prevents the execution of code from non-executable memory regions, protecting against certain exploits.',
 				},
 				{
-					acronym: 'DIMM - Dual Inline Memory Module',
+					acronym: 'DES - Digital Encryption Standard',
 					definition:
-						'A standard type of computer memory module.<br><br>DIMMs are used in desktops, servers, and workstations for volatile memory.',
+						'A symmetric-key encryption algorithm that was widely used for securing data but is now considered obsolete due to its small key size.',
+				},
+				{
+					acronym: 'DHCP - Dynamic Host Configuration Protocol',
+					definition:
+						'A protocol that automatically assigns IP addresses and other network configurations to devices on a network.',
+				},
+				{
+					acronym: 'DHE - Diffie-Hellman Ephemeral',
+					definition:
+						'A key exchange protocol that provides forward secrecy by using temporary, ephemeral keys for each session.',
 				},
 				{
 					acronym: 'DKIM - DomainKeys Identified Mail',
@@ -314,1022 +399,1340 @@
 						'An email authentication method that uses cryptographic signatures to verify the sender and ensure message integrity.',
 				},
 				{
-					acronym:
-						'DMARC - Domain-based Message Authentication, Reporting, and Conformance',
+					acronym: 'DLL - Dynamic Link Library',
 					definition:
-						'An email authentication protocol that builds on SPF and DKIM to reduce phishing and spam while providing domain owners feedback on email security issues.',
+						'A file that contains code and data used by multiple programs in Windows to perform common functions.',
 				},
 				{
 					acronym: 'DLP - Data Loss Prevention',
 					definition:
-						'Technology preventing sensitive data from leaving an organization.<br><br>DLP solutions monitor and control data flows to prevent unauthorized sharing or exposure.',
+						'Technology that prevents sensitive data from leaving an organization through unauthorized channels.',
 				},
 				{
-					acronym: 'DMZ - Demilitarized Zone',
+					acronym:
+						'DMARC - Domain Message Authentication Reporting and Conformance',
 					definition:
-						'A network segment that contains and exposes external-facing services.<br><br>It acts as a buffer between untrusted networks and internal systems.',
+						'An email authentication protocol that helps prevent phishing and spoofing by validating email senders.',
+				},
+				{
+					acronym: 'DNAT - Destination Network Address Translation',
+					definition:
+						'A type of NAT that modifies the destination address of incoming packets to redirect traffic to an internal network.',
 				},
 				{
 					acronym: 'DNS - Domain Name System',
 					definition:
-						'A system that translates domain names into IP addresses.<br><br>DNS is essential for internet functionality, enabling human-readable web addresses.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A system that translates human-readable domain names into IP addresses to facilitate network communication.',
 				},
 				{
-					acronym: 'DNSKEY - DNS Public Key Record',
+					acronym: 'DoS - Denial of Service',
 					definition:
-						'A DNSSEC record type that stores a public signing key, used to verify DNS record authenticity.',
+						'An attack that disrupts the availability of a system or service by overwhelming it with traffic or requests.',
 				},
 				{
-					acronym: 'DNSSEC - DNS Security Extensions',
+					acronym: 'DPO - Data Privacy Officer',
 					definition:
-						'A suite of specifications that adds a layer of authentication to DNS, protecting against certain types of attacks, such as DNS spoofing.',
+						'A role responsible for overseeing data protection strategies and ensuring compliance with privacy regulations.',
 				},
 				{
 					acronym: 'DRP - Disaster Recovery Plan',
 					definition:
-						'Technical steps and procedures for restoring systems after a disaster.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A set of procedures and tools designed to recover IT systems and data after a disaster or disruption.',
+				},
+				{
+					acronym: 'DSA - Digital Signature Algorithm',
+					definition:
+						'A standard for digital signatures that ensures the authenticity and integrity of electronic documents.',
+				},
+				{
+					acronym: 'DSL - Digital Subscriber Line',
+					definition:
+						'A technology for high-speed internet access over traditional telephone lines.',
 				},
 				{
 					acronym: 'EAP - Extensible Authentication Protocol',
 					definition:
-						'A framework for authentication used in wireless networks.<br><br>EAP supports multiple methods like EAP-TLS for secure credential exchange.',
+						'A framework used in wireless networks to support various authentication methods, such as EAP-TLS or EAP-PEAP.',
+				},
+				{
+					acronym: 'ECB - Electronic Code Book',
+					definition:
+						'An encryption mode that encrypts each block of plaintext independently, making it less secure due to pattern repetition.',
 				},
 				{
 					acronym: 'ECC - Elliptic Curve Cryptography',
 					definition:
-						'A cryptographic approach using elliptic curves.<br><br>ECC offers strong security with smaller key sizes, making it efficient for mobile devices and IoT.',
+						'A cryptographic approach using elliptic curves to provide strong encryption with smaller key sizes.',
+				},
+				{
+					acronym: 'ECDHE - Elliptic Curve Diffie-Hellman Ephemeral',
+					definition:
+						'A variant of the Diffie-Hellman protocol using elliptic curves for secure key exchange with forward secrecy.',
+				},
+				{
+					acronym: 'ECDSA - Elliptic Curve Digital Signature Algorithm',
+					definition:
+						'A cryptographic algorithm used to generate digital signatures with elliptic curve technology.',
 				},
 				{
 					acronym: 'EDR - Endpoint Detection and Response',
 					definition:
-						'Advanced security tools that monitor and respond to endpoint threats.<br><br>EDR systems provide real-time detection, analysis, and remediation.',
+						'A security solution that monitors endpoints for malicious activities and provides tools for threat detection and response.',
 				},
 				{
-					acronym: 'EF - Exposure Factor',
+					acronym: 'EFS - Encrypted File System',
 					definition:
-						"The percentage of an asset's value likely to be lost due to a specific risk.<br><br>EF is a critical component in determining the Single Loss Expectancy (SLE).",
+						'A feature of NTFS that allows files and directories to be encrypted to protect sensitive data.',
 				},
 				{
-					acronym: 'EMM - Enterprise Mobility Management',
+					acronym: 'ERP - Enterprise Resource Planning',
 					definition:
-						'A platform for managing mobile devices in an organization.<br><br>EMM ensures security and compliance for devices accessing corporate resources.',
+						'Software that integrates and manages core business processes, such as finance, HR, and supply chain operations.',
 				},
 				{
-					acronym: 'ESP - Encapsulating Security Payload',
+					acronym: 'ESN - Electronic Serial Number',
 					definition:
-						'A protocol providing encryption and authentication in IPsec.<br><br>ESP secures data by encrypting payloads and verifying integrity.',
+						'A unique identifier assigned to mobile devices for identification on cellular networks.',
 				},
 				{
-					acronym: 'FaaS - Function as a Service',
+					acronym: 'ESP - Encapsulated Security Payload',
 					definition:
-						'A serverless computing model for running individual functions.<br><br>FaaS enables developers to deploy code without managing servers, billed per execution.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A protocol used in IPsec to provide confidentiality, integrity, and authentication for IP packets.',
+				},
+				{
+					acronym: 'FACL - File System Access Control List',
+					definition:
+						'A list of permissions attached to a file or directory, specifying which users or groups can access the resource and what actions they can perform.',
 				},
 				{
 					acronym: 'FDE - Full Disk Encryption',
 					definition:
-						'A technology that encrypts all user data on a storage device.<br><br>FDE protects against unauthorized access to data, even if the device is lost or stolen.',
+						'A technology that encrypts all data on a storage device to protect it from unauthorized access.',
 				},
 				{
-					acronym: 'FIM - File Integrity Monitoring',
+					acronym: 'FIM - File Integrity Management',
 					definition:
-						'A security process that checks files for unauthorized changes, ensuring system and application integrity.',
+						'A security process that ensures files are not tampered with or altered without authorization.',
 				},
 				{
-					acronym: 'FOB - Frequency Operated Button',
+					acronym: 'FPGA - Field Programmable Gate Array',
 					definition:
-						'A small hardware security token that can store authentication credentials.<br><br>FOBs are used for secure physical or digital access control and are a common form of multi-factor authentication.',
+						'An integrated circuit that can be programmed and reconfigured for specific tasks after manufacturing.',
 				},
 				{
-					acronym: 'FPS - Frames Per Second',
+					acronym: 'FRR - False Rejection Rate',
 					definition:
-						'A measurement of display refresh rate or video playback smoothness.<br><br>Higher FPS ensures better visual quality, crucial for gaming and video applications.',
-				},
-				{
-					acronym: 'FTK - Forensic Toolkit',
-					definition:
-						'A software suite used for digital forensics investigations.<br><br>FTK enables evidence collection, analysis, and reporting for legal and investigative purposes.',
+						'A biometric security metric that measures how often legitimate users are incorrectly denied access.',
 				},
 				{
 					acronym: 'FTP - File Transfer Protocol',
 					definition:
-						'A standard protocol used to transfer files between a client and server over a network.<br><br>FTP lacks encryption, making it less secure than alternatives like SFTP.',
+						'A protocol used to transfer files between a client and a server over a network, lacking encryption by default.',
 				},
 				{
-					acronym: 'GCMP - Galois/Counter Mode Protocol',
+					acronym: 'FTPS - Secured File Transfer Protocol',
 					definition:
-						'A cryptographic mode combining Galois field multiplication and counter mode.<br><br>GCMP provides both confidentiality and authentication, widely used in WPA3 for secure wireless communication.<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2)</b>',
+						'An extension of FTP that adds support for SSL/TLS encryption to secure file transfers.',
+				},
+				{
+					acronym: 'GCM - Galois Counter Mode',
+					definition:
+						'A cryptographic mode that provides both encryption and authentication for secure data transmission.',
 				},
 				{
 					acronym: 'GDPR - General Data Protection Regulation',
 					definition:
-						'A comprehensive EU law governing data protection and privacy for individuals.<br><br>GDPR ensures organizations handle personal data transparently, securely, and with user consent.',
+						'A comprehensive data protection law in the European Union that governs the collection, processing, and storage of personal data.',
 				},
 				{
-					acronym: 'GMAC - Galois Message Authentication Code',
+					acronym: 'GPG - Gnu Privacy Guard',
 					definition:
-						'A cryptographic method that ensures data authenticity and integrity.<br><br>GMAC is integrated into AES-GCM, eliminating the need for separate hashing mechanisms.',
+						'An encryption software that provides tools for secure communication and data encryption, based on the OpenPGP standard.',
+				},
+				{
+					acronym: 'GPO - Group Policy Object',
+					definition:
+						'A feature in Windows that allows administrators to manage and configure user and computer settings across a network.',
+				},
+				{
+					acronym: 'GPS - Global Positioning System',
+					definition:
+						'A satellite-based navigation system used for determining geographic locations.',
+				},
+				{
+					acronym: 'GPU - Graphics Processing Unit',
+					definition:
+						'A specialized processor designed for rendering images, animations, and video.',
+				},
+				{
+					acronym: 'GRE - Generic Routing Encapsulation',
+					definition:
+						'A tunneling protocol used to encapsulate a wide variety of network layer protocols inside virtual point-to-point links.',
+				},
+				{
+					acronym: 'HA - High Availability',
+					definition:
+						'A system design approach ensuring a high level of operational performance and uptime.',
+				},
+				{
+					acronym: 'HDD - Hard Disk Drive',
+					definition:
+						'A traditional data storage device that uses spinning magnetic disks to read and write data.',
 				},
 				{
 					acronym: 'HIDS - Host-based Intrusion Detection System',
 					definition:
-						'A system monitoring host activities for suspicious behavior.<br><br>HIDS focuses on detecting anomalies on individual devices.',
-				},
-				{
-					acronym:
-						'HIPAA - Health Insurance Portability and Accountability Act',
-					definition:
-						'A U.S. law designed to protect sensitive health information.<br><br>HIPAA mandates standards for the privacy and security of medical records and personal health information.',
+						'A system that monitors and analyzes activities on a specific host for malicious or unauthorized behavior.',
 				},
 				{
 					acronym: 'HIPS - Host-based Intrusion Prevention System',
 					definition:
-						'An active security system that blocks detected threats on a host.<br><br>HIPS combines monitoring with proactive threat prevention.',
+						'A system that proactively blocks detected threats on a host before they can execute.',
 				},
 				{
-					acronym: 'HMAC - Hash-based Message Authentication Code',
+					acronym: 'HMAC - Hashed Message Authentication Code',
 					definition:
-						'A cryptographic method for message authentication.<br><br>HMAC uses a hash function and a secret key to ensure data integrity and authenticity.',
+						'A cryptographic technique that ensures the integrity and authenticity of a message using a secret key and a hash function.',
 				},
 				{
-					acronym: 'HPC - High-Performance Cluster',
+					acronym: 'HOTP - HMAC-based One-time Password',
 					definition:
-						'A group of servers working together for data-intensive tasks.<br><br>Used for real-time processing and complex computational operations.',
+						'A one-time password algorithm that generates a password based on a secret key and a counter.',
 				},
 				{
 					acronym: 'HSM - Hardware Security Module',
 					definition:
-						'A physical computing device that safeguards and manages digital keys, performs encryption and decryption functions.<br><br>HSMs provide additional security for sensitive data and cryptographic operations.',
+						'A physical device that securely manages, processes, and stores cryptographic keys.',
 				},
 				{
-					acronym: 'HTTP - HyperText Transfer Protocol',
+					acronym: 'HTML - Hypertext Markup Language',
 					definition:
-						'A protocol for transferring hypertext documents.<br><br>HTTP is the foundation of data communication on the web.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'The standard language used to create and structure content on the web.',
 				},
 				{
-					acronym: 'HTTPS - HyperText Transfer Protocol Secure',
+					acronym: 'HTTP - Hypertext Transfer Protocol',
 					definition:
-						'An encrypted version of HTTP.<br><br>HTTPS secures web communication using TLS or SSL for encryption.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A protocol used for transmitting hypertext documents over the web, facilitating communication between servers and browsers.',
+				},
+				{
+					acronym: 'HTTPS - Hypertext Transfer Protocol Secure',
+					definition:
+						'A secure version of HTTP that uses encryption protocols such as SSL/TLS to protect data in transit.',
+				},
+				{
+					acronym: 'HVAC - Heating, Ventilation, and Air Conditioning',
+					definition:
+						'A system used to regulate the temperature, humidity, and air quality in a building.',
+				},
+				{
+					acronym: 'IaaS - Infrastructure as a Service',
+					definition:
+						'A cloud computing model that provides virtualized computing resources over the internet.',
 				},
 				{
 					acronym: 'IaC - Infrastructure as Code',
 					definition:
-						'Managing infrastructure using configuration files.<br><br>IaC promotes automation and consistency in infrastructure deployment.',
+						'A practice of managing and provisioning infrastructure through code rather than manual processes.',
 				},
 				{
 					acronym: 'IAM - Identity and Access Management',
 					definition:
-						'A framework for managing digital identities and access rights.<br><br>IAM ensures that only authorized users can access specific resources.',
+						'A framework of policies and technologies ensuring the right individuals access the right resources at the right times.',
 				},
 				{
-					acronym: 'IdM - Identity Management',
+					acronym: 'ICMP - Internet Control Message Protocol',
 					definition:
-						'A framework for ensuring that the right individuals have appropriate access to technology resources.<br><br>IdM systems manage digital identities, credentials, and access rights within an organization.',
+						'A network protocol used for error reporting and operational information, often associated with tools like ping.',
+				},
+				{
+					acronym: 'ICS - Industrial Control Systems',
+					definition:
+						'A system that manages industrial processes such as manufacturing, power generation, and transportation.',
+				},
+				{
+					acronym: 'IDEA - International Data Encryption Algorithm',
+					definition:
+						'A symmetric encryption algorithm used for secure data transmission.',
+				},
+				{
+					acronym: 'IDF - Intermediate Distribution Frame',
+					definition:
+						'A cable rack that interconnects and manages telecommunication wiring between the Main Distribution Frame (MDF) and endpoints.',
 				},
 				{
 					acronym: 'IdP - Identity Provider',
 					definition:
-						'A system that creates, maintains, and manages identity information while providing authentication services.<br><br>IdPs are crucial components in federated identity management systems.',
+						'A system that creates, maintains, and manages identity information while providing authentication services.',
 				},
 				{
 					acronym: 'IDS - Intrusion Detection System',
 					definition:
-						'A system monitoring for malicious activities.<br><br>IDS systems alert administrators about potential security breaches.',
+						'A system designed to monitor and analyze network or system activity for malicious behavior or policy violations.',
+				},
+				{
+					acronym: 'IEEE - Institute of Electrical and Electronics Engineers',
+					definition:
+						'An organization that develops standards for electronic and electrical technologies, including networking and communications.',
 				},
 				{
 					acronym: 'IKE - Internet Key Exchange',
 					definition:
-						'A protocol for setting up security associations in IPsec.<br><br>IKE automates the negotiation of cryptographic keys.',
+						'A protocol used in IPsec for negotiating, establishing, and managing secure communication sessions.',
+				},
+				{
+					acronym: 'IM - Instant Messaging',
+					definition:
+						'A form of communication over the internet that allows real-time text exchanges between users.',
 				},
 				{
 					acronym: 'IMAP - Internet Message Access Protocol',
 					definition:
-						'A protocol for accessing email on a server.<br><br>IMAP allows users to manage email directly on the server, enabling synchronization across devices.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A protocol for retrieving email messages from a server, allowing synchronization across multiple devices.',
 				},
 				{
-					acronym: 'IoC - Indicator of Compromise',
+					acronym: 'IoC - Indicators of Compromise',
 					definition:
-						'Evidence suggesting a security breach has occurred.<br><br>Examples include unusual network traffic patterns or unauthorized file access.',
+						'Artifacts or evidence found on a network or system indicating a potential breach or malicious activity.',
 				},
 				{
 					acronym: 'IoT - Internet of Things',
 					definition:
-						'A network of internet-connected physical devices and sensors.<br><br>IoT devices collect and exchange data, enhancing automation and analytics.',
+						'A network of interconnected devices that communicate and exchange data, often used in smart homes and industries.',
 				},
 				{
-					acronym: 'IPS - In-Plane Switching/Intrusion Prevention System',
+					acronym: 'IP - Internet Protocol',
 					definition:
-						'Dual meaning acronym:<br><br>1. LCD display technology offering superior color and viewing angles for screens<br><br>2. Security system that actively protects networks by blocking threats',
+						'A set of rules governing the format of data sent over the internet or a local network.',
 				},
 				{
-					acronym: 'IPsec - Internet Protocol Security',
+					acronym: 'IPS - Intrusion Prevention System',
 					definition:
-						'A suite of protocols for securing IP communications.<br><br>IPsec ensures data confidentiality, integrity, and authenticity in network communication.',
+						'A system that monitors network traffic for malicious activities and blocks identified threats in real-time.',
 				},
 				{
-					acronym: 'IRM - Information Rights Management',
+					acronym: 'IPSec - Internet Protocol Security',
 					definition:
-						'A technology that protects sensitive information from unauthorized access.<br><br>IRM enforces access control policies such as restrictions on copying, printing, or sharing data.',
+						'A suite of protocols designed to secure internet communication by authenticating and encrypting each IP packet.',
 				},
 				{
 					acronym: 'IR - Incident Response',
 					definition:
-						'A process for addressing and managing cybersecurity incidents.<br><br>IR aims to mitigate damage, recover operations, and learn from security events.',
+						'A process for detecting, investigating, and mitigating cybersecurity incidents to minimize impact.',
 				},
 				{
-					acronym:
-						'ISO/IEC - International Organization for Standardization/International Electrotechnical Commission',
+					acronym: 'IRC - Internet Relay Chat',
 					definition:
-						'A collaborative effort providing international standards for technology and security.<br><br>ISO/IEC guidelines help organizations improve their cybersecurity, privacy, and risk management practices.',
+						'A protocol that allows text-based communication in real-time, often used in group discussions.',
 				},
 				{
-					acronym: 'IT - Information Technology',
+					acronym: 'IRP - Incident Response Plan',
 					definition:
-						'The use of systems for storing, retrieving, and transmitting data.<br><br>IT encompasses hardware, software, networks, and related processes.',
+						'A documented strategy for handling cybersecurity incidents effectively to minimize damage.',
 				},
 				{
-					acronym: 'JMX - Java Management Extensions',
+					acronym: 'ISO - International Standards Organization',
 					definition:
-						'A Java technology that provides tools for managing and monitoring applications, system objects, devices, and service-oriented networks.',
+						'An international organization that develops and publishes standards for technology, manufacturing, and other industries.',
 				},
 				{
-					acronym: 'JSON - JavaScript Object Notation',
+					acronym: 'ISP - Internet Service Provider',
 					definition:
-						'A lightweight data-interchange format.<br><br>JSON is commonly used for data exchange in web applications.',
+						'A company that provides individuals and businesses with access to the internet.',
 				},
 				{
-					acronym: 'KRIs - Key Risk Indicators',
+					acronym: 'ISSO - Information Systems Security Officer',
 					definition:
-						'Metrics used to measure the likelihood or impact of a potential risk.<br><br>KRIs help organizations monitor risks and align with their risk appetite.',
+						'A professional responsible for implementing and managing an organization’s cybersecurity policies and systems.',
+				},
+				{
+					acronym: 'IV - Initialization Vector',
+					definition:
+						'A random value used in encryption to ensure that identical plaintext results in different ciphertext.',
+				},
+				{
+					acronym: 'KDC - Key Distribution Center',
+					definition:
+						'A service that provides cryptographic keys for secure communication in systems like Kerberos.',
+				},
+				{
+					acronym: 'KEK - Key Encryption Key',
+					definition:
+						'A key used to encrypt and protect other cryptographic keys, ensuring their secure storage and transmission.',
+				},
+				{
+					acronym: 'L2TP - Layer 2 Tunneling Protocol',
+					definition:
+						'A VPN tunneling protocol often used with IPSec to provide secure remote access.',
 				},
 				{
 					acronym: 'LAN - Local Area Network',
 					definition:
-						'A network connecting devices within a small geographical area.<br><br>LANs enable communication and resource sharing in homes or offices.',
-				},
-				{
-					acronym: 'LB - Load Balancing',
-					definition:
-						'The distribution of network or application traffic across multiple servers.<br><br>LB optimizes resource use, ensures high availability, and improves performance.',
+						'A network that connects devices within a limited area, such as a home, school, or office building.',
 				},
 				{
 					acronym: 'LDAP - Lightweight Directory Access Protocol',
 					definition:
-						'A protocol for accessing and maintaining distributed directory information.<br><br>LDAP is commonly used for centralized authentication and directory services.',
+						'A protocol used to access and maintain distributed directory information, such as user credentials and network resource locations.',
 				},
 				{
-					acronym: 'MAB - MAC Authentication Bypass',
+					acronym: 'LEAP - Lightweight Extensible Authentication Protocol',
 					definition:
-						"A method allowing network access based on MAC address.<br><br>MAB is often used as a fallback for devices that don't support 802.1X authentication.",
+						'A wireless authentication protocol developed by Cisco, now considered outdated due to security vulnerabilities.',
+				},
+				{
+					acronym: 'MaaS - Monitoring as a Service',
+					definition:
+						'A cloud-based model for monitoring IT infrastructure and applications, providing real-time insights and alerts.',
 				},
 				{
 					acronym: 'MAC - Mandatory Access Control',
 					definition:
-						'A security model where access control policies are uniformly enforced across all subjects and objects.<br><br>MAC uses strict classification levels and is commonly used in military and high-security environments.',
+						'A security model where access permissions are determined by a central authority based on classifications.',
 				},
 				{
-					acronym: 'MaaS - Malware-as-a-Service',
+					acronym: 'MAC - Media Access Control',
 					definition:
-						'A business model where malware tools are sold or rented to attackers.<br><br>MaaS platforms provide services like ransomware campaigns, enabling cybercriminals to execute attacks with minimal expertise.',
+						'A unique identifier assigned to network interfaces for communication on the physical network segment.',
 				},
 				{
-					acronym: 'MCA - Multicriteria Analysis',
+					acronym: 'MAC - Message Authentication Code',
 					definition:
-						'A detection method used in antivirus systems that combines data from multiple detection methods to identify potentially dangerous files.',
+						'A cryptographic code that verifies the integrity and authenticity of a message.',
 				},
 				{
-					acronym: 'MFA - Multi-Factor Authentication',
+					acronym: 'MAN - Metropolitan Area Network',
 					definition:
-						'A security system requiring multiple forms of verification.<br><br>MFA strengthens access control by combining passwords, biometrics, and device authentication.',
+						'A network that connects devices across a city or large campus, larger than a LAN but smaller than a WAN.',
 				},
 				{
-					acronym: 'ML/AI - Machine Learning/Artificial Intelligence',
+					acronym: 'MBR - Master Boot Record',
 					definition:
-						'Technologies for automated learning and decision-making.<br><br>ML/AI are used in applications ranging from predictive analytics to cybersecurity.',
+						'A special type of boot sector at the beginning of storage devices that contains information about disk partitions and a boot loader.',
 				},
 				{
-					acronym:
-						'MITRE ATT&CK - MITRE Adversarial Tactics, Techniques, and Common Knowledge',
+					acronym: 'MD5 - Message Digest 5',
 					definition:
-						'A framework categorizing adversary behaviors into tactics and techniques.<br><br>It aids in understanding attack patterns to enhance defenses across different stages of the attack lifecycle.',
+						'A cryptographic hash function used to verify data integrity, though considered insecure due to vulnerabilities.',
 				},
 				{
-					acronym: 'MITRE ATT&CK Matrix',
+					acronym: 'MDF - Main Distribution Frame',
 					definition:
-						'A structured framework that categorizes adversary tactics and techniques.<br><br>It supports security teams in mapping attack behaviors and improving defensive strategies.',
+						'A physical frame used to connect and manage telecommunication cables in a network.',
+				},
+				{
+					acronym: 'MDM - Mobile Device Management',
+					definition:
+						'A software solution used to manage and secure mobile devices within an organization.',
+				},
+				{
+					acronym: 'MFA - Multifactor Authentication',
+					definition:
+						'A security mechanism requiring multiple forms of verification, such as passwords, biometrics, or hardware tokens.',
+				},
+				{
+					acronym: 'MFD - Multifunction Device',
+					definition:
+						'An office device that combines functions such as printing, scanning, copying, and faxing.',
+				},
+				{
+					acronym: 'MFP - Multifunction Printer',
+					definition:
+						'A printer that also offers additional capabilities like scanning, copying, and faxing.',
+				},
+				{
+					acronym: 'ML - Machine Learning',
+					definition:
+						'A subset of artificial intelligence focused on building systems that learn from and adapt to data.',
+				},
+				{
+					acronym: 'MMS - Multimedia Message Service',
+					definition:
+						'A messaging service that enables the transmission of multimedia content such as images, audio, and video.',
 				},
 				{
 					acronym: 'MOA - Memorandum of Agreement',
 					definition:
-						'A formal document describing the cooperative relationship between two parties.<br><br>MOA outlines the terms of collaboration and serves as a precursor to a binding contract.',
+						'A formal document outlining the terms and details of a partnership or agreement between parties.',
 				},
 				{
 					acronym: 'MOU - Memorandum of Understanding',
 					definition:
-						'A nonbinding agreement defining the intentions and terms of a partnership.<br><br>MOU is often a preliminary step towards a formal contract or agreement.',
+						'A non-binding agreement that outlines the intentions and roles of parties in a collaboration.',
 				},
 				{
-					acronym: 'MP - Megapixel',
+					acronym: 'MPLS - Multi-protocol Label Switching',
 					definition:
-						'A unit of image resolution equal to one million pixels.<br><br>Higher MP values indicate greater image detail, commonly used in cameras and displays.',
+						'A routing technique in high-performance telecommunications networks that directs data based on short path labels.',
+				},
+				{
+					acronym: 'MSA - Master Service Agreement',
+					definition:
+						'A contract that defines the terms and conditions for future agreements between two parties.',
+				},
+				{
+					acronym:
+						'MSCHAP - Microsoft Challenge Handshake Authentication Protocol',
+					definition:
+						'An authentication protocol used for validating user credentials in Microsoft networks.',
+				},
+				{
+					acronym: 'MSP - Managed Service Provider',
+					definition:
+						"A third-party company that remotely manages a customer's IT infrastructure and end-user systems.",
 				},
 				{
 					acronym: 'MSSP - Managed Security Service Provider',
 					definition:
-						'A company providing outsourced security monitoring.<br><br>MSSPs offer expertise in threat detection and incident response.',
+						'A company that provides outsourced monitoring and management of security systems and devices.',
 				},
 				{
 					acronym: 'MTBF - Mean Time Between Failures',
 					definition:
-						'A metric measuring the average time between hardware or system failures.<br><br>Used to assess reliability and plan maintenance schedules.',
+						'A reliability metric that measures the average time between failures of a system or component.',
 				},
 				{
-					acronym: 'MTD - Maximum Tolerable Downtime',
+					acronym: 'MTTF - Mean Time to Failure',
 					definition:
-						'The maximum time a system can be offline before causing significant harm.<br><br>Used in business continuity planning and disaster recovery.',
+						'A metric that estimates the average time until a system or component fails.',
 				},
 				{
-					acronym: 'MTTR - Mean Time to Recovery',
+					acronym: 'MTTR - Mean Time to Recover',
 					definition:
-						'The average time required to restore a system to normal operation after a failure.<br><br>Critical metric for service level agreements and recovery planning.',
+						'The average time it takes to restore a system to normal operation after a failure.',
+				},
+				{
+					acronym: 'MTU - Maximum Transmission Unit',
+					definition:
+						'The largest size of a packet or frame that can be transmitted in a network.',
 				},
 				{
 					acronym: 'NAC - Network Access Control',
 					definition:
-						'A security approach controlling network access based on device identity.<br><br>NAC ensures compliance with security policies before granting network access.',
+						'A security solution that enforces policies to manage access to network resources based on identity and compliance.',
 				},
 				{
-					acronym: 'NACL - Network Access Control List',
+					acronym: 'NAT - Network Address Translation',
 					definition:
-						'Stateless firewall rules for subnet traffic control.<br><br>NACLs are used to filter inbound and outbound traffic in cloud environments.',
+						'A method used to remap private IP addresses into a single public IP address for internet communication.',
 				},
 				{
-					acronym: 'NDA - Non-Disclosure Agreement',
+					acronym: 'NDA - Non-disclosure Agreement',
 					definition:
-						'A legal contract to protect sensitive information shared between parties.<br><br>NDAs ensure that proprietary or confidential information is not disclosed without authorization.',
+						'A legal contract that protects sensitive or proprietary information from being disclosed to unauthorized parties.',
 				},
 				{
 					acronym: 'NFC - Near Field Communication',
 					definition:
-						'A short-range wireless technology for data exchange.<br><br>NFC is commonly used in contactless payments and device pairing.',
+						'A short-range wireless communication technology used for tasks like contactless payments and device pairing.',
 				},
 				{
-					acronym: 'NGFW - Next-Generation Firewall',
+					acronym: 'NGFW - Next-generation Firewall',
 					definition:
-						'An advanced firewall with additional security features.<br><br>NGFWs provide capabilities like deep packet inspection and intrusion prevention.',
+						'An advanced firewall that includes features such as deep packet inspection, intrusion prevention, and application control.',
 				},
 				{
-					acronym:
-						'NIST SPs - National Institute of Standards and Technology Special Publications',
+					acronym: 'NIDS - Network-based Intrusion Detection System',
 					definition:
-						'Guidelines and best practices published by NIST for information security.<br><br>NIST SPs provide frameworks for risk management, cybersecurity, and compliance.',
+						'A system that monitors and analyzes network traffic for malicious activities or violations of policies.',
 				},
 				{
-					acronym: 'NNTP - Network News Transfer Protocol',
+					acronym: 'NIPS - Network-based Intrusion Prevention System',
 					definition:
-						'A protocol for distributing and retrieving news articles.<br><br>NNTP is used for managing Usenet discussions.',
+						'A system that actively blocks detected threats by analyzing and filtering network traffic in real-time.',
 				},
 				{
-					acronym: 'NSEC - Next Secure Record',
+					acronym: 'NIST - National Institute of Standards & Technology',
 					definition:
-						'A DNSSEC record type that proves the non-existence of a DNS record, preventing certain types of attacks.',
+						'A U.S. government agency that develops cybersecurity standards, guidelines, and best practices.',
 				},
 				{
-					acronym: 'NSEC3 - Next Secure Record version 3',
+					acronym: 'NTFS - New Technology File System',
 					definition:
-						'An improved version of NSEC, providing authenticated denial of existence with additional resistance to zone-walking attacks.',
+						'A file system used by Windows operating systems that supports large files, file compression, and access control.',
+				},
+				{
+					acronym: 'NTLM - New Technology LAN Manager',
+					definition:
+						'A suite of Microsoft security protocols used for authentication and maintaining the integrity of communication.',
 				},
 				{
 					acronym: 'NTP - Network Time Protocol',
 					definition:
-						'A protocol for clock synchronization between computers.<br><br>NTP ensures accurate timekeeping across distributed systems.',
+						'A protocol used to synchronize the clocks of devices across a network to a standard time source.',
 				},
 				{
-					acronym: 'NVD - National Vulnerability Database',
+					acronym: 'OAUTH - Open Authorization',
 					definition:
-						'A centralized repository managed by NIST for tracking publicly disclosed cybersecurity vulnerabilities.<br><br>Each vulnerability is assigned a unique CVE identifier and a CVSS severity score.',
+						'An open standard for token-based authentication that enables secure access to resources without sharing credentials.',
 				},
 				{
-					acronym: 'OCIL - Open Checklist Interactive Language',
+					acronym: 'OCSP - Online Certificate Status Protocol',
 					definition:
-						'A framework for expressing a set of questions to be presented to a user and corresponding procedures to interpret responses to these questions. Used in SCAP audits.',
+						'A protocol used to determine the revocation status of digital certificates in real-time.',
 				},
 				{
-					acronym: 'OEM - Original Equipment Manufacturer',
+					acronym: 'OID - Object Identifier',
 					definition:
-						"A company that produces parts or equipment used in another company's products.<br><br>OEMs often provide hardware or software with tailored branding or functionality.",
+						'A globally unique identifier used to name objects in a hierarchical structure, often used in security certificates.',
 				},
 				{
 					acronym: 'OS - Operating System',
 					definition:
-						'Software that manages hardware and software resources.<br><br>Examples include Windows, macOS, and Linux.',
+						'Software that manages hardware resources and provides services for computer programs.',
 				},
 				{
-					acronym: 'OSINT - Open-Source Intelligence',
+					acronym: 'OSINT - Open-source Intelligence',
 					definition:
-						'The collection of publicly available information for analysis and reconnaissance.<br><br>OSINT sources include reports, white papers, public records, and digital media. Often used in penetration testing.',
+						'The collection and analysis of publicly available information to gather intelligence for cybersecurity or investigative purposes.',
 				},
 				{
-					acronym: 'OTP - One-Time Password',
+					acronym: 'OSPF - Open Shortest Path First',
 					definition:
-						'A password valid for only one login session.<br><br>OTPs enhance security by preventing password reuse.',
+						'A routing protocol used in IP networks to determine the most efficient path for data transmission.',
 				},
 				{
-					acronym: 'OWASP ZAP - OWASP Zed Attack Proxy',
+					acronym: 'OT - Operational Technology',
 					definition:
-						'An open-source web application vulnerability scanner.<br><br>OWASP ZAP is used to identify common vulnerabilities like SQL injection, cross-site scripting (XSS), and misconfigurations.',
+						'Hardware and software systems used to monitor and control industrial processes and infrastructure.',
+				},
+				{
+					acronym: 'OTA - Over the Air',
+					definition:
+						'A method of wirelessly delivering updates or patches to devices, commonly used in mobile and IoT devices.',
 				},
 				{
 					acronym: 'OVAL - Open Vulnerability Assessment Language',
 					definition:
-						'An information security community effort to standardize how to report upon the machine state of computer systems. Part of the SCAP framework.',
+						'A standard for assessing and reporting the security vulnerabilities of computer systems.',
 				},
 				{
-					acronym: 'PAZ - Public Access Zone',
+					acronym: 'P12 - PKCS #12',
 					definition:
-						'A network segment accessible to the public.<br><br>PAZ is often used for hosting public-facing services.',
+						'A file format used to store and transport cryptographic keys and certificates securely.',
 				},
 				{
-					acronym: 'PBKDF2 - Password-Based Key Derivation Function 2',
+					acronym: 'P2P - Peer to Peer',
 					definition:
-						'A key stretching algorithm for password security.<br><br>PBKDF2 increases password complexity, making brute-force attacks more difficult.',
+						'A decentralized network model where devices communicate directly with each other without a central server.',
 				},
 				{
-					acronym: 'PE - Policy Engine',
+					acronym: 'PaaS - Platform as a Service',
 					definition:
-						'A component making access control decisions.<br><br>PE evaluates requests based on defined policies and attributes.',
+						'A cloud computing model that provides developers with a platform to build, deploy, and manage applications.',
 				},
 				{
-					acronym: 'PEP - Policy Enforcement Point',
+					acronym: 'PAC - Proxy Auto Configuration',
 					definition:
-						'An entity enforcing policy decisions for resource requests.<br><br>PEPs ensure compliance with access control rules.',
+						'A file used by web browsers to automatically determine the appropriate proxy server for a given URL.',
 				},
 				{
-					acronym: 'PHI - Protected Health Information',
+					acronym: 'PAM - Privileged Access Management',
 					definition:
-						'Medical and healthcare-related information protected under privacy laws.<br><br>Examples include medical histories, test results, insurance information, and other identifiable health data.',
+						'A security solution that controls and monitors access to critical systems and data by privileged users.',
+				},
+				{
+					acronym: 'PAM - Pluggable Authentication Modules',
+					definition:
+						'A flexible framework for authentication that allows system administrators to integrate multiple authentication methods.',
+				},
+				{
+					acronym: 'PAP - Password Authentication Protocol',
+					definition:
+						'A simple authentication protocol that sends passwords in plaintext, making it less secure compared to alternatives.',
+				},
+				{
+					acronym: 'PAT - Port Address Translation',
+					definition:
+						'A type of NAT that maps multiple private IP addresses to a single public IP address using unique port numbers.',
+				},
+				{
+					acronym: 'PBKDF2 - Password-based Key Derivation Function 2',
+					definition:
+						'A key stretching algorithm used to strengthen passwords by increasing computational effort during brute-force attacks.',
+				},
+				{
+					acronym: 'PBX - Private Branch Exchange',
+					definition:
+						'A private telephone network used within an organization, allowing internal and external communication.',
+				},
+				{
+					acronym: 'PCAP - Packet Capture',
+					definition:
+						'A file format used to record and analyze network traffic for troubleshooting or security purposes.',
+				},
+				{
+					acronym: 'PCI DSS - Payment Card Industry Data Security Standard',
+					definition:
+						'A set of security standards designed to protect cardholder data during transactions and storage.',
+				},
+				{
+					acronym: 'PDU - Power Distribution Unit',
+					definition:
+						'A device used in data centers to distribute electrical power to connected equipment.',
+				},
+				{
+					acronym: 'PEAP - Protected Extensible Authentication Protocol',
+					definition:
+						'A wireless network authentication protocol that provides encryption and protection for transmitted credentials.',
+				},
+				{
+					acronym: 'PED - Personal Electronic Device',
+					definition:
+						'A device such as a smartphone, tablet, or laptop used for personal or work-related tasks.',
+				},
+				{
+					acronym: 'PEM - Privacy Enhanced Mail',
+					definition:
+						'A file format for storing and transmitting cryptographic keys and certificates in a base64-encoded text format.',
+				},
+				{
+					acronym: 'PFS - Perfect Forward Secrecy',
+					definition:
+						'A cryptographic feature that ensures session keys are unique and not derived from long-term keys, protecting past communications.',
+				},
+				{
+					acronym: 'PGP - Pretty Good Privacy',
+					definition:
+						'A data encryption program used to secure emails and files, ensuring confidentiality and integrity.',
+				},
+				{
+					acronym: 'PHI - Personal Health Information',
+					definition:
+						'Medical information that is protected under privacy laws such as HIPAA in the United States.',
 				},
 				{
 					acronym: 'PII - Personally Identifiable Information',
 					definition:
-						'Any data that can be used to identify an individual.<br><br>Examples include names, Social Security numbers, email addresses, and biometric records.',
+						'Any data that can identify an individual, such as names, Social Security numbers, or biometric data.',
+				},
+				{
+					acronym: 'PIV - Personal Identity Verification',
+					definition:
+						'A smart card used by federal employees for secure access to government systems and facilities.',
+				},
+				{
+					acronym: 'PKCS - Public Key Cryptography Standards',
+					definition:
+						'A set of standards for public key cryptography to ensure interoperability between cryptographic systems.',
 				},
 				{
 					acronym: 'PKI - Public Key Infrastructure',
 					definition:
-						'A framework for managing digital certificates and encryption.<br><br>PKI supports secure communication through authentication and encryption.',
+						'A framework for managing digital certificates and cryptographic keys to secure electronic communications.',
 				},
 				{
-					acronym: 'PMF - Protected Management Frames',
+					acronym: 'POP - Post Office Protocol',
 					definition:
-						'A security feature that protects management communications in wireless networks.<br><br>PMF enhances WPA3 by securing control packets against spoofing and eavesdropping.<br><br><b>OSI Layer:</b> <b>Data Link (Layer 2)</b>',
+						'A protocol used for retrieving emails from a mail server, typically downloading them for local storage.',
 				},
 				{
-					acronym: 'PNAC - Port-based Network Access Control',
+					acronym: 'POTS - Plain Old Telephone Service',
 					definition:
-						'A standard for port-based authentication.<br><br>PNAC ensures that only authorized devices can access the network.',
+						'The traditional analog voice telephone service used for communication over copper wires.',
 				},
 				{
-					acronym: 'PUP - Potentially Unwanted Process',
+					acronym: 'PPP - Point-to-Point Protocol',
 					definition:
-						'A term for software that may be unwanted despite being legitimately installed, often moved to sandbox environments for analysis.',
+						'A protocol used to establish a direct connection between two network nodes, commonly used in dial-up internet.',
 				},
 				{
-					acronym: 'PCA - Principal Component Analysis',
+					acronym: 'PPTP - Point-to-Point Tunneling Protocol',
 					definition:
-						'A statistical method used in facial recognition systems.<br><br>PCA reduces data complexity while maintaining essential features, making it effective for modeling facial images.',
+						'A VPN protocol that allows secure data transfer over public networks, now considered outdated due to security vulnerabilities.',
 				},
 				{
-					acronym: 'QR - Quick Response',
+					acronym: 'PSK - Pre-shared Key',
 					definition:
-						'A two-dimensional barcode that can be quickly read by digital devices.<br><br>QR codes are used for authentication, payments, and accessing information, particularly in mobile applications.',
+						'A shared secret key used for authentication in wireless networks, commonly associated with WPA/WPA2 security.',
 				},
 				{
-					acronym: 'RaaS - Ransomware-as-a-Service',
+					acronym: 'PTZ - Pan-tilt-zoom',
 					definition:
-						'A business model where ransomware tools are leased to attackers.<br><br>RaaS lowers the barrier to entry for cybercriminals.',
+						'A camera feature that allows remote control of camera movement and zoom capabilities, often used in surveillance.',
 				},
 				{
-					acronym: 'RADIUS - Remote Authentication Dial-In User Service',
+					acronym: 'PUP - Potentially Unwanted Program',
 					definition:
-						'A networking protocol providing centralized Authentication, Authorization, and Accounting (AAA) management.<br><br>Commonly used for network access control and VPN authentication.',
+						'Software that is not necessarily malicious but may be unwanted by the user, often bundled with other applications.',
 				},
 				{
-					acronym: 'RAID - Redundant Array of Independent Disks',
+					acronym: 'RA - Recovery Agent',
 					definition:
-						'A data storage virtualization technology.<br><br>RAID provides redundancy and improves performance by combining multiple disks.',
+						'A user or system with permissions to recover encrypted data in case of key loss.',
 				},
 				{
-					acronym: 'RAM - Random Access Memory',
+					acronym: 'RA - Registration Authority',
 					definition:
-						'Temporary computer memory for active processes.<br><br>RAM allows fast read/write access for running applications.',
+						'An entity in a PKI that verifies user identities and forwards certificate requests to a Certificate Authority (CA).',
+				},
+				{
+					acronym:
+						'RACE - Research and Development in Advanced Communications Technologies in Europe',
+					definition:
+						'An initiative focused on advancing telecommunications and information technologies in Europe.',
+				},
+				{
+					acronym: 'RAD - Rapid Application Development',
+					definition:
+						'A software development methodology emphasizing quick prototyping and iterative testing.',
+				},
+				{
+					acronym: 'RADIUS - Remote Authentication Dial-in User Service',
+					definition:
+						'A protocol that provides centralized authentication, authorization, and accounting for network access.',
+				},
+				{
+					acronym: 'RAID - Redundant Array of Inexpensive Disks',
+					definition:
+						'A data storage technology that combines multiple physical disks into a single logical unit to improve performance and reliability.',
+				},
+				{
+					acronym: 'RAS - Remote Access Server',
+					definition:
+						'A server that provides remote users with access to a network over the internet or other connections.',
 				},
 				{
 					acronym: 'RAT - Remote Access Trojan',
 					definition:
-						'Malware providing unauthorized remote access.<br><br>RATs are often used for espionage or data theft.',
+						"A type of malware that allows attackers to remotely control a victim's computer.",
 				},
 				{
-					acronym: 'RBAC - Role-Based Access Control',
+					acronym: 'RBAC - Role-based Access Control',
 					definition:
-						'A security model that assigns permissions based on user roles.<br><br>RBAC simplifies access management by grouping permissions according to roles within an organization.',
+						"An access control model that restricts access based on users' roles within an organization.",
 				},
 				{
-					acronym: 'RCA - Root Cause Analysis',
+					acronym: 'RBAC - Rule-based Access Control',
 					definition:
-						'A systematic process for identifying the origin of problems.<br><br>RCA helps organizations resolve issues and prevent recurrence.',
+						'An access control model that uses rules to determine access permissions based on conditions like time of day or location.',
+				},
+				{
+					acronym: 'RC4 - Rivest Cipher version 4',
+					definition:
+						'A stream cipher that was widely used in protocols like SSL but is now considered insecure.',
 				},
 				{
 					acronym: 'RDP - Remote Desktop Protocol',
 					definition:
-						'A protocol for remotely accessing computers.<br><br>RDP enables remote management and troubleshooting of systems.',
+						'A protocol developed by Microsoft that allows users to connect to and control another computer remotely.',
+				},
+				{
+					acronym: 'RFID - Radio Frequency Identifier',
+					definition:
+						'A technology that uses radio waves to identify and track objects, often used in inventory management and access control.',
+				},
+				{
+					acronym:
+						'RIPEMD - RACE Integrity Primitives Evaluation Message Digest',
+					definition:
+						'A cryptographic hash function designed to ensure data integrity.',
+				},
+				{
+					acronym: 'ROI - Return on Investment',
+					definition:
+						'A performance measure used to evaluate the efficiency or profitability of an investment.',
 				},
 				{
 					acronym: 'RPO - Recovery Point Objective',
 					definition:
-						'The maximum acceptable amount of data loss measured in time.<br><br>Defines the point in time to which data must be recovered after an incident.',
+						'The maximum acceptable amount of data loss measured in time during a disaster recovery scenario.',
 				},
 				{
-					acronym: 'RRSIG - Resource Record Signature',
+					acronym: 'RSA - Rivest, Shamir, & Adleman',
 					definition:
-						'A DNSSEC record type containing the cryptographic signature for a set of DNS records, ensuring their authenticity.',
+						'An asymmetric cryptographic algorithm widely used for secure data transmission.',
+				},
+				{
+					acronym: 'RTBH - Remotely Triggered Black Hole',
+					definition:
+						'A network security technique used to mitigate DDoS attacks by dropping malicious traffic.',
 				},
 				{
 					acronym: 'RTO - Recovery Time Objective',
 					definition:
-						'The target duration of time a system should take to be restored after a disruption.<br><br>Critical metric for disaster recovery planning.',
+						'The target time for restoring IT systems and operations after a disruption.',
 				},
 				{
-					acronym: 'RTOS - Real-Time Operating System',
+					acronym: 'RTOS - Real-time Operating System',
 					definition:
-						'An operating system guaranteeing real-time response.<br><br>RTOS is commonly used in embedded systems and IoT devices.',
+						'An operating system designed to process data and execute tasks within a strict time frame.',
+				},
+				{
+					acronym: 'RTP - Real-time Transport Protocol',
+					definition:
+						'A protocol used for delivering audio and video over IP networks in real-time.',
+				},
+				{
+					acronym: 'S/MIME - Secure/Multipurpose Internet Mail Extensions',
+					definition:
+						'A protocol used for securing email communications through encryption and digital signatures.',
 				},
 				{
 					acronym: 'SaaS - Software as a Service',
 					definition:
-						'A cloud-based software delivery model.<br><br>SaaS eliminates the need for local installations, offering scalability and accessibility.',
+						'A cloud computing model that delivers software applications over the internet, eliminating the need for local installation.',
+				},
+				{
+					acronym: 'SAE - Simultaneous Authentication of Equals',
+					definition:
+						'A secure key exchange protocol used in WPA3 to protect against offline dictionary attacks.',
+				},
+				{
+					acronym: 'SAML - Security Assertions Markup Language',
+					definition:
+						'An open standard for exchanging authentication and authorization data between parties, often used for single sign-on (SSO).',
 				},
 				{
 					acronym: 'SAN - Storage Area Network',
 					definition:
-						'A dedicated network for data storage.<br><br>SANs provide high-speed access to consolidated storage resources.',
+						'A high-speed network that provides access to consolidated storage resources.',
+				},
+				{
+					acronym: 'SAN - Subject Alternative Name',
+					definition:
+						'An extension to X.509 certificates that allows multiple domains to be secured with a single certificate.',
 				},
 				{
 					acronym: 'SASE - Secure Access Service Edge',
 					definition:
-						'A cloud architecture combining network and security functions.<br><br>SASE delivers secure and flexible access to applications and resources.',
+						'A security framework that combines network and security services in a single cloud-delivered solution.',
 				},
 				{
-					acronym: 'SAST - Static Application Security Testing',
+					acronym: 'SCADA - Supervisory Control and Data Acquisition',
 					definition:
-						'A security testing methodology analyzing application source code.<br><br>SAST identifies vulnerabilities like SQL injection or cross-site scripting during development, improving code security.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
-				},
-				{
-					acronym: 'SAS - Security Assertion Service',
-					definition:
-						'A service that generates security tokens or assertions for authentication and authorization.<br><br>Used in federated identity systems, particularly in cloud environments like Microsoft Azure.',
-				},
-
-				{
-					acronym: 'SDP - Service Delivery Platform',
-					definition:
-						'A set of components that provides a service delivery architecture.<br><br>Enables the rapid development and deployment of new services while managing user authentication and access.',
-				},
-				{
-					acronym: 'SLE - Single Loss Expectancy',
-					definition:
-						'The expected monetary loss from a single risk event.<br><br>SLE is calculated as Asset Value (AV) × Exposure Factor (EF).',
-				},
-				{
-					acronym: 'SMTP - Simple Mail Transfer Protocol',
-					definition:
-						'A protocol for sending emails between servers.<br><br>SMTP is widely used for email transmission but requires additional security measures like SSL/TLS.',
-				},
-				{
-					acronym: 'SOC - Service Organization Control',
-					definition:
-						'A series of reports for evaluating organizational controls related to data security, availability, processing integrity, confidentiality, and privacy.<br><br>SOC audits are commonly used for compliance and vendor assurance.',
-				},
-				{
-					acronym: 'SOW - Statement of Work',
-					definition:
-						'A document outlining the scope, deliverables, and terms of a project or service.<br><br>SOW establishes clear expectations and responsibilities for both parties in a contract.',
-				},
-				{
-					acronym: 'SOX - Sarbanes-Oxley Act',
-					definition:
-						'A U.S. law ensuring corporate financial transparency and accountability.<br><br>SOX mandates strict controls over financial reporting to prevent fraud and protect investors.',
-				},
-				{
-					acronym: 'SRM - Shared Responsibility Model',
-					definition:
-						'A framework that outlines security responsibilities between cloud service providers and users.<br><br>SRM clarifies the division of duties for managing data, systems, and applications.',
-				},
-				{
-					acronym: 'STS - Security Token Service',
-					definition:
-						'A web service that issues security tokens used for federated identity management.<br><br>STS validates credentials and issues tokens that can be used to access protected resources.',
-				},
-				{
-					acronym: 'DAST - Dynamic Application Security Testing',
-					definition:
-						'A security testing methodology assessing running applications.<br><br>DAST simulates attacks on live applications to identify runtime vulnerabilities like weak authentication.<br><br><b>OSI Layer:</b> <b>Application (Layer 7)</b>',
+						'A system used to monitor and control industrial processes such as manufacturing, energy, and water treatment.',
 				},
 				{
 					acronym: 'SCAP - Security Content Automation Protocol',
 					definition:
-						'A synthesis of interoperable specifications derived from community ideas. SCAP helps improve cybersecurity posture, streamline vulnerability evaluation, simplify compliance, and boost collaboration in cybersecurity processes.',
+						'A suite of standards for automating vulnerability management and compliance.',
 				},
 				{
-					acronym: 'SCP - Secure Copy Protocol',
+					acronym: 'SCEP - Simple Certificate Enrollment Protocol',
 					definition:
-						'A protocol for securely transferring files.<br><br>SCP uses SSH for encrypted file transfers.',
+						'A protocol used to streamline the issuance and management of digital certificates.',
 				},
 				{
-					acronym: 'SD-WAN - Software-Defined Wide Area Network',
+					acronym: 'SD-WAN - Software-defined Wide Area Network',
 					definition:
-						'A software-based WAN management solution.<br><br>SD-WAN optimizes network performance through centralized control and policy enforcement.',
+						'A networking approach that uses software to control connectivity, management, and services between data centers and remote locations.',
 				},
 				{
-					acronym: 'SDP - Software-Defined Perimeter',
+					acronym: 'SDK - Software Development Kit',
 					definition:
-						'A security framework controlling resource access based on identity.<br><br>SDP reduces the attack surface by requiring authentication before granting access.',
+						'A set of tools and libraries that developers use to create applications for specific platforms or systems.',
 				},
 				{
-					acronym: 'SEM - Security Event Management',
+					acronym: 'SDLC - Software Development Lifecycle',
 					definition:
-						'A component of SIEM systems focused on real-time monitoring, correlation of events, notifications and console views.',
+						'A process used for planning, creating, testing, and deploying information systems.',
 				},
 				{
-					acronym: 'SIM - Security Information Management',
+					acronym: 'SDLM - Software Development Lifecycle Methodology',
 					definition:
-						'A component of SIEM systems focused on long-term storage, analysis and reporting of log data.',
+						'A structured approach to software development, focusing on each phase of the development lifecycle.',
 				},
 				{
-					acronym: 'SMI-S - Storage Management Initiative Specification',
+					acronym: 'SDN - Software-defined Networking',
 					definition:
-						'A standardized protocol for managing storage devices and ensuring interoperability in storage area networks.',
+						'A network architecture approach that enables centralized control of network traffic through software applications.',
 				},
 				{
-					acronym: 'SNMP - Simple Network Management Protocol',
+					acronym: 'SE Linux - Security-enhanced Linux',
 					definition:
-						'A protocol for monitoring and managing network devices.<br><br>SNMP collects performance data and sends alerts for troubleshooting.',
+						'A Linux kernel security module that provides a mechanism for supporting access control policies.',
 				},
 				{
-					acronym: 'SPF - Sender Policy Framework',
+					acronym: 'SED - Self-encrypting Drives',
 					definition:
-						'An email authentication protocol that allows domain owners to specify which mail servers are authorized to send emails on their behalf.',
+						'Storage devices that automatically encrypt data stored on the drive using a built-in encryption engine.',
 				},
 				{
-					acronym: 'SFTP - SSH File Transfer Protocol',
+					acronym: 'SEH - Structured Exception Handler',
 					definition:
-						'A secure protocol for file transfer over SSH.<br><br>SFTP provides encryption for data and file integrity during transfer.',
+						'A mechanism used in programming to handle exceptions or errors that occur during execution.',
+				},
+				{
+					acronym: 'SFTP - Secured File Transfer Protocol',
+					definition:
+						'A secure version of the File Transfer Protocol (FTP) that uses SSH for encryption.',
+				},
+				{
+					acronym: 'SHA - Secure Hashing Algorithm',
+					definition:
+						'A family of cryptographic hash functions designed to ensure data integrity and security.',
+				},
+				{
+					acronym: 'SHTTP - Secure Hypertext Transfer Protocol',
+					definition:
+						'An obsolete protocol used to provide security for HTTP communications.',
 				},
 				{
 					acronym: 'SIEM - Security Information and Event Management',
 					definition:
-						'A system for aggregating and analyzing security data.<br><br>SIEM helps detect and respond to security threats in real-time.',
+						'A system that collects, analyzes, and correlates security data from multiple sources to provide real-time threat detection and response.',
 				},
 				{
-					acronym: 'SPOF - Single Point of Failure',
+					acronym: 'SIM - Subscriber Identity Module',
 					definition:
-						'A component whose failure causes the entire system to fail.<br><br>Identifying and mitigating SPOFs improves system reliability.',
+						'A smart card used in mobile devices to store user identity, authentication, and network information.',
 				},
 				{
-					acronym: 'SLA - Service Level Agreement',
+					acronym: 'SLA - Service-level Agreement',
 					definition:
-						'A contract defining service provider responsibilities.<br><br>SLAs outline performance expectations and penalties for non-compliance.',
+						'A formal agreement between a service provider and a customer defining the level of service expected.',
+				},
+				{
+					acronym: 'SLE - Single Loss Expectancy',
+					definition:
+						'The monetary value of a single loss, calculated as Asset Value × Exposure Factor.',
+				},
+				{
+					acronym: 'SMS - Short Message Service',
+					definition:
+						'A text messaging service that allows short messages to be sent between mobile devices.',
+				},
+				{
+					acronym: 'SMTP - Simple Mail Transfer Protocol',
+					definition:
+						'A protocol used to send emails between servers on the internet.',
 				},
 				{
 					acronym: 'SMTPS - Simple Mail Transfer Protocol Secure',
 					definition:
-						'An encrypted version of SMTP.<br><br>SMTPS ensures secure email transmission.',
+						'A secure version of SMTP that uses SSL/TLS to encrypt email communications.',
 				},
 				{
-					acronym: 'SOAR - Security Orchestration, Automation and Response',
+					acronym: 'SNMP - Simple Network Management Protocol',
 					definition:
-						'Tools for automating security operations.<br><br>SOAR improves efficiency and consistency in incident response.',
+						'A protocol used to manage and monitor network devices and their performance.',
 				},
 				{
-					acronym: 'SODIMM - Small Outline Dual Inline Memory Module',
+					acronym: 'SOAP - Simple Object Access Protocol',
 					definition:
-						'A compact memory module for laptops.<br><br>SODIMMs provide the same functionality as DIMMs in a smaller form factor.',
+						'A protocol used for exchanging structured information in web services.',
 				},
 				{
-					acronym: 'SoD - Separation of Duties',
+					acronym: 'SOAR - Security Orchestration, Automation, and Response',
 					definition:
-						'A security principle requiring multiple people for sensitive tasks.<br><br>SoD minimizes the risk of fraud or error by distributing responsibilities.',
+						'A platform that integrates and automates security tools and processes to improve incident response.',
 				},
 				{
-					acronym: 'SOP - Standard Operating Procedure',
+					acronym: 'SoC - System on Chip',
 					definition:
-						'A documented process for routine operations.<br><br>SOPs ensure consistency and compliance across organizational workflows.',
+						'An integrated circuit that consolidates all components of a computer or electronic system onto a single chip.',
+				},
+				{
+					acronym: 'SOC - Security Operations Center',
+					definition:
+						'A centralized unit that monitors, detects, and responds to cybersecurity threats and incidents within an organization.',
+				},
+				{
+					acronym: 'SOW - Statement of Work',
+					definition:
+						'A formal document that outlines the scope, deliverables, and timelines for a project or contract.',
+				},
+				{
+					acronym: 'SPF - Sender Policy Framework',
+					definition:
+						"An email authentication protocol that helps prevent email spoofing by verifying the sender's IP address.",
+				},
+				{
+					acronym: 'SPIM - Spam over Internet Messaging',
+					definition:
+						'Unsolicited messages sent over instant messaging services, similar to email spam.',
 				},
 				{
 					acronym: 'SQL - Structured Query Language',
 					definition:
-						'A language for managing databases.<br><br>SQL allows users to query, update, and manage relational databases efficiently.',
+						'A standard language used for managing and manipulating relational databases.',
 				},
 				{
 					acronym: 'SQLi - SQL Injection',
 					definition:
-						'An attack that inserts malicious SQL code into queries.<br><br>SQLi exploits vulnerabilities to access or manipulate databases.',
+						'A type of cyberattack where malicious SQL code is injected into a query to manipulate or access a database.',
+				},
+				{
+					acronym: 'SRTP - Secure Real-Time Protocol',
+					definition:
+						'An extension of the Real-Time Protocol (RTP) that provides encryption, message authentication, and integrity for real-time communications.',
 				},
 				{
 					acronym: 'SSD - Solid State Drive',
 					definition:
-						'A storage device using flash memory.<br><br>SSDs offer faster performance and durability compared to traditional hard drives.',
+						'A data storage device that uses flash memory for faster read and write speeds compared to traditional hard drives.',
+				},
+				{
+					acronym: 'SSH - Secure Shell',
+					definition:
+						'A cryptographic network protocol used to securely access and manage devices over an unsecured network.',
 				},
 				{
 					acronym: 'SSL - Secure Sockets Layer',
 					definition:
-						'A deprecated protocol for secure communications.<br><br>SSL has been replaced by TLS due to improved security features.',
+						'A deprecated protocol used to secure communications over a computer network, replaced by TLS.',
 				},
 				{
-					acronym: 'SWID - Software Identification Tagging',
+					acronym: 'SSO - Single Sign-on',
 					definition:
-						'Allows for the proper management of software inventories of managed devices in support of higher-level business, IT security management practices such as configuration management, change management, and problem management.',
+						'An authentication method that allows users to access multiple applications with one set of login credentials.',
+				},
+				{
+					acronym: 'STIX - Structured Threat Information eXchange',
+					definition:
+						'A standardized format for sharing threat intelligence data across organizations.',
+				},
+				{
+					acronym: 'SWG - Secure Web Gateway',
+					definition:
+						'A security solution that filters and monitors web traffic to protect against threats and enforce policies.',
 				},
 				{
 					acronym:
 						'TACACS+ - Terminal Access Controller Access Control System Plus',
 					definition:
-						'A protocol providing centralized authentication, authorization, and accounting for network access control.<br><br>Often used in network devices and remote access scenarios.',
+						'A protocol used to provide centralized authentication and authorization for network devices.',
 				},
 				{
-					acronym: 'TDE - Transparent Data Encryption',
+					acronym:
+						'TAXII - Trusted Automated eXchange of Indicator Information',
 					definition:
-						'A technology that encrypts database files at the storage level.<br><br>TDE provides security by encrypting sensitive data without requiring changes to applications.',
+						'A protocol for securely sharing threat intelligence data between organizations.',
+				},
+				{
+					acronym: 'TCP/IP - Transmission Control Protocol/Internet Protocol',
+					definition:
+						'A suite of communication protocols used to interconnect network devices on the internet.',
+				},
+				{
+					acronym: 'TGT - Ticket Granting Ticket',
+					definition:
+						'A temporary credential issued by the Kerberos authentication system, used to obtain access to services.',
+				},
+				{
+					acronym: 'TKIP - Temporal Key Integrity Protocol',
+					definition:
+						'A security protocol used in WPA to provide improved encryption for wireless networks, now deprecated.',
 				},
 				{
 					acronym: 'TLS - Transport Layer Security',
 					definition:
-						'A cryptographic protocol for secure communications.<br><br>TLS is widely used to protect data in transit over networks.',
+						'A cryptographic protocol that provides secure communication over a network, replacing SSL.',
 				},
 				{
-					acronym: 'TMSAD - Trust Model for Security Automation Data',
+					acronym: 'TOC - Time-of-check',
 					definition:
-						'Describes a community trust model that can be applied to specifications within the security automation domain, such as SCAP.',
+						'A concept in software testing and security that ensures operations are performed as intended at a specific point in time.',
 				},
 				{
-					acronym: 'TOR - The Onion Router',
+					acronym: 'TOTP - Time-based One-time Password',
 					definition:
-						'A privacy-focused network that enables anonymous web browsing.<br><br>TOR uses layered encryption to route traffic through multiple volunteer-operated nodes, making it difficult to trace user activity.',
+						'A temporary passcode generated using the current time and a shared secret, commonly used in two-factor authentication.',
 				},
 				{
-					acronym: 'UBA - User Behavior Analytics',
+					acronym: 'TOU - Time-of-use',
 					definition:
-						'A cybersecurity approach that uses machine learning to analyze user behavior for detecting insider threats and anomalous activities.',
+						'A concept in energy management or billing that varies charges based on the time of day energy is used.',
 				},
 				{
-					acronym: 'UPS - Uninterruptible Power Supply',
+					acronym: 'TPM - Trusted Platform Module',
 					definition:
-						'A backup power solution providing temporary power during outages.<br><br>Allows for safe system shutdowns during power failures.',
+						'A hardware-based security module used to secure cryptographic operations and store sensitive data like encryption keys.',
+				},
+				{
+					acronym: 'TTP - Tactics, Techniques, and Procedures',
+					definition:
+						'The behavior patterns of cyber adversaries used to describe their methods, actions, and strategies.',
+				},
+				{
+					acronym: 'TSIG - Transaction Signature',
+					definition:
+						'A mechanism used to secure DNS messages by providing message integrity and authentication.',
+				},
+				{
+					acronym: 'UAT - User Acceptance Testing',
+					definition:
+						'The final phase of software testing where end-users validate that the system meets their requirements.',
+				},
+				{
+					acronym: 'UAV - Unmanned Aerial Vehicle',
+					definition:
+						'A drone or aircraft controlled remotely or autonomously without a human pilot onboard.',
+				},
+				{
+					acronym: 'UDP - User Datagram Protocol',
+					definition:
+						'A connectionless protocol used in networking that prioritizes speed over reliability, often used in video streaming and gaming.',
+				},
+				{
+					acronym: 'UEFI - Unified Extensible Firmware Interface',
+					definition:
+						'A modern firmware interface between the operating system and platform firmware, replacing BIOS with more features and security.',
+				},
+				{
+					acronym: 'UEM - Unified Endpoint Management',
+					definition:
+						'A framework for managing and securing all endpoint devices in an organization, such as desktops, laptops, and mobile devices.',
+				},
+				{
+					acronym: 'UPS - Uninterruptable Power Supply',
+					definition:
+						'A device that provides backup power and surge protection for electronic equipment during power outages.',
+				},
+				{
+					acronym: 'URI - Uniform Resource Identifier',
+					definition:
+						'A string of characters used to identify a resource on the internet, such as a URL or URN.',
+				},
+				{
+					acronym: 'URL - Universal Resource Locator',
+					definition:
+						'The address used to access a specific resource on the internet, such as a website or file.',
+				},
+				{
+					acronym: 'USB - Universal Serial Bus',
+					definition:
+						'A standard interface for connecting peripheral devices to a computer, such as keyboards, mice, and external drives.',
+				},
+				{
+					acronym: 'USB OTG - USB On the Go',
+					definition:
+						'A feature that allows a USB device to act as a host, enabling other USB devices to connect to it.',
 				},
 				{
 					acronym: 'UTM - Unified Threat Management',
 					definition:
-						'A security appliance combining multiple security features.<br><br>UTM solutions integrate firewall, antivirus, and intrusion detection capabilities.',
+						'A comprehensive security solution that integrates multiple security features, such as firewalls, antivirus, and intrusion prevention.',
+				},
+				{
+					acronym: 'UTP - Unshielded Twisted Pair',
+					definition:
+						'A type of cabling commonly used in Ethernet networks, consisting of pairs of wires twisted together to reduce electromagnetic interference.',
+				},
+				{
+					acronym: 'VBA - Visual Basic for Applications',
+					definition:
+						'A programming language developed by Microsoft used for automating tasks and customizing functionality in applications like Excel.',
+				},
+				{
+					acronym: 'VDE - Virtual Desktop Environment',
+					definition:
+						'A virtualized computing environment that allows users to access their desktop and applications remotely.',
+				},
+				{
+					acronym: 'VDI - Virtual Desktop Infrastructure',
+					definition:
+						'A virtualization technology that hosts desktop environments on a centralized server and provides remote access to them.',
 				},
 				{
 					acronym: 'VLAN - Virtual Local Area Network',
 					definition:
-						'A virtualized network segment within a larger network.<br><br>VLANs enhance security and efficiency by isolating traffic.',
+						'A logical grouping of network devices that allows for segmentation and isolation within a physical network.',
+				},
+				{
+					acronym: 'VLSM - Variable Length Subnet Masking',
+					definition:
+						'A technique that allows different subnet masks within the same network, improving IP address allocation efficiency.',
 				},
 				{
 					acronym: 'VM - Virtual Machine',
 					definition:
-						'An emulation of a computer system.<br><br>VMs enable multiple operating systems to run on a single hardware platform.',
+						'A software-based emulation of a physical computer that runs an operating system and applications.',
+				},
+				{
+					acronym: 'VoIP - Voice over IP',
+					definition:
+						'A technology that enables voice communication and multimedia sessions over the internet instead of traditional phone lines.',
+				},
+				{
+					acronym: 'VPC - Virtual Private Cloud',
+					definition:
+						"A secure, isolated section of a cloud provider's network where users can deploy resources and run applications.",
 				},
 				{
 					acronym: 'VPN - Virtual Private Network',
 					definition:
-						'A secure connection over a public network.<br><br>VPNs encrypt data to ensure privacy and security for remote users.',
+						'A technology that creates a secure and encrypted connection over a less secure network, such as the internet.',
+				},
+				{
+					acronym: 'VTC - Video Teleconferencing',
+					definition:
+						'A technology that allows people in different locations to communicate via video and audio in real-time.',
 				},
 				{
 					acronym: 'WAF - Web Application Firewall',
 					definition:
-						'A firewall specifically protecting web applications.<br><br>WAFs mitigate threats like SQL injection and cross-site scripting.',
+						'A security solution that monitors, filters, and blocks HTTP traffic to and from a web application to protect against attacks.',
 				},
 				{
-					acronym: 'WMI - Windows Management Interface',
+					acronym: 'WAP - Wireless Access Point',
 					definition:
-						'A core Windows infrastructure for management data and operations that enables monitoring and control of system resources.',
+						'A networking device that allows wireless devices to connect to a wired network using Wi-Fi.',
 				},
 				{
-					acronym: 'WPA2 - Wi-Fi Protected Access 2',
+					acronym: 'WEP - Wired Equivalent Privacy',
 					definition:
-						'A security protocol for wireless networks that uses advanced encryption and authentication.<br><br>WPA2 improves over its predecessor (WPA) with stronger data protection.',
+						'An outdated wireless network security protocol that has been replaced by WPA due to vulnerabilities.',
 				},
 				{
-					acronym: 'WPA3 - Wi-Fi Protected Access 3',
+					acronym: 'WIDS - Wireless Intrusion Detection System',
 					definition:
-						'The latest security protocol for wireless networks, offering enhanced encryption and authentication.<br><br>WPA3 introduces protections against brute-force attacks and improved security for public networks.',
+						'A system that monitors wireless networks for malicious activities or policy violations.',
 				},
 				{
-					acronym:
-						'XCCDF - Extensible Configuration Checklist Description Format',
+					acronym: 'WIPS - Wireless Intrusion Prevention System',
 					definition:
-						'A specification language for writing security checklists, benchmarks, and related kinds of documents. Part of the SCAP framework.',
+						'A system that proactively detects and prevents unauthorized access to or attacks on a wireless network.',
+				},
+				{
+					acronym: 'WO - Work Order',
+					definition:
+						'A document that outlines the tasks and details of a job or project to be completed.',
+				},
+				{
+					acronym: 'WPA - Wi-Fi Protected Access',
+					definition:
+						'A security protocol designed to secure wireless networks, providing stronger encryption than WEP.',
+				},
+				{
+					acronym: 'WPS - Wi-Fi Protected Setup',
+					definition:
+						'A network security standard that allows users to quickly and securely connect devices to a wireless network.',
+				},
+				{
+					acronym: 'WTLS - Wireless TLS',
+					definition:
+						'A security protocol used to provide encryption and secure communication for wireless networks.',
 				},
 				{
 					acronym: 'XDR - Extended Detection and Response',
 					definition:
-						'An advanced security solution that integrates data from multiple sources to detect, investigate, and respond to threats across endpoints, networks, and servers.',
+						'A cybersecurity solution that integrates and correlates data from multiple security tools for enhanced threat detection and response.',
 				},
 				{
-					acronym: 'XSS - Cross-Site Scripting',
+					acronym: 'XML - Extensible Markup Language',
 					definition:
-						'An attack injecting malicious scripts into trusted websites.<br><br>XSS exploits vulnerabilities in web applications to execute unauthorized scripts.',
+						'A markup language used for encoding and structuring data in a format that is both human-readable and machine-readable.',
 				},
 				{
-					acronym: 'YAML - YAML Ain’t Markup Language',
+					acronym: 'XOR - Exclusive Or',
 					definition:
-						'A human-readable data serialization standard.<br><br>YAML is widely used for configuration files and data exchange in DevOps.',
+						'A logical operation that outputs true only when the inputs are different, commonly used in cryptographic algorithms.',
 				},
 				{
-					acronym: 'ZIP - Zone Interface Point',
+					acronym: 'XSRF - Cross-site Request Forgery',
 					definition:
-						'A connection point between different security zones.<br><br>ZIPs help enforce segmentation and traffic control.',
+						'A web security vulnerability where an attacker tricks a user into performing actions on a website without their consent.',
 				},
 				{
-					acronym: 'ZTNA - Zero Trust Network Access',
+					acronym: 'XSS - Cross-site Scripting',
 					definition:
-						'A security framework providing secure remote access based on identity.<br><br>ZTNA verifies users and devices before granting access to resources.',
-				},
-				{
-					acronym: 'Port 20',
-					definition:
-						'FTP (Data Transfer) - Used for transferring files in active mode between a client and a server. It handles the actual data movement during file transfers.',
-				},
-				{
-					acronym: 'Port 21',
-					definition:
-						'FTP (Command/Control) - Manages the connection between the client and the server, including authentication and commands like listing files or initiating file transfers.',
-				},
-				{
-					acronym: 'Port 22',
-					definition:
-						'SSH (Secure Shell) - Provides a secure channel for remote login and file transfers (using SCP/SFTP) by encrypting the data, replacing unsecure protocols like Telnet.',
-				},
-				{
-					acronym: 'Port 23',
-					definition:
-						'Telnet - Enables unencrypted remote command-line access to a system. It is outdated and insecure, often replaced by SSH.',
-				},
-				{
-					acronym: 'Port 25',
-					definition:
-						'SMTP (Simple Mail Transfer Protocol) - Handles sending emails between mail servers and client systems. It lacks built-in encryption unless used with STARTTLS or SSL.',
-				},
-				{
-					acronym: 'Port 53',
-					definition:
-						'DNS (Domain Name System) - Resolves human-readable domain names (e.g., www.example.com) into IP addresses for network communication.',
-				},
-				{
-					acronym: 'Port 67',
-					definition:
-						'DHCP (Server to Client) - Assigns IP addresses, subnet masks, and other network configurations to devices when they join a network.',
-				},
-				{
-					acronym: 'Port 68',
-					definition:
-						'DHCP (Client to Server) - Allows a client to request an IP address or network configuration information from the DHCP server.',
-				},
-				{
-					acronym: 'Port 69',
-					definition:
-						"TFTP (Trivial File Transfer Protocol) - A lightweight, simple protocol for file transfers that doesn't require authentication or encryption, often used for bootstrapping devices.",
-				},
-				{
-					acronym: 'Port 80',
-					definition:
-						'HTTP (HyperText Transfer Protocol) - The protocol for transmitting web pages and other content between servers and clients on the World Wide Web.',
-				},
-				{
-					acronym: 'Port 110',
-					definition:
-						'POP3 (Post Office Protocol v3) - Used to retrieve emails from a server, typically removing them from the server and storing them locally.',
-				},
-				{
-					acronym: 'Port 123',
-					definition:
-						'NTP (Network Time Protocol) - Synchronizes the time and date settings of devices across a network to ensure consistent timestamps.',
-				},
-				{
-					acronym: 'Port 143',
-					definition:
-						'IMAP (Internet Message Access Protocol) - Allows users to retrieve and manage emails stored on a server, enabling multi-device synchronization.',
-				},
-				{
-					acronym: 'Port 161',
-					definition:
-						'SNMP (Simple Network Management Protocol) - Monitors and manages devices on a network, collecting performance metrics and configurations.',
-				},
-				{
-					acronym: 'Port 162',
-					definition:
-						'SNMP Trap - Used by managed devices to send alerts and notifications to an SNMP monitoring system.',
-				},
-				{
-					acronym: 'Port 389',
-					definition:
-						'LDAP (Lightweight Directory Access Protocol) - Manages and queries directory information, such as user credentials and network resource locations.',
-				},
-				{
-					acronym: 'Port 443',
-					definition:
-						'HTTPS (HTTP Secure) - Encrypts web traffic using SSL/TLS, ensuring secure communication over the Internet.',
-				},
-				{
-					acronym: 'Port 465',
-					definition:
-						'Secure SMTP - Provides encrypted email sending using SSL/TLS, often replacing port 25 for secure mail transmission.',
-				},
-				{
-					acronym: 'Port 500',
-					definition:
-						'ISAKMP/IKE (Internet Key Exchange) - Establishes secure connections for VPNs by negotiating cryptographic keys.',
-				},
-				{
-					acronym: 'Port 514',
-					definition:
-						'Syslog - Collects and centralizes logging information from network devices like routers, switches, and servers.',
-				},
-				{
-					acronym: 'Port 587',
-					definition:
-						'SMTP (Authenticated) - Similar to port 25 but requires user authentication, typically used for sending emails securely.',
-				},
-				{
-					acronym: 'Port 993',
-					definition:
-						"IMAP over SSL/TLS - Secures email retrieval using encryption, maintaining the IMAP protocol's multi-device synchronization.",
-				},
-				{
-					acronym: 'Port 995',
-					definition:
-						'POP3 over SSL/TLS - Secures email retrieval using encryption while following the POP3 protocol for local storage.',
-				},
-				{
-					acronym: 'Port 1433',
-					definition:
-						'Microsoft SQL Server - Handles communication between client applications and Microsoft SQL Server databases.',
-				},
-				{
-					acronym: 'Port 1521',
-					definition:
-						'Oracle Database - Manages connections and communication to Oracle database servers.',
-				},
-				{
-					acronym: 'Port 1701',
-					definition:
-						'L2TP (Layer 2 Tunneling Protocol) - A VPN tunneling protocol often combined with IPSec for secure data transmission.',
-				},
-				{
-					acronym: 'Port 1723',
-					definition:
-						'PPTP (Point-to-Point Tunneling Protocol) - One of the earliest VPN protocols, providing basic tunneling with limited encryption.',
-				},
-				{
-					acronym: 'Port 3306',
-					definition:
-						'MySQL Database - Supports communication between client applications and MySQL database servers for query execution.',
-				},
-				{
-					acronym: 'Port 3389',
-					definition:
-						"RDP (Remote Desktop Protocol) - Provides remote access to a computer's desktop, allowing full graphical and command-line interaction.",
-				},
-				{
-					acronym: 'Port 4500',
-					definition:
-						'IPSec NAT Traversal - Ensures VPN connections function securely when Network Address Translation (NAT) is in use.',
-				},
-				{
-					acronym: 'Port 5060',
-					definition:
-						'SIP (Session Initiation Protocol) - Initiates, maintains, and terminates multimedia communication sessions such as VoIP calls (unencrypted).',
-				},
-				{
-					acronym: 'Port 5061',
-					definition:
-						'SIP (Secure) - Provides encrypted multimedia communication sessions, typically for secure VoIP.',
-				},
-				{
-					acronym: 'Port 5900',
-					definition:
-						"VNC (Virtual Network Computing) - Allows remote desktop sharing by transmitting keyboard and mouse inputs and displaying the remote system's screen.",
-				},
-				{
-					acronym: 'Port 8080',
-					definition:
-						'HTTP Alternative - Often used as an alternative or for web servers during testing and proxy configurations.',
+						'A web application vulnerability that allows attackers to inject malicious scripts into webpages viewed by other users.',
 				},
 			];
 
-			console.log('Flashcards loaded:', flashcards.length);
-			console.log('First card:', flashcards[0]);
+			// console.log('Flashcards loaded:', flashcards.length);
+			// console.log('First card:', flashcards[0]);
 
 			let currentIndex = 0;
 			let isFlipped = false;
