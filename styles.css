@@ -1,3 +1,4 @@
+/* Base Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body Layout */
 body {
     min-height: 100vh;
     background: #f0f2f5;
@@ -14,12 +16,14 @@ body {
     padding: 2rem;
 }
 
+/* Container */
 .container {
     max-width: 800px;
     width: 100%;
     text-align: center;
 }
 
+/* Typography */
 h1 {
     color: #1a1a1a;
     margin-bottom: 1rem;
@@ -31,6 +35,7 @@ h1 {
     margin-bottom: 2rem;
 }
 
+/* Card Container and Animation */
 .card-container {
     perspective: 1000px;
     height: 400px;
@@ -79,6 +84,7 @@ h1 {
     transition: opacity 0.3s ease-in-out;
 }
 
+/* Card Content */
 .acronym {
     font-size: 3.5rem;
     font-weight: bold;
@@ -93,6 +99,7 @@ h1 {
     line-height: 1.5;
 }
 
+/* Controls */
 .controls {
     display: flex;
     gap: 1rem;
@@ -101,6 +108,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* Search Components */
 .search-container {
     width: 100%;
     max-width: 400px;
@@ -132,6 +140,7 @@ h1 {
     overflow-y: auto;
     display: none;
     text-align: left;
+    -webkit-overflow-scrolling: touch;
 }
 
 .search-results.active {
@@ -158,6 +167,7 @@ h1 {
     font-size: 0.9rem;
 }
 
+/* Buttons and Inputs */
 button {
     padding: 0.75rem 1.5rem;
     border: none;
@@ -169,6 +179,11 @@ button {
 
 button:hover {
     transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+    opacity: 0.8;
 }
 
 .btn-primary {
@@ -197,6 +212,7 @@ input[type='number'] {
     text-align: center;
 }
 
+/* Animations */
 .card-container {
     animation: cardEnter 0.5s ease-out;
 }
@@ -212,6 +228,13 @@ input[type='number'] {
     }
 }
 
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Footer */
 .footer {
     margin-top: auto;
     padding: 1rem;
@@ -220,7 +243,7 @@ input[type='number'] {
     font-size: 0.9rem;
 }
 
-/* Audio Styles */
+/* Audio Controls */
 .audio-controls {
     display: flex;
     gap: 1rem;
@@ -264,9 +287,127 @@ input[type='number'] {
     animation: shake 0.5s;
 }
 
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+/* Mobile Responsive Design */
+@media screen and (max-width: 767px) {
+    /* Layout adjustments */
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: 2rem;
+    }
+
+    .acronym {
+        font-size: 2.5rem;
+    }
+
+    .definition {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    /* Card adjustments */
+    .card-container {
+        height: 300px;
+        margin: 1rem 0;
+    }
+
+    /* Controls adjustments */
+    .controls {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .controls > * {
+        width: 100%;
+    }
+
+    /* Button and input adjustments */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+        width: 100%;
+    }
+
+    .search-input {
+        min-height: 44px;
+    }
+
+    /* Search container adjustments */
+    .search-container {
+        margin: 1.5rem auto;
+        width: 100%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    /* Audio controls adjustment */
+    .audio-controls {
+        flex-direction: column;
+    }
+
+    .voice-select {
+        width: 100%;
+    }
 }
-  </rewritten_file> 
+
+/* Error Message Styling */
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+/* Accessibility Improvements */
+button:focus, 
+input:focus, 
+select:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.card:focus {
+    outline: none;
+}
+
+/* Print Styles */
+@media print {
+    .controls,
+    .audio-controls,
+    .search-container {
+        display: none;
+    }
+
+    .card-container {
+        height: auto;
+        margin: 0;
+        page-break-inside: avoid;
+    }
+
+    .card {
+        transform-style: flat;
+    }
+
+    .card-face {
+        position: relative;
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .card-back {
+        transform: none;
+        margin-top: 2rem;
+    }
+}
