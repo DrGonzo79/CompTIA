@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="styles.css" />
 		<meta
 			http-equiv="Content-Security-Policy"
-			content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';" />
+			content="default-src 'self' https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline';" />
 	</head>
 	<body>
 		<div class="container">
@@ -87,7 +87,20 @@
 				>DGC Digital</a
 			>
 		</footer>
-
+		<div id="theme-toggle-root"></div>
 		<script src="scripts.js"></script>
+		<!-- Dark Mode Script-->
+		<!-- Add React and ReactDOM -->
+		<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+		<!-- Add ThemeToggle script -->
+		<script src="ThemeToggle.js"></script>
+
+		<!-- Initialize the theme toggle -->
+		<script>
+			const container = document.getElementById('theme-toggle-root');
+			ReactDOM.createRoot(container).render(React.createElement(ThemeToggle));
+		</script>
 	</body>
 </html>

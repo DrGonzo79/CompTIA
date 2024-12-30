@@ -18,1619 +18,1613 @@ const flashcards = [
 	{
 		acronym: 'AES-256 - Advanced Encryption Standard 256-bit',
 		definition:
-			'AES-256 is a version of AES with a 256-bit key length, offering robust encryption.\n\nPurpose: Provides stronger security to resist brute-force attacks.\nDeployment: Used in secure communications like HTTPS, file encryption, and secure file sharing.\nContext: Standard for encrypting classified information.',
+			'AES-256 is a version of AES with a 256-bit key length, offering robust encryption.\n\nPurpose: Provides stronger security to resist brute-force attacks and quantum computing threats.\nDeployment: Used in secure communications like HTTPS, file encryption, and secure file sharing.\nContext: Standard for encrypting classified information and high-security applications.',
 	},
 	{
 		acronym: 'AH - Authentication Header',
 		definition:
-			'AH is a protocol in IPsec for ensuring data integrity and authenticity of packets.\n\nPurpose: Adds a layer of security by verifying data integrity and source authentication.\nDeployment: Configured in IPsec settings in network devices and systems.\nContext: Used in secure network communication.',
+			'AH is a protocol in IPsec that ensures data integrity and authenticity of packets.\n\nPurpose: Adds a layer of security by verifying data integrity and source authentication without encryption.\nDeployment: Configured in IPsec settings in network devices and systems, often alongside ESP.\nContext: Used in secure network communication where integrity is crucial but confidentiality is not required.',
 	},
 	{
 		acronym: 'AI - Artificial Intelligence',
 		definition:
-			'AI involves machine-driven intelligence processes, such as learning and problem-solving.\n\nPurpose: Enhances cybersecurity through automated threat detection and response.\nDeployment: Found in advanced threat detection platforms and analytics tools.\nContext: Used for behavior analysis, anomaly detection, and automating responses to threats.',
+			'AI involves machine-driven intelligence processes in cybersecurity.\n\nPurpose: Enhances cybersecurity through automated threat detection, pattern recognition, and response.\nDeployment: Integrated into security tools like SIEM, EDR, and threat intelligence platforms.\nContext: Used for behavioral analysis, anomaly detection, and automating security responses at scale.',
 	},
 	{
 		acronym: 'AIS - Automated Indicator Sharing',
 		definition:
-			'AIS is a system for sharing cybersecurity threat indicators between organizations in real-time.\n\nPurpose: Enables faster response to emerging threats by sharing actionable intelligence.\nDeployment: Managed through platforms supported by agencies like CISA.\nContext: Used in government and private sector collaborations.',
+			'AIS is a system for sharing cybersecurity threat indicators between organizations.\n\nPurpose: Enables faster response to emerging threats through automated sharing of threat intelligence.\nDeployment: Implemented through TAXII/STIX protocols and platforms supported by CISA.\nContext: Critical in government and private sector collaboration for cyber defense.',
 	},
 	{
 		acronym: 'ALE - Annualized Loss Expectancy',
 		definition:
-			'ALE quantifies the expected monetary loss for a specific risk over a year.\n\nPurpose: Helps organizations assess the financial impact of risks.\nDeployment: Used in risk management calculations alongside SLE and ARO.\nContext: Found in frameworks like ISO 27001 for risk analysis.',
+			'ALE quantifies the expected yearly monetary loss from security risks.\n\nPurpose: Helps organizations make informed decisions about security investments.\nDeployment: Calculated using SLE (Single Loss Expectancy) × ARO (Annual Rate of Occurrence).\nContext: Essential in risk management frameworks and security budget planning.',
 	},
 	{
 		acronym: 'AP - Access Point',
 		definition:
-			'An AP connects wireless devices to a wired network, extending network coverage.\n\nPurpose: Provides wireless connectivity within networks.\nDeployment: Installed as part of Wi-Fi infrastructure, managed locally or through controllers.\nContext: Found in homes, businesses, and public Wi-Fi setups.',
+			'An AP is a networking device that enables wireless connectivity.\n\nPurpose: Provides wireless network access while maintaining security controls.\nDeployment: Installed strategically for coverage, managed through controllers or cloud platforms.\nContext: Critical in modern network infrastructure, requiring security features like WPA3.',
 	},
 	{
 		acronym: 'API - Application Programming Interface',
 		definition:
-			'API defines protocols for building and interacting with software applications.\n\nPurpose: Enables seamless integration and communication between different software systems.\nDeployment: Used in web services, cloud platforms, and software tools.\nContext: Found in modern application development for resource sharing.',
+			'API defines protocols for software interaction and data exchange.\n\nPurpose: Enables secure and controlled access to application functionality and data.\nDeployment: Implemented with authentication, rate limiting, and encryption.\nContext: Essential in modern applications, requiring robust security controls.',
 	},
 	{
 		acronym: 'APT - Advanced Persistent Threat',
 		definition:
-			'APT represents prolonged, targeted attacks by sophisticated adversaries.\n\nPurpose: Used by attackers to gain and maintain unauthorized access for data theft.\nDeployment: Detected and mitigated through SIEM, threat intelligence, and endpoint protection.\nContext: Common in nation-state and corporate espionage scenarios.',
+			'APT represents sophisticated, long-term targeted attacks.\n\nPurpose: Gains and maintains unauthorized access for espionage or data theft.\nDeployment: Detected through advanced security tools, threat hunting, and behavioral analysis.\nContext: Major concern for government and high-value corporate targets.',
 	},
 	{
 		acronym: 'ARO - Annualized Rate of Occurrence',
 		definition:
-			'ARO estimates how often a specific risk is expected to occur annually.\n\nPurpose: Helps quantify risk frequency for ALE calculations.\nDeployment: Included in risk assessment processes using historical data.\nContext: Found in frameworks like NIST and ISO 31000.',
+			'ARO estimates the frequency of security incidents per year.\n\nPurpose: Helps quantify risk frequency for security planning and ALE calculations.\nDeployment: Determined through historical data analysis and threat intelligence.\nContext: Used in risk assessment frameworks and security planning.',
 	},
 	{
 		acronym: 'ARP - Address Resolution Protocol',
 		definition:
-			'ARP resolves IP addresses to MAC addresses on local networks.\n\nPurpose: Ensures proper delivery of packets within LANs.\nDeployment: Operates in Layer 2 of the OSI model, configured in networking devices.\nContext: Found in all IP-based networks.',
+			'ARP maps IP addresses to MAC addresses in local networks.\n\nPurpose: Enables proper packet delivery while presenting security considerations.\nDeployment: Built into network devices with security features like ARP inspection.\nContext: Critical for network operations but vulnerable to ARP poisoning attacks.',
 	},
 	{
 		acronym: 'ASLR - Address Space Layout Randomization',
 		definition:
-			'ASLR randomizes memory address space locations to prevent exploitation.\n\nPurpose: Protects against memory-based attacks like buffer overflows.\nDeployment: Enabled in operating systems and modern software.\nContext: Found in modern OS security mechanisms.',
+			'ASLR is a security technique randomizing memory addresses.\n\nPurpose: Prevents memory-based attacks by making target locations unpredictable.\nDeployment: Built into modern operating systems and supported by applications.\nContext: Essential protection against buffer overflow and memory exploitation attacks.',
 	},
 	{
 		acronym: 'ATT&CK - Adversarial Tactics, Techniques, and Common Knowledge',
 		definition:
-			'ATT&CK is a framework for understanding adversary tactics and techniques.\n\nPurpose: Provides a standardized knowledge base for analyzing cyberattacks.\nDeployment: Integrated into threat detection tools and cybersecurity operations.\nContext: Widely used by security professionals and organizations.',
+			'ATT&CK is a comprehensive framework for understanding cyber threats.\n\nPurpose: Provides structured approach to understanding and defending against attacks.\nDeployment: Used in threat modeling, security testing, and defense planning.\nContext: Standard reference for security teams and threat intelligence analysts.',
 	},
 	{
 		acronym: 'AUP - Acceptable Use Policy',
 		definition:
-			'AUP outlines rules for acceptable use of organizational resources.\n\nPurpose: Ensures proper use and security of IT systems.\nDeployment: Distributed as part of onboarding or compliance training.\nContext: Found in all organizations with IT resources.',
+			'AUP defines rules for acceptable use of IT resources.\n\nPurpose: Establishes guidelines for secure and appropriate resource usage.\nDeployment: Distributed and acknowledged during onboarding, with regular updates.\nContext: Foundation of organizational security policy and compliance.',
 	},
 	{
 		acronym: 'AV - Antivirus',
 		definition:
-			'Antivirus software detects, prevents, and removes malware from systems.\n\nPurpose: Protects devices from malware infections and attacks.\nDeployment: Installed on endpoints, managed individually or centrally.\nContext: Common in all computing environments.',
+			'Antivirus software protects against malicious code.\n\nPurpose: Detects, prevents, and removes malware from systems.\nDeployment: Installed on endpoints with central management and regular updates.\nContext: Basic security requirement for all systems, often part of larger EPP solutions.',
 	},
 	{
 		acronym: 'BASH - Bourne Again Shell',
 		definition:
-			'BASH is a Unix-based command-line shell and scripting language.\n\nPurpose: Facilitates task automation and system management.\nDeployment: Found in Linux/Unix systems and macOS terminals.\nContext: Used by system administrators and developers.',
+			'BASH is a command-line interface and scripting environment.\n\nPurpose: Enables system administration and security automation.\nDeployment: Standard in Linux/Unix systems, used for security scripts and automation.\nContext: Essential tool for security professionals and system administrators.',
 	},
 	{
 		acronym: 'BCP - Business Continuity Planning',
 		definition:
-			'BCP involves strategies for maintaining operations during disruptions.\n\nPurpose: Ensures business resilience and minimizes downtime.\nDeployment: Documented plans tested periodically through simulations.\nContext: Found in enterprise risk management frameworks.',
+			'BCP involves strategies for maintaining operations during disruptions.\n\nPurpose: Ensures critical business functions continue during incidents.\nDeployment: Documented plans with regular testing and updates.\nContext: Critical for organizational resilience and incident response.',
 	},
 	{
 		acronym: 'BGP - Border Gateway Protocol',
 		definition:
-			'BGP routes traffic between networks on the internet.\n\nPurpose: Ensures efficient, reliable routing of packets across networks.\nDeployment: Configured in routers and ISPs.\nContext: Found in global internet infrastructure.',
+			'BGP manages routing between autonomous systems on the internet.\n\nPurpose: Enables global internet routing while requiring security controls.\nDeployment: Configured with authentication and filtering on border routers.\nContext: Critical internet infrastructure requiring protection against BGP hijacking.',
 	},
 	{
 		acronym: 'BIA - Business Impact Analysis',
 		definition:
-			'BIA identifies critical operations and assesses the impact of disruptions.\n\nPurpose: Guides recovery priorities and strategies.\nDeployment: Conducted as part of risk assessments and DRP planning.\nContext: Used in business continuity frameworks.',
+			'BIA identifies critical operations and assesses disruption impacts.\n\nPurpose: Guides recovery priorities and resource allocation.\nDeployment: Conducted through interviews, analysis, and documentation.\nContext: Essential for disaster recovery and business continuity planning.',
 	},
 	{
 		acronym: 'BIOS - Basic Input/Output System',
 		definition:
-			'BIOS is firmware that initializes hardware during the booting process.\n\nPurpose: Provides essential instructions to start the operating system.\nDeployment: Embedded in the motherboard and configurable via setup utilities.\nContext: Common in traditional computing systems, now often replaced by UEFI.',
+			'BIOS is firmware initializing hardware during boot process.\n\nPurpose: Provides secure system initialization and hardware configuration.\nDeployment: Protected through passwords and security settings.\nContext: Critical for system security, often replaced by UEFI in modern systems.',
 	},
 	{
 		acronym: 'BPA - Business Partners Agreement',
 		definition:
-			'BPA is a legal document defining responsibilities between business partners.\n\nPurpose: Clarifies roles, obligations, and risk-sharing between parties.\nDeployment: Signed during partnerships or collaborations.\nContext: Found in long-term business arrangements.',
+			'BPA defines security responsibilities between business partners.\n\nPurpose: Establishes security requirements and responsibilities in partnerships.\nDeployment: Negotiated and signed before sharing sensitive resources.\nContext: Essential for managing third-party security risks.',
 	},
 	{
 		acronym: 'BPDU - Bridge Protocol Data Unit',
 		definition:
-			'BPDU is a message exchanged by network switches to maintain spanning tree topology.\n\nPurpose: Prevents loops in Layer 2 networks by ensuring optimal path selection.\nDeployment: Configured in switches running Spanning Tree Protocol (STP).\nContext: Found in managed network environments.',
+			'BPDU manages Layer 2 network topology.\n\nPurpose: Prevents network loops while requiring security controls.\nDeployment: Configured with BPDU guard and root guard for protection.\nContext: Important in switched networks requiring topology security.',
 	},
 	{
 		acronym: 'BYOD - Bring Your Own Device',
 		definition:
-			'BYOD is a policy allowing employees to use personal devices for work.\n\nPurpose: Enhances flexibility and productivity by leveraging employee-owned devices.\nDeployment: Managed through mobile device management (MDM) solutions.\nContext: Common in modern workplace settings.',
+			'BYOD allows personal devices in work environments.\n\nPurpose: Enables workforce mobility while managing security risks.\nDeployment: Implemented with MDM, MAM, and security policies.\nContext: Common in modern workplaces requiring balance of convenience and security.',
 	},
 	{
 		acronym: 'CA - Certificate Authority',
 		definition:
-			'An entity that issues digital certificates, which are used to verify the authenticity of public keys in secure communications.',
+			'CA is a trusted entity that issues and manages digital certificates.\n\nPurpose: Validates identity and binds public keys to entities, establishing trust in digital certificates.\nDeployment: Implemented as public CAs (like DigiCert) or private PKI infrastructure.\nContext: Critical for secure web communications (HTTPS), digital signatures, and email security.',
 	},
 	{
 		acronym:
 			'CAPTCHA - Completely Automated Public Turing Test to Tell Computers and Humans Apart',
 		definition:
-			'A challenge-response test used to determine if a user is human, helping to prevent automated attacks such as bots.',
+			'CAPTCHA is a security mechanism that validates human interaction.\n\nPurpose: Prevents automated attacks, bot activities, and brute force attempts.\nDeployment: Implemented on web forms, login pages, and registration processes.\nContext: Used in websites and applications to prevent automated abuse.',
 	},
 	{
 		acronym: 'CAR - Corrective Action Report',
 		definition:
-			'A document that outlines steps to fix issues or deficiencies identified during an incident or audit.',
+			'CAR documents steps taken to address security issues.\n\nPurpose: Ensures proper documentation and tracking of security incident remediation.\nDeployment: Generated after incidents, audits, or compliance reviews.\nContext: Essential in incident response and compliance documentation.',
 	},
 	{
 		acronym: 'CASB - Cloud Access Security Broker',
 		definition:
-			'A security tool that provides visibility and control over data and applications used in the cloud.',
+			'CASB provides security controls between users and cloud services.\n\nPurpose: Enforces security policies across multiple cloud services and providers.\nDeployment: Implemented as cloud-based or on-premises solution with API integration.\nContext: Critical for organizations using multiple cloud services and requiring unified security.',
 	},
 	{
 		acronym: 'CBC - Cipher Block Chaining',
 		definition:
-			'An encryption mode where each plaintext block is XORed with the previous ciphertext block before being encrypted.',
+			'CBC is an encryption mode providing better security through chaining.\n\nPurpose: Enhances encryption security by linking blocks of ciphertext.\nDeployment: Used in protocols like TLS and file encryption systems.\nContext: Common in secure communications and data protection.',
 	},
 	{
 		acronym: 'CCMP - Counter Mode/CBC-MAC Protocol',
 		definition:
-			'An encryption protocol used in WPA2 to provide data confidentiality and integrity for wireless networks.',
+			'CCMP is a robust security protocol for wireless networks.\n\nPurpose: Provides both encryption and authentication for wireless data.\nDeployment: Implemented in WPA2/WPA3 for securing wireless networks.\nContext: Standard protocol in modern wireless network security.',
 	},
 	{
 		acronym: 'CCTV - Closed-Circuit Television',
 		definition:
-			'A video surveillance system used for monitoring and security purposes.',
+			'CCTV provides video surveillance for physical security.\n\nPurpose: Monitors and records activity for security and investigation.\nDeployment: Installed with digital recording systems and network connectivity.\nContext: Essential component of physical security and monitoring.',
 	},
 	{
 		acronym: 'CERT - Computer Emergency Response Team',
 		definition:
-			'A group responsible for responding to cybersecurity incidents, often providing coordination and guidance during an attack.',
+			'CERT manages cybersecurity incidents and responses.\n\nPurpose: Coordinates responses to security incidents and provides guidance.\nDeployment: Established at organizational, national, or sector levels.\nContext: Critical for incident response and security coordination.',
 	},
 	{
 		acronym: 'CFB - Cipher Feedback',
 		definition:
-			'An encryption mode that encrypts smaller units of plaintext, such as individual bits or bytes, making it suitable for streaming data.',
+			'CFB is a block cipher mode enabling stream-like encryption.\n\nPurpose: Allows encryption of data in smaller units than block size.\nDeployment: Used in applications requiring real-time encryption.\nContext: Found in secure communication systems and data streams.',
 	},
 	{
 		acronym: 'CHAP - Challenge Handshake Authentication Protocol',
 		definition:
-			'An authentication protocol that uses a three-way handshake to verify the identity of a user or device.',
+			'CHAP provides secure authentication through challenges.\n\nPurpose: Verifies identity without transmitting passwords directly.\nDeployment: Implemented in network authentication systems, especially PPP.\nContext: Used in network access and remote authentication scenarios.',
 	},
 	{
 		acronym: 'CIA - Confidentiality, Integrity, Availability',
 		definition:
-			'The three core principles of cybersecurity, ensuring data is protected, accurate, and accessible to authorized users.',
+			'CIA represents core principles of information security.\n\nPurpose: Provides framework for comprehensive security controls.\nDeployment: Applied across all security policies and controls.\nContext: Fundamental to all security programs and compliance efforts.',
 	},
 	{
 		acronym: 'CIO - Chief Information Officer',
 		definition:
-			'An executive responsible for managing an organization’s IT strategy, infrastructure, and security.',
+			'CIO oversees organizational IT strategy and operations.\n\nPurpose: Ensures alignment of IT and security with business objectives.\nDeployment: Executive position working with CISO and other leaders.\nContext: Critical role in security governance and strategy.',
 	},
 	{
 		acronym: 'CIRT - Computer Incident Response Team',
 		definition:
-			'A team that handles cybersecurity incidents, such as breaches or malware outbreaks, to mitigate damage and restore operations.',
+			'CIRT handles cybersecurity incidents and responses.\n\nPurpose: Provides organized approach to security incident management.\nDeployment: Established with defined procedures and tools.\nContext: Essential for effective incident response and recovery.',
 	},
 	{
 		acronym: 'CMS - Content Management System',
 		definition:
-			'Software used for creating, managing, and publishing digital content, often for websites or applications.',
+			'CMS manages digital content with security controls.\n\nPurpose: Enables secure content creation and management.\nDeployment: Implemented with access controls and security features.\nContext: Common in web applications requiring content security.',
 	},
 	{
 		acronym: 'COOP - Continuity of Operations Planning',
 		definition:
-			'A strategy to ensure essential functions and operations continue during and after a disaster.',
+			'COOP ensures critical operations continue during disruptions.\n\nPurpose: Maintains essential functions during and after incidents.\nDeployment: Documented plans with regular testing and updates.\nContext: Critical for organizational resilience and recovery.',
 	},
 	{
 		acronym: 'COPE - Corporate Owned, Personally Enabled',
 		definition:
-			'A mobile device deployment model where the organization owns the device but allows personal use.',
+			'COPE is a mobile device management strategy.\n\nPurpose: Balances security control with personal use flexibility.\nDeployment: Implemented through MDM systems and policies.\nContext: Alternative to BYOD in security-conscious organizations.',
 	},
 	{
 		acronym: 'CRC - Cyclical Redundancy Check',
 		definition:
-			'An error-detecting code used to check the integrity of data during transmission or storage.',
+			'CRC detects accidental changes to raw data.\n\nPurpose: Ensures data integrity during transmission or storage.\nDeployment: Implemented in network protocols and storage systems.\nContext: Basic error detection in data communications.',
 	},
 	{
 		acronym: 'CRL - Certificate Revocation List',
 		definition:
-			'A list of digital certificates that have been revoked by a Certificate Authority and are no longer valid.',
+			'CRL lists revoked digital certificates.\n\nPurpose: Identifies and blocks use of compromised certificates.\nDeployment: Published by CAs and checked during certificate validation.\nContext: Critical component of PKI and certificate management.',
 	},
 	{
 		acronym: 'CSO - Chief Security Officer',
 		definition:
-			"An executive responsible for an organization's physical and cybersecurity strategies and operations.",
+			'CSO leads organizational security strategy.\n\nPurpose: Ensures comprehensive security across physical and digital domains.\nDeployment: Executive position overseeing all security operations.\nContext: Key role in security leadership and governance.',
 	},
 	{
 		acronym: 'CSP - Cloud Service Provider',
 		definition:
-			'A company that offers cloud computing services such as storage, software, or infrastructure over the internet.',
+			'CSP delivers cloud computing services.\n\nPurpose: Provides scalable computing resources with security controls.\nDeployment: Offers IaaS, PaaS, or SaaS with security features.\nContext: Major component of modern IT infrastructure.',
 	},
 	{
 		acronym: 'CSR - Certificate Signing Request',
 		definition:
-			'A message sent to a Certificate Authority to request the issuance of a digital certificate.',
+			'CSR requests issuance of digital certificate.\n\nPurpose: Initiates secure certificate issuance process.\nDeployment: Generated during SSL/TLS certificate requests.\nContext: Essential in PKI and secure communications setup.',
 	},
 	{
 		acronym: 'CSRF - Cross-site Request Forgery',
 		definition:
-			'A web security vulnerability that tricks users into performing unwanted actions on a trusted website while authenticated.',
+			'CSRF is a web security vulnerability exploiting trust.\n\nPurpose: Attacks leverage authenticated user sessions.\nDeployment: Prevented through tokens and request validation.\nContext: Common web application security concern.',
 	},
 	{
 		acronym: 'CSU - Channel Service Unit',
 		definition:
-			'A device used to connect a digital circuit to a data terminal, ensuring compatibility and proper signal transmission.',
+			'CSU interfaces between digital equipment and transmission lines.\n\nPurpose: Ensures secure and proper signal transmission.\nDeployment: Installed at network boundaries and carrier connections.\nContext: Found in telecommunications infrastructure.',
 	},
 	{
 		acronym: 'CTM - Counter Mode',
 		definition:
-			'An encryption mode that turns a block cipher into a stream cipher, encrypting plaintext by XORing it with a counter value.',
+			'CTM is an encryption mode providing parallelization.\n\nPurpose: Enables efficient encryption of data blocks.\nDeployment: Used in high-performance encryption systems.\nContext: Found in secure communications requiring speed.',
 	},
 	{
 		acronym: 'CTO - Chief Technology Officer',
 		definition:
-			'An executive responsible for overseeing the development and dissemination of technology in an organization.',
+			'CTO leads technology strategy and innovation.\n\nPurpose: Ensures security in technology development and adoption.\nDeployment: Executive position working with security leadership.\nContext: Key role in secure technology implementation.',
 	},
 	{
 		acronym: 'CVE - Common Vulnerabilities and Exposures',
 		definition:
-			'A public database of known cybersecurity vulnerabilities used to identify and mitigate risks in software or systems.',
+			'CVE is a standardized system for identifying and tracking security vulnerabilities.\n\nPurpose: Provides unique identifiers for known vulnerabilities to facilitate sharing and remediation.\nDeployment: Used in vulnerability management systems, security advisories, and patch management.\nContext: Essential for vulnerability tracking, reporting, and coordinated response.',
 	},
 	{
 		acronym: 'CVSS - Common Vulnerability Scoring System',
 		definition:
-			'A standardized method for assessing the severity of cybersecurity vulnerabilities to prioritize remediation.',
+			'CVSS provides standardized vulnerability severity scores.\n\nPurpose: Enables consistent assessment and prioritization of vulnerabilities.\nDeployment: Used in vulnerability management tools and security reports.\nContext: Critical for risk assessment and remediation planning.',
 	},
 	{
 		acronym: 'CYOD - Choose Your Own Device',
 		definition:
-			'A mobile device policy allowing employees to select their device from a list of pre-approved options.',
+			'CYOD is a managed device program with user choice.\n\nPurpose: Balances user preference with organizational security control.\nDeployment: Implemented through MDM with pre-approved device list.\nContext: Alternative to BYOD offering better security control.',
 	},
 	{
 		acronym: 'DAC - Discretionary Access Control',
 		definition:
-			'A security model where access is determined by the resource owner, who decides which users can access specific resources.',
+			'DAC allows resource owners to control access permissions.\n\nPurpose: Provides flexible access control based on owner discretion.\nDeployment: Implemented in operating systems and file systems.\nContext: Common in commercial operating systems and applications.',
 	},
 	{
 		acronym: 'DBA - Database Administrator',
 		definition:
-			'A professional responsible for the maintenance, configuration, and security of database systems.',
+			'DBA manages database security and operations.\n\nPurpose: Ensures database security, integrity, and availability.\nDeployment: Works with security teams on database controls and monitoring.\nContext: Critical role in data security and compliance.',
 	},
 	{
 		acronym: 'DDoS - Distributed Denial of Service',
 		definition:
-			'An attack that overwhelms a network or server with excessive traffic from multiple sources, disrupting normal operations.',
+			'DDoS attacks use multiple sources to overwhelm targets.\n\nPurpose: Disrupts service availability through coordinated attacks.\nDeployment: Mitigated through DDoS protection services and network controls.\nContext: Common threat requiring specific defense strategies.',
 	},
 	{
 		acronym: 'DEP - Data Execution Prevention',
 		definition:
-			'A security feature that prevents the execution of code from non-executable memory regions, protecting against certain exploits.',
+			'DEP prevents code execution from non-executable memory.\n\nPurpose: Prevents certain types of memory exploitation attacks.\nDeployment: Implemented at OS level and supported by hardware.\nContext: Important protection against buffer overflow attacks.',
 	},
 	{
 		acronym: 'DES - Digital Encryption Standard',
 		definition:
-			'A symmetric-key encryption algorithm that was widely used for securing data but is now considered obsolete due to its small key size.',
+			'DES is a legacy symmetric encryption algorithm.\n\nPurpose: Provided data encryption (now considered insecure).\nDeployment: Largely replaced by AES, but still found in legacy systems.\nContext: Historical importance in encryption development.',
 	},
 	{
 		acronym: 'DHCP - Dynamic Host Configuration Protocol',
 		definition:
-			'A protocol that automatically assigns IP addresses and other network configurations to devices on a network.',
+			'DHCP automates IP address assignment and network configuration.\n\nPurpose: Enables automated network configuration while requiring security controls.\nDeployment: Implemented with DHCP snooping and authentication.\nContext: Essential network service requiring protection.',
 	},
 	{
 		acronym: 'DHE - Diffie-Hellman Ephemeral',
 		definition:
-			'A key exchange protocol that provides forward secrecy by using temporary, ephemeral keys for each session.',
+			'DHE enables secure key exchange with perfect forward secrecy.\n\nPurpose: Provides secure key exchange that protects past communications.\nDeployment: Used in TLS and other secure protocols.\nContext: Important for secure communications requiring forward secrecy.',
 	},
 	{
 		acronym: 'DKIM - DomainKeys Identified Mail',
 		definition:
-			'An email authentication method that uses cryptographic signatures to verify the sender and ensure message integrity.',
+			'DKIM authenticates email sender and message integrity.\n\nPurpose: Prevents email spoofing and verifies message authenticity.\nDeployment: Implemented through DNS records and email server configuration.\nContext: Part of modern email security infrastructure.',
 	},
 	{
 		acronym: 'DLL - Dynamic Link Library',
 		definition:
-			'A file that contains code and data used by multiple programs in Windows to perform common functions.',
+			'DLL contains shared code and data for multiple programs.\n\nPurpose: Enables code reuse while presenting security considerations.\nDeployment: Protected through DLL signing and secure loading practices.\nContext: Common attack vector requiring security controls.',
 	},
 	{
 		acronym: 'DLP - Data Loss Prevention',
 		definition:
-			'Technology that prevents sensitive data from leaving an organization through unauthorized channels.',
+			'DLP prevents unauthorized data exfiltration.\n\nPurpose: Protects sensitive data from unauthorized access and transfer.\nDeployment: Implemented at network, endpoint, and cloud levels.\nContext: Critical for data security and compliance.',
 	},
 	{
 		acronym: 'DMARC - Domain Message Authentication Reporting and Conformance',
 		definition:
-			'An email authentication protocol that helps prevent phishing and spoofing by validating email senders.',
+			'DMARC extends email authentication protocols.\n\nPurpose: Provides comprehensive email authentication and reporting.\nDeployment: Configured through DNS with SPF and DKIM.\nContext: Advanced email security standard.',
 	},
 	{
 		acronym: 'DNAT - Destination Network Address Translation',
 		definition:
-			'A type of NAT that modifies the destination address of incoming packets to redirect traffic to an internal network.',
+			'DNAT modifies destination addresses in packet headers.\n\nPurpose: Enables secure internal service access from external networks.\nDeployment: Configured on firewalls and security gateways.\nContext: Used in network security architecture.',
 	},
 	{
 		acronym: 'DNS - Domain Name System',
 		definition:
-			'A system that translates human-readable domain names into IP addresses to facilitate network communication.',
+			'DNS translates domain names to IP addresses.\n\nPurpose: Enables user-friendly network addressing while requiring security.\nDeployment: Secured through DNSSEC, filtering, and monitoring.\nContext: Critical internet infrastructure requiring protection.',
 	},
 	{
 		acronym: 'DoS - Denial of Service',
 		definition:
-			'An attack that disrupts the availability of a system or service by overwhelming it with traffic or requests.',
+			'DoS attacks disrupt service availability.\n\nPurpose: Attempts to make resources unavailable to legitimate users.\nDeployment: Mitigated through traffic analysis and filtering.\nContext: Common attack requiring specific defenses.',
 	},
 	{
 		acronym: 'DPO - Data Privacy Officer',
 		definition:
-			'A role responsible for overseeing data protection strategies and ensuring compliance with privacy regulations.',
+			'DPO oversees data privacy compliance and protection.\n\nPurpose: Ensures organizational compliance with privacy regulations.\nDeployment: Required by regulations like GDPR in many organizations.\nContext: Critical role in privacy and compliance.',
 	},
 	{
 		acronym: 'DRP - Disaster Recovery Plan',
 		definition:
-			'A set of procedures and tools designed to recover IT systems and data after a disaster or disruption.',
+			'DRP defines procedures for system recovery after disasters.\n\nPurpose: Ensures business continuity and data recovery capabilities.\nDeployment: Documented procedures with regular testing and updates.\nContext: Essential for business continuity and resilience.',
 	},
 	{
 		acronym: 'DSA - Digital Signature Algorithm',
 		definition:
-			'A standard for digital signatures that ensures the authenticity and integrity of electronic documents.',
+			'DSA creates and verifies digital signatures.\n\nPurpose: Provides authentication and non-repudiation for documents.\nDeployment: Implemented in PKI systems and security applications.\nContext: Used in secure document signing and verification.',
 	},
 	{
 		acronym: 'DSL - Digital Subscriber Line',
 		definition:
-			'A technology for high-speed internet access over traditional telephone lines.',
+			'DSL provides digital data transmission over telephone lines.\n\nPurpose: Enables broadband internet access requiring security controls.\nDeployment: Implemented with authentication and encryption.\nContext: Common internet access method needing protection.',
 	},
 	{
 		acronym: 'EAP - Extensible Authentication Protocol',
 		definition:
-			'A framework used in wireless networks to support various authentication methods, such as EAP-TLS or EAP-PEAP.',
+			'EAP provides a framework for various authentication methods.\n\nPurpose: Enables flexible, secure network authentication.\nDeployment: Used in wireless and network access security.\nContext: Foundation for secure network access control.',
 	},
 	{
 		acronym: 'ECB - Electronic Code Book',
 		definition:
-			'An encryption mode that encrypts each block of plaintext independently, making it less secure due to pattern repetition.',
+			'ECB is a basic block cipher mode of operation.\n\nPurpose: Provides basic encryption but with security limitations.\nDeployment: Generally avoided due to security weaknesses.\nContext: Teaching example of why advanced modes are needed.',
 	},
 	{
 		acronym: 'ECC - Elliptic Curve Cryptography',
 		definition:
-			'A cryptographic approach using elliptic curves to provide strong encryption with smaller key sizes.',
-	},
-	{
-		acronym: 'ECDHE - Elliptic Curve Diffie-Hellman Ephemeral',
-		definition:
-			'A variant of the Diffie-Hellman protocol using elliptic curves for secure key exchange with forward secrecy.',
+			'ECC uses elliptic curves for cryptographic operations.\n\nPurpose: Provides strong encryption with smaller key sizes.\nDeployment: Used in modern cryptographic systems and protocols.\nContext: Advanced cryptography for resource-constrained systems.',
 	},
 	{
 		acronym: 'ECDSA - Elliptic Curve Digital Signature Algorithm',
 		definition:
-			'A cryptographic algorithm used to generate digital signatures with elliptic curve technology.',
+			'ECDSA applies ECC to digital signatures.\n\nPurpose: Provides efficient digital signatures with strong security.\nDeployment: Used in TLS, cryptocurrency, and secure communications.\nContext: Modern alternative to traditional DSA.',
 	},
 	{
 		acronym: 'EDR - Endpoint Detection and Response',
 		definition:
-			'A security solution that monitors endpoints for malicious activities and provides tools for threat detection and response.',
+			'EDR provides advanced endpoint threat detection and response.\n\nPurpose: Monitors endpoints for threats and enables rapid incident response.\nDeployment: Installed on endpoints with centralized management console.\nContext: Critical in modern security architecture for threat detection and response.',
 	},
 	{
 		acronym: 'EFS - Encrypted File System',
 		definition:
-			'A feature of NTFS that allows files and directories to be encrypted to protect sensitive data.',
+			'EFS provides file-level encryption in Windows systems.\n\nPurpose: Protects sensitive files through transparent encryption.\nDeployment: Enabled per file/folder with recovery agent support.\nContext: Used for protecting sensitive data on Windows systems.',
 	},
 	{
 		acronym: 'ERP - Enterprise Resource Planning',
 		definition:
-			'Software that integrates and manages core business processes, such as finance, HR, and supply chain operations.',
+			'ERP systems integrate core business processes.\n\nPurpose: Centralizes business operations while requiring comprehensive security.\nDeployment: Implemented with role-based access and security controls.\nContext: Critical business systems requiring strong security measures.',
 	},
 	{
 		acronym: 'ESN - Electronic Serial Number',
 		definition:
-			'A unique identifier assigned to mobile devices for identification on cellular networks.',
+			'ESN uniquely identifies mobile devices.\n\nPurpose: Enables device authentication and tracking in mobile networks.\nDeployment: Embedded in mobile devices during manufacturing.\nContext: Used in mobile device security and management.',
 	},
 	{
-		acronym: 'ESP - Encapsulated Security Payload',
+		acronym: 'ESP - Encapsulating Security Payload',
 		definition:
-			'A protocol used in IPsec to provide confidentiality, integrity, and authentication for IP packets.',
+			'ESP provides encryption and authentication in IPsec.\n\nPurpose: Ensures confidentiality and integrity of IP packets.\nDeployment: Configured in IPsec implementations with encryption.\nContext: Core component of VPN and secure network communications.',
 	},
 	{
 		acronym: 'FACL - File System Access Control List',
 		definition:
-			'A list of permissions attached to a file or directory, specifying which users or groups can access the resource and what actions they can perform.',
+			'FACL provides granular file permissions.\n\nPurpose: Enables detailed access control for files and directories.\nDeployment: Configured at file system level with specific permissions.\nContext: Used in Unix/Linux systems for precise access control.',
 	},
 	{
 		acronym: 'FDE - Full Disk Encryption',
 		definition:
-			'A technology that encrypts all data on a storage device to protect it from unauthorized access.',
+			'FDE encrypts entire storage devices.\n\nPurpose: Protects all data on storage devices from unauthorized access.\nDeployment: Implemented through software or hardware encryption.\nContext: Essential for protecting data on mobile devices and laptops.',
 	},
 	{
-		acronym: 'FIM - File Integrity Management',
+		acronym: 'FIM - File Integrity Monitoring',
 		definition:
-			'A security process that ensures files are not tampered with or altered without authorization.',
+			'FIM tracks changes to critical files and systems.\n\nPurpose: Detects unauthorized modifications to important files.\nDeployment: Implemented through monitoring tools with baselines.\nContext: Critical for compliance and security monitoring.',
 	},
 	{
 		acronym: 'FPGA - Field Programmable Gate Array',
 		definition:
-			'An integrated circuit that can be programmed and reconfigured for specific tasks after manufacturing.',
+			'FPGA is a configurable integrated circuit.\n\nPurpose: Enables hardware-level security implementations.\nDeployment: Used in custom security hardware solutions.\nContext: Found in specialized security applications and devices.',
 	},
 	{
 		acronym: 'FRR - False Rejection Rate',
 		definition:
-			'A biometric security metric that measures how often legitimate users are incorrectly denied access.',
+			'FRR measures biometric authentication accuracy.\n\nPurpose: Quantifies legitimate users incorrectly rejected.\nDeployment: Used in biometric system configuration and testing.\nContext: Important metric in biometric security systems.',
 	},
 	{
 		acronym: 'FTP - File Transfer Protocol',
 		definition:
-			'A protocol used to transfer files between a client and a server over a network, lacking encryption by default.',
+			'FTP transfers files between systems.\n\nPurpose: Enables file transfer while requiring security considerations.\nDeployment: Should be replaced by SFTP/FTPS for security.\nContext: Legacy protocol requiring secure alternatives.',
 	},
 	{
-		acronym: 'FTPS - Secured File Transfer Protocol',
+		acronym: 'FTPS - File Transfer Protocol Secure',
 		definition:
-			'An extension of FTP that adds support for SSL/TLS encryption to secure file transfers.',
+			'FTPS adds SSL/TLS security to FTP.\n\nPurpose: Provides secure file transfer with encryption.\nDeployment: Implemented with SSL/TLS certificates and authentication.\nContext: Secure alternative to standard FTP.',
 	},
 	{
 		acronym: 'GCM - Galois Counter Mode',
 		definition:
-			'A cryptographic mode that provides both encryption and authentication for secure data transmission.',
+			'GCM provides authenticated encryption.\n\nPurpose: Combines encryption and authentication efficiently.\nDeployment: Used in TLS and other secure protocols.\nContext: Modern encryption mode for secure communications.',
 	},
 	{
 		acronym: 'GDPR - General Data Protection Regulation',
 		definition:
-			'A comprehensive data protection law in the European Union that governs the collection, processing, and storage of personal data.',
+			'GDPR enforces data protection and privacy in EU.\n\nPurpose: Protects individual privacy rights and data.\nDeployment: Requires specific security and privacy controls.\nContext: Major privacy regulation affecting global operations.',
 	},
 	{
-		acronym: 'GPG - Gnu Privacy Guard',
+		acronym: 'GPG - GNU Privacy Guard',
 		definition:
-			'An encryption software that provides tools for secure communication and data encryption, based on the OpenPGP standard.',
+			'GPG implements OpenPGP standard for encryption.\n\nPurpose: Provides encryption and digital signatures.\nDeployment: Used for secure email and file encryption.\nContext: Open-source tool for cryptographic operations.',
 	},
 	{
 		acronym: 'GPO - Group Policy Object',
 		definition:
-			'A feature in Windows that allows administrators to manage and configure user and computer settings across a network.',
+			'GPO manages Windows domain security policies.\n\nPurpose: Enables centralized security policy management.\nDeployment: Configured in Active Directory environments.\nContext: Critical for Windows domain security management.',
 	},
 	{
 		acronym: 'GPS - Global Positioning System',
 		definition:
-			'A satellite-based navigation system used for determining geographic locations.',
+			'GPS provides location and timing information.\n\nPurpose: Enables location-based security services.\nDeployment: Used in device tracking and geofencing.\nContext: Component in mobile device security.',
 	},
 	{
 		acronym: 'GPU - Graphics Processing Unit',
 		definition:
-			'A specialized processor designed for rendering images, animations, and video.',
+			'GPU processes graphics and parallel computations.\n\nPurpose: Can be used for cryptographic operations or attacks.\nDeployment: Considered in cryptographic system design.\nContext: Relevant for cryptographic processing and attacks.',
 	},
 	{
 		acronym: 'GRE - Generic Routing Encapsulation',
 		definition:
-			'A tunneling protocol used to encapsulate a wide variety of network layer protocols inside virtual point-to-point links.',
+			'GRE tunnels network protocols.\n\nPurpose: Enables secure tunneling of various protocols.\nDeployment: Configured on routers and security gateways.\nContext: Used in VPN and secure networking.',
 	},
 	{
 		acronym: 'HA - High Availability',
 		definition:
-			'A system design approach ensuring a high level of operational performance and uptime.',
+			'HA ensures continuous system operation.\n\nPurpose: Maintains service availability through redundancy.\nDeployment: Implemented through clustered systems and failover.\nContext: Critical for maintaining security service uptime.',
 	},
 	{
 		acronym: 'HDD - Hard Disk Drive',
 		definition:
-			'A traditional data storage device that uses spinning magnetic disks to read and write data.',
+			'HDD stores data magnetically.\n\nPurpose: Provides data storage requiring security controls.\nDeployment: Protected through encryption and secure erasure.\nContext: Common storage requiring security measures.',
 	},
 	{
 		acronym: 'HIDS - Host-based Intrusion Detection System',
 		definition:
-			'A system that monitors and analyzes activities on a specific host for malicious or unauthorized behavior.',
+			'HIDS monitors host systems for threats.\n\nPurpose: Detects malicious activities on individual hosts.\nDeployment: Installed on critical servers and systems.\nContext: Important component of endpoint security.',
 	},
 	{
 		acronym: 'HIPS - Host-based Intrusion Prevention System',
 		definition:
-			'A system that proactively blocks detected threats on a host before they can execute.',
+			'HIPS actively prevents host-based attacks.\n\nPurpose: Blocks malicious activities on individual hosts.\nDeployment: Installed with active prevention rules.\nContext: Advanced endpoint protection technology.',
 	},
 	{
-		acronym: 'HMAC - Hashed Message Authentication Code',
+		acronym: 'HMAC - Hash-based Message Authentication Code',
 		definition:
-			'A cryptographic technique that ensures the integrity and authenticity of a message using a secret key and a hash function.',
+			"HMAC verifies message integrity and authenticity.\n\nPurpose: Ensures messages haven't been tampered with.\nDeployment: Used in secure communications protocols.\nContext: Critical for secure data transmission.",
 	},
 	{
-		acronym: 'HOTP - HMAC-based One-time Password',
+		acronym: 'HOTP - HMAC-based One-Time Password',
 		definition:
-			'A one-time password algorithm that generates a password based on a secret key and a counter.',
+			'HOTP generates secure one-time passwords.\n\nPurpose: Provides strong authentication through changing passwords.\nDeployment: Implemented in multi-factor authentication systems.\nContext: Used in secure access control systems.',
 	},
 	{
 		acronym: 'HSM - Hardware Security Module',
 		definition:
-			'A physical device that securely manages, processes, and stores cryptographic keys.',
+			'HSM is a physical device for secure cryptographic operations.\n\nPurpose: Provides secure key storage and cryptographic operations.\nDeployment: Implemented in data centers and security infrastructure.\nContext: Critical for protecting cryptographic keys and operations.',
 	},
 	{
 		acronym: 'HTML - Hypertext Markup Language',
 		definition:
-			'The standard language used to create and structure content on the web.',
+			'HTML structures web content with security implications.\n\nPurpose: Delivers web content while requiring security controls.\nDeployment: Secured against XSS and injection attacks.\nContext: Foundation of web applications requiring security measures.',
 	},
 	{
 		acronym: 'HTTP - Hypertext Transfer Protocol',
 		definition:
-			'A protocol used for transmitting hypertext documents over the web, facilitating communication between servers and browsers.',
+			'HTTP enables web communication.\n\nPurpose: Facilitates web traffic while requiring security controls.\nDeployment: Should be secured with TLS (HTTPS).\nContext: Basic web protocol requiring security enhancement.',
 	},
 	{
 		acronym: 'HTTPS - Hypertext Transfer Protocol Secure',
 		definition:
-			'A secure version of HTTP that uses encryption protocols such as SSL/TLS to protect data in transit.',
+			'HTTPS encrypts web communications.\n\nPurpose: Protects web traffic through encryption and authentication.\nDeployment: Implemented with TLS certificates and proper configuration.\nContext: Standard for secure web communications.',
 	},
 	{
 		acronym: 'HVAC - Heating, Ventilation, and Air Conditioning',
 		definition:
-			'A system used to regulate the temperature, humidity, and air quality in a building.',
+			'HVAC systems affect physical security and operations.\n\nPurpose: Maintains environmental conditions while presenting security concerns.\nDeployment: Secured against cyber-physical attacks.\nContext: Critical infrastructure requiring protection.',
 	},
 	{
 		acronym: 'IaaS - Infrastructure as a Service',
 		definition:
-			'A cloud computing model that provides virtualized computing resources over the internet.',
+			'IaaS provides virtualized computing infrastructure.\n\nPurpose: Delivers scalable infrastructure while requiring security controls.\nDeployment: Implemented with cloud security controls and monitoring.\nContext: Cloud service model with shared security responsibility.',
 	},
 	{
 		acronym: 'IaC - Infrastructure as Code',
 		definition:
-			'A practice of managing and provisioning infrastructure through code rather than manual processes.',
+			'IaC automates infrastructure deployment.\n\nPurpose: Ensures consistent, secure infrastructure deployment.\nDeployment: Implemented with security controls in code.\nContext: Modern approach to secure infrastructure management.',
 	},
 	{
 		acronym: 'IAM - Identity and Access Management',
 		definition:
-			'A framework of policies and technologies ensuring the right individuals access the right resources at the right times.',
+			'IAM controls access to resources.\n\nPurpose: Manages identities and access rights securely.\nDeployment: Implemented through directory services and access control systems.\nContext: Fundamental to organizational security.',
 	},
 	{
 		acronym: 'ICMP - Internet Control Message Protocol',
 		definition:
-			'A network protocol used for error reporting and operational information, often associated with tools like ping.',
+			'ICMP manages network diagnostics and errors.\n\nPurpose: Enables network troubleshooting while requiring security controls.\nDeployment: Often restricted at firewalls due to potential abuse.\nContext: Network protocol requiring security consideration.',
 	},
 	{
 		acronym: 'ICS - Industrial Control Systems',
 		definition:
-			'A system that manages industrial processes such as manufacturing, power generation, and transportation.',
+			'ICS manages industrial processes.\n\nPurpose: Controls industrial operations while requiring specialized security.\nDeployment: Protected through air-gapping and specific security controls.\nContext: Critical infrastructure requiring robust protection.',
 	},
 	{
 		acronym: 'IDEA - International Data Encryption Algorithm',
 		definition:
-			'A symmetric encryption algorithm used for secure data transmission.',
+			'IDEA is a symmetric block cipher.\n\nPurpose: Provides data encryption with historical significance.\nDeployment: Used in legacy systems, largely replaced by AES.\nContext: Historical encryption algorithm with limited modern use.',
 	},
 	{
 		acronym: 'IDF - Intermediate Distribution Frame',
 		definition:
-			'A cable rack that interconnects and manages telecommunication wiring between the Main Distribution Frame (MDF) and endpoints.',
+			'IDF connects telecommunications equipment.\n\nPurpose: Provides network connectivity while requiring physical security.\nDeployment: Secured in locked rooms with access controls.\nContext: Network infrastructure requiring protection.',
 	},
 	{
 		acronym: 'IdP - Identity Provider',
 		definition:
-			'A system that creates, maintains, and manages identity information while providing authentication services.',
+			'IdP manages authentication and identity information.\n\nPurpose: Centralizes identity management and authentication.\nDeployment: Implemented for SSO and federated identity.\nContext: Critical for modern authentication systems.',
 	},
 	{
 		acronym: 'IDS - Intrusion Detection System',
 		definition:
-			'A system designed to monitor and analyze network or system activity for malicious behavior or policy violations.',
+			'IDS monitors for security threats.\n\nPurpose: Detects potential security incidents and attacks.\nDeployment: Implemented at network and host levels.\nContext: Essential security monitoring tool.',
 	},
 	{
 		acronym: 'IEEE - Institute of Electrical and Electronics Engineers',
 		definition:
-			'An organization that develops standards for electronic and electrical technologies, including networking and communications.',
+			'IEEE develops technical standards.\n\nPurpose: Creates standards for secure technology implementation.\nDeployment: Standards implemented in various technologies.\nContext: Important for security standardization.',
 	},
 	{
 		acronym: 'IKE - Internet Key Exchange',
 		definition:
-			'A protocol used in IPsec for negotiating, establishing, and managing secure communication sessions.',
+			'IKE manages security associations and keys.\n\nPurpose: Establishes secure communication channels in IPsec.\nDeployment: Implemented in VPN and secure networking.\nContext: Critical for VPN and secure communications.',
 	},
 	{
 		acronym: 'IM - Instant Messaging',
 		definition:
-			'A form of communication over the internet that allows real-time text exchanges between users.',
+			'IM enables real-time communication.\n\nPurpose: Provides communication while requiring security controls.\nDeployment: Secured through encryption and authentication.\nContext: Common communication tool requiring protection.',
 	},
 	{
 		acronym: 'IMAP - Internet Message Access Protocol',
 		definition:
-			'A protocol for retrieving email messages from a server, allowing synchronization across multiple devices.',
+			'IMAP enables email access and management.\n\nPurpose: Provides email access while requiring security measures.\nDeployment: Secured with TLS and authentication.\nContext: Email protocol requiring protection.',
 	},
 	{
 		acronym: 'IoC - Indicators of Compromise',
 		definition:
-			'Artifacts or evidence found on a network or system indicating a potential breach or malicious activity.',
+			'IoC identifies security incidents.\n\nPurpose: Helps detect and respond to security incidents.\nDeployment: Used in security monitoring and incident response.\nContext: Critical for threat detection and response.',
 	},
 	{
 		acronym: 'IoT - Internet of Things',
 		definition:
-			'A network of interconnected devices that communicate and exchange data, often used in smart homes and industries.',
+			'IoT connects everyday devices to networks.\n\nPurpose: Enables device connectivity while requiring security.\nDeployment: Protected through network segmentation and security controls.\nContext: Growing attack surface requiring protection.',
 	},
 	{
 		acronym: 'IP - Internet Protocol',
 		definition:
-			'A set of rules governing the format of data sent over the internet or a local network.',
+			'IP routes data across networks.\n\nPurpose: Enables network communication while requiring security.\nDeployment: Secured through various network security controls.\nContext: Foundation of internet requiring protection.',
 	},
 	{
 		acronym: 'IPS - Intrusion Prevention System',
 		definition:
-			'A system that monitors network traffic for malicious activities and blocks identified threats in real-time.',
+			'IPS blocks detected security threats.\n\nPurpose: Actively prevents detected security incidents.\nDeployment: Implemented inline with traffic flow.\nContext: Active security defense system.',
 	},
 	{
 		acronym: 'IPSec - Internet Protocol Security',
 		definition:
-			'A suite of protocols designed to secure internet communication by authenticating and encrypting each IP packet.',
+			'IPSec secures IP communications.\n\nPurpose: Provides encryption and authentication for IP traffic.\nDeployment: Implemented in VPNs and secure networking.\nContext: Standard for network layer security.',
 	},
 	{
 		acronym: 'IR - Incident Response',
 		definition:
-			'A process for detecting, investigating, and mitigating cybersecurity incidents to minimize impact.',
+			'IR manages security incidents.\n\nPurpose: Provides organized approach to security incidents.\nDeployment: Implemented through plans and trained teams.\nContext: Critical for security incident management.',
 	},
 	{
 		acronym: 'IRC - Internet Relay Chat',
 		definition:
-			'A protocol that allows text-based communication in real-time, often used in group discussions.',
+			'IRC enables group text communication.\n\nPurpose: Provides chat functionality while requiring security.\nDeployment: Secured through encryption and authentication.\nContext: Legacy chat protocol requiring protection.',
 	},
 	{
 		acronym: 'IRP - Incident Response Plan',
 		definition:
-			'A documented strategy for handling cybersecurity incidents effectively to minimize damage.',
+			'IRP defines incident handling procedures.\n\nPurpose: Provides structured approach to security incidents.\nDeployment: Documented and tested with regular updates.\nContext: Essential for effective incident management.',
 	},
 	{
 		acronym: 'ISO - International Standards Organization',
 		definition:
-			'An international organization that develops and publishes standards for technology, manufacturing, and other industries.',
+			'ISO develops international standards.\n\nPurpose: Creates standards for security implementation.\nDeployment: Standards implemented across organizations.\nContext: Key for security standardization and compliance.',
 	},
 	{
 		acronym: 'ISP - Internet Service Provider',
 		definition:
-			'A company that provides individuals and businesses with access to the internet.',
+			'ISP provides internet connectivity.\n\nPurpose: Delivers internet access with security considerations.\nDeployment: Implements network security controls.\nContext: Critical infrastructure requiring security measures.',
 	},
 	{
 		acronym: 'ISSO - Information Systems Security Officer',
 		definition:
-			'A professional responsible for implementing and managing an organization’s cybersecurity policies and systems.',
+			'ISSO manages system security.\n\nPurpose: Ensures system-level security compliance.\nDeployment: Assigned to specific systems or areas.\nContext: Key role in system security management.',
 	},
 	{
 		acronym: 'IV - Initialization Vector',
 		definition:
-			'A random value used in encryption to ensure that identical plaintext results in different ciphertext.',
+			'IV provides randomness in encryption.\n\nPurpose: Ensures unique encryption results for identical data.\nDeployment: Used in encryption algorithms and protocols.\nContext: Critical for secure encryption implementation.',
 	},
 	{
 		acronym: 'KDC - Key Distribution Center',
 		definition:
-			'A service that provides cryptographic keys for secure communication in systems like Kerberos.',
+			'KDC manages cryptographic keys.\n\nPurpose: Provides secure key distribution in authentication.\nDeployment: Central component in Kerberos authentication.\nContext: Critical for secure authentication systems.',
 	},
 	{
 		acronym: 'KEK - Key Encryption Key',
 		definition:
-			'A key used to encrypt and protect other cryptographic keys, ensuring their secure storage and transmission.',
+			'KEK protects other encryption keys.\n\nPurpose: Secures storage and transmission of other keys.\nDeployment: Used in key management systems.\nContext: Important for key hierarchy security.',
 	},
 	{
 		acronym: 'L2TP - Layer 2 Tunneling Protocol',
 		definition:
-			'A VPN tunneling protocol often used with IPSec to provide secure remote access.',
+			'L2TP creates network tunnels.\n\nPurpose: Enables VPN connectivity with IPSec security.\nDeployment: Implemented in VPN solutions.\nContext: VPN protocol requiring additional security.',
 	},
 	{
 		acronym: 'LAN - Local Area Network',
 		definition:
-			'A network that connects devices within a limited area, such as a home, school, or office building.',
+			'LAN connects local devices.\n\nPurpose: Provides local connectivity requiring security.\nDeployment: Secured through various network controls.\nContext: Basic network requiring protection.',
 	},
 	{
 		acronym: 'LDAP - Lightweight Directory Access Protocol',
 		definition:
-			'A protocol used to access and maintain distributed directory information, such as user credentials and network resource locations.',
+			'LDAP manages directory information.\n\nPurpose: Provides directory services with authentication.\nDeployment: Implemented with security controls and encryption.\nContext: Critical for enterprise authentication.',
 	},
 	{
 		acronym: 'LEAP - Lightweight Extensible Authentication Protocol',
 		definition:
-			'A wireless authentication protocol developed by Cisco, now considered outdated due to security vulnerabilities.',
+			'LEAP is a wireless authentication protocol.\n\nPurpose: Provides wireless authentication (now considered insecure).\nDeployment: Legacy protocol replaced by more secure options.\nContext: Historical example of deprecated security.',
 	},
 	{
 		acronym: 'MaaS - Monitoring as a Service',
 		definition:
-			'A cloud-based model for monitoring IT infrastructure and applications, providing real-time insights and alerts.',
+			'MaaS provides cloud-based monitoring.\n\nPurpose: Enables security monitoring and alerting.\nDeployment: Implemented through cloud service providers.\nContext: Modern approach to security monitoring.',
 	},
 	{
 		acronym: 'MAC - Mandatory Access Control',
 		definition:
-			'A security model where access permissions are determined by a central authority based on classifications.',
+			'MAC enforces system-defined access control.\n\nPurpose: Provides strict, system-enforced access control.\nDeployment: Implemented in high-security systems.\nContext: Strong access control mechanism.',
 	},
 	{
 		acronym: 'MAC - Media Access Control',
 		definition:
-			'A unique identifier assigned to network interfaces for communication on the physical network segment.',
+			'MAC uniquely identifies network interfaces.\n\nPurpose: Enables device identification on networks.\nDeployment: Used in network security controls.\nContext: Important for network security.',
 	},
 	{
 		acronym: 'MAC - Message Authentication Code',
 		definition:
-			'A cryptographic code that verifies the integrity and authenticity of a message.',
+			'MAC verifies message integrity.\n\nPurpose: Ensures message authenticity and integrity.\nDeployment: Used in secure communications protocols.\nContext: Critical for secure messaging.',
 	},
 	{
 		acronym: 'MAN - Metropolitan Area Network',
 		definition:
-			'A network that connects devices across a city or large campus, larger than a LAN but smaller than a WAN.',
+			'MAN connects city-wide networks.\n\nPurpose: Provides regional connectivity requiring security.\nDeployment: Secured through various network controls.\nContext: Large network requiring protection.',
 	},
 	{
 		acronym: 'MBR - Master Boot Record',
 		definition:
-			'A special type of boot sector at the beginning of storage devices that contains information about disk partitions and a boot loader.',
+			'MBR contains boot and partition information.\n\nPurpose: Enables system boot while requiring protection.\nDeployment: Secured against boot sector malware.\nContext: Critical system component requiring security.',
 	},
 	{
 		acronym: 'MD5 - Message Digest 5',
 		definition:
-			'A cryptographic hash function used to verify data integrity, though considered insecure due to vulnerabilities.',
+			'MD5 is a cryptographic hash function.\n\nPurpose: Creates message digests (now considered insecure).\nDeployment: Legacy hash function replaced by secure alternatives.\nContext: Example of deprecated cryptographic algorithm.',
 	},
 	{
 		acronym: 'MDF - Main Distribution Frame',
 		definition:
-			'A physical frame used to connect and manage telecommunication cables in a network.',
+			'MDF centralizes telecommunications connections.\n\nPurpose: Provides central connection point requiring security.\nDeployment: Secured through physical and access controls.\nContext: Critical infrastructure requiring protection.',
 	},
 	{
 		acronym: 'MDM - Mobile Device Management',
 		definition:
-			'A software solution used to manage and secure mobile devices within an organization.',
+			'MDM controls mobile device security.\n\nPurpose: Manages security of organizational mobile devices.\nDeployment: Implemented through MDM platforms and policies.\nContext: Essential for mobile device security.',
 	},
 	{
-		acronym: 'MFA - Multifactor Authentication',
+		acronym: 'MFA - Multi-Factor Authentication',
 		definition:
-			'A security mechanism requiring multiple forms of verification, such as passwords, biometrics, or hardware tokens.',
+			'MFA requires multiple authentication factors.\n\nPurpose: Strengthens authentication through multiple verifications.\nDeployment: Implemented using various authentication methods.\nContext: Critical modern security control.',
 	},
 	{
-		acronym: 'MFD - Multifunction Device',
+		acronym: 'MFD - Multi-Function Device',
 		definition:
-			'An office device that combines functions such as printing, scanning, copying, and faxing.',
+			'MFD combines multiple office functions.\n\nPurpose: Provides multiple services requiring security controls.\nDeployment: Secured through access controls and encryption.\nContext: Common office equipment requiring protection.',
 	},
 	{
-		acronym: 'MFP - Multifunction Printer',
+		acronym: 'MFP - Multi-Function Printer',
 		definition:
-			'A printer that also offers additional capabilities like scanning, copying, and faxing.',
+			'MFP combines printing with other functions.\n\nPurpose: Provides multiple services requiring security.\nDeployment: Protected through access controls and encryption.\nContext: Office equipment requiring security measures.',
 	},
 	{
 		acronym: 'ML - Machine Learning',
 		definition:
-			'A subset of artificial intelligence focused on building systems that learn from and adapt to data.',
+			'ML enables automated pattern recognition.\n\nPurpose: Enhances security through automated analysis.\nDeployment: Implemented in security tools and monitoring.\nContext: Advanced technology for security analytics.',
 	},
 	{
 		acronym: 'MMS - Multimedia Message Service',
 		definition:
-			'A messaging service that enables the transmission of multimedia content such as images, audio, and video.',
+			'MMS enables rich mobile messaging.\n\nPurpose: Provides multimedia messaging requiring security.\nDeployment: Secured through mobile network controls.\nContext: Mobile service requiring protection.',
 	},
 	{
 		acronym: 'MOA - Memorandum of Agreement',
 		definition:
-			'A formal document outlining the terms and details of a partnership or agreement between parties.',
+			'MOA formally defines security responsibilities between parties.\n\nPurpose: Establishes binding security obligations and requirements.\nDeployment: Documented and signed before sharing sensitive resources.\nContext: Critical for multi-party security arrangements.',
 	},
 	{
 		acronym: 'MOU - Memorandum of Understanding',
 		definition:
-			'A non-binding agreement that outlines the intentions and roles of parties in a collaboration.',
+			'MOU outlines intended security collaboration.\n\nPurpose: Documents non-binding security arrangements and intentions.\nDeployment: Used in initial stages of security partnerships.\nContext: Precursor to formal security agreements.',
 	},
 	{
 		acronym: 'MPLS - Multi-protocol Label Switching',
 		definition:
-			'A routing technique in high-performance telecommunications networks that directs data based on short path labels.',
+			'MPLS directs data through network paths.\n\nPurpose: Enables efficient, secure data routing in networks.\nDeployment: Implemented in service provider networks with security controls.\nContext: Enterprise networking technology requiring protection.',
 	},
 	{
 		acronym: 'MSA - Master Service Agreement',
 		definition:
-			'A contract that defines the terms and conditions for future agreements between two parties.',
+			'MSA defines long-term service relationships.\n\nPurpose: Establishes security requirements for ongoing services.\nDeployment: Negotiated with security provisions and controls.\nContext: Foundation for secure service relationships.',
 	},
 	{
 		acronym: 'MSCHAP - Microsoft Challenge Handshake Authentication Protocol',
 		definition:
-			'An authentication protocol used for validating user credentials in Microsoft networks.',
+			'MSCHAP authenticates users in Microsoft networks.\n\nPurpose: Provides secure authentication for network access.\nDeployment: Used in Windows domains and VPN services.\nContext: Microsoft-specific authentication protocol.',
 	},
 	{
 		acronym: 'MSP - Managed Service Provider',
 		definition:
-			"A third-party company that remotely manages a customer's IT infrastructure and end-user systems.",
+			'MSP manages IT services and security.\n\nPurpose: Provides outsourced IT and security management.\nDeployment: Operates under security agreements and standards.\nContext: Third-party security service provider.',
 	},
 	{
 		acronym: 'MSSP - Managed Security Service Provider',
 		definition:
-			'A company that provides outsourced monitoring and management of security systems and devices.',
+			'MSSP provides specialized security services.\n\nPurpose: Delivers dedicated security monitoring and management.\nDeployment: Operates security operations centers and tools.\nContext: Specialized security service provider.',
 	},
 	{
 		acronym: 'MTBF - Mean Time Between Failures',
 		definition:
-			'A reliability metric that measures the average time between failures of a system or component.',
+			'MTBF measures system reliability.\n\nPurpose: Quantifies system stability and availability.\nDeployment: Used in system design and maintenance planning.\nContext: Important for security system reliability.',
 	},
 	{
 		acronym: 'MTTF - Mean Time to Failure',
 		definition:
-			'A metric that estimates the average time until a system or component fails.',
+			'MTTF predicts system failure timing.\n\nPurpose: Helps plan security system maintenance.\nDeployment: Used in security infrastructure planning.\nContext: Critical for security system maintenance.',
 	},
 	{
 		acronym: 'MTTR - Mean Time to Recover',
 		definition:
-			'The average time it takes to restore a system to normal operation after a failure.',
+			'MTTR measures system recovery speed.\n\nPurpose: Quantifies incident recovery capabilities.\nDeployment: Used in disaster recovery planning.\nContext: Key metric for incident response.',
 	},
 	{
 		acronym: 'MTU - Maximum Transmission Unit',
 		definition:
-			'The largest size of a packet or frame that can be transmitted in a network.',
+			'MTU defines largest packet size.\n\nPurpose: Optimizes network performance and security.\nDeployment: Configured in network devices and security tools.\nContext: Network parameter affecting security.',
 	},
 	{
 		acronym: 'NAC - Network Access Control',
 		definition:
-			'A security solution that enforces policies to manage access to network resources based on identity and compliance.',
+			'NAC enforces network connection security.\n\nPurpose: Controls device access to networks based on security policy.\nDeployment: Implemented through NAC platforms and policies.\nContext: Critical for secure network access.',
 	},
 	{
 		acronym: 'NAT - Network Address Translation',
 		definition:
-			'A method used to remap private IP addresses into a single public IP address for internet communication.',
+			'NAT maps private to public IP addresses.\n\nPurpose: Provides address privacy and conservation.\nDeployment: Configured on firewalls and routers.\nContext: Basic network security mechanism.',
 	},
 	{
 		acronym: 'NDA - Non-disclosure Agreement',
 		definition:
-			'A legal contract that protects sensitive or proprietary information from being disclosed to unauthorized parties.',
+			'NDA protects sensitive information.\n\nPurpose: Legally binds parties to maintain confidentiality.\nDeployment: Signed before sharing sensitive information.\nContext: Legal security control measure.',
 	},
 	{
 		acronym: 'NFC - Near Field Communication',
 		definition:
-			'A short-range wireless communication technology used for tasks like contactless payments and device pairing.',
+			'NFC enables short-range wireless communication.\n\nPurpose: Provides secure short-range data exchange.\nDeployment: Used in mobile payments and access control.\nContext: Proximity-based security technology.',
 	},
 	{
 		acronym: 'NGFW - Next-generation Firewall',
 		definition:
-			'An advanced firewall that includes features such as deep packet inspection, intrusion prevention, and application control.',
+			'NGFW provides advanced network protection.\n\nPurpose: Combines traditional firewall with advanced security features.\nDeployment: Implemented at network boundaries with deep inspection.\nContext: Modern network security appliance.',
 	},
 	{
 		acronym: 'NIDS - Network-based Intrusion Detection System',
 		definition:
-			'A system that monitors and analyzes network traffic for malicious activities or violations of policies.',
+			'NIDS monitors network traffic for threats.\n\nPurpose: Detects network-based attacks and anomalies.\nDeployment: Monitors network segments through sensors.\nContext: Critical network security monitoring tool.',
 	},
 	{
 		acronym: 'NIPS - Network-based Intrusion Prevention System',
 		definition:
-			'A system that actively blocks detected threats by analyzing and filtering network traffic in real-time.',
+			'NIPS blocks network-based attacks.\n\nPurpose: Actively prevents detected network attacks.\nDeployment: Inline deployment on network segments.\nContext: Active network defense system.',
 	},
 	{
 		acronym: 'NIST - National Institute of Standards & Technology',
 		definition:
-			'A U.S. government agency that develops cybersecurity standards, guidelines, and best practices.',
+			'NIST develops security standards.\n\nPurpose: Provides authoritative security guidance and standards.\nDeployment: Standards implemented across organizations.\nContext: Key source of security best practices.',
 	},
 	{
 		acronym: 'NTFS - New Technology File System',
 		definition:
-			'A file system used by Windows operating systems that supports large files, file compression, and access control.',
+			'NTFS provides secure file system features.\n\nPurpose: Enables file-level security and encryption.\nDeployment: Standard in Windows systems with security features.\nContext: Secure Windows file system.',
 	},
 	{
 		acronym: 'NTLM - New Technology LAN Manager',
 		definition:
-			'A suite of Microsoft security protocols used for authentication and maintaining the integrity of communication.',
+			'NTLM authenticates in Windows networks.\n\nPurpose: Provides Windows authentication protocol.\nDeployment: Legacy protocol still used in some environments.\nContext: Windows authentication mechanism.',
 	},
 	{
 		acronym: 'NTP - Network Time Protocol',
 		definition:
-			'A protocol used to synchronize the clocks of devices across a network to a standard time source.',
+			'NTP synchronizes system time.\n\nPurpose: Ensures accurate timing for security functions.\nDeployment: Implemented with secure NTP servers.\nContext: Critical for security logging and certificates.',
 	},
 	{
 		acronym: 'OAUTH - Open Authorization',
 		definition:
-			'An open standard for token-based authentication that enables secure access to resources without sharing credentials.',
+			'OAUTH enables secure authorization.\n\nPurpose: Provides secure delegation of resource access.\nDeployment: Implemented in web and mobile applications.\nContext: Standard for API security.',
 	},
 	{
 		acronym: 'OCSP - Online Certificate Status Protocol',
 		definition:
-			'A protocol used to determine the revocation status of digital certificates in real-time.',
+			'OCSP verifies certificate validity.\n\nPurpose: Checks digital certificate revocation status.\nDeployment: Used in PKI environments for real-time checks.\nContext: Critical for certificate validation.',
 	},
 	{
 		acronym: 'OID - Object Identifier',
 		definition:
-			'A globally unique identifier used to name objects in a hierarchical structure, often used in security certificates.',
+			'OID uniquely identifies objects globally.\n\nPurpose: Provides unique identification in security contexts.\nDeployment: Used in certificates and security protocols.\nContext: Important for PKI and security standards.',
 	},
 	{
 		acronym: 'OS - Operating System',
 		definition:
-			'Software that manages hardware resources and provides services for computer programs.',
+			'OS manages hardware and software resources.\n\nPurpose: Provides secure platform for applications and services.\nDeployment: Hardened according to security best practices.\nContext: Foundation of system security.',
 	},
 	{
 		acronym: 'OSINT - Open-source Intelligence',
 		definition:
-			'The collection and analysis of publicly available information to gather intelligence for cybersecurity or investigative purposes.',
+			'OSINT gathers intelligence from public sources.\n\nPurpose: Collects security information from public data.\nDeployment: Used in threat intelligence and investigation.\nContext: Important for threat assessment and research.',
 	},
 	{
 		acronym: 'OSPF - Open Shortest Path First',
 		definition:
-			'A routing protocol used in IP networks to determine the most efficient path for data transmission.',
+			'OSPF routes network traffic efficiently.\n\nPurpose: Enables secure and efficient network routing.\nDeployment: Implemented with authentication and encryption.\nContext: Enterprise routing protocol requiring security.',
 	},
 	{
 		acronym: 'OT - Operational Technology',
 		definition:
-			'Hardware and software systems used to monitor and control industrial processes and infrastructure.',
+			'OT controls industrial processes.\n\nPurpose: Manages industrial systems with security requirements.\nDeployment: Protected through specialized security controls.\nContext: Critical infrastructure technology.',
 	},
 	{
 		acronym: 'OTA - Over the Air',
 		definition:
-			'A method of wirelessly delivering updates or patches to devices, commonly used in mobile and IoT devices.',
+			'OTA enables wireless updates.\n\nPurpose: Provides secure remote system updates.\nDeployment: Implemented with signing and verification.\nContext: Important for mobile and IoT security.',
 	},
 	{
 		acronym: 'OVAL - Open Vulnerability Assessment Language',
 		definition:
-			'A standard for assessing and reporting the security vulnerabilities of computer systems.',
+			'OVAL standardizes vulnerability assessment.\n\nPurpose: Enables consistent vulnerability testing and reporting.\nDeployment: Used in security assessment tools.\nContext: Standard for vulnerability management.',
 	},
 	{
 		acronym: 'P12 - PKCS #12',
 		definition:
-			'A file format used to store and transport cryptographic keys and certificates securely.',
+			'P12 stores cryptographic objects.\n\nPurpose: Securely stores keys and certificates.\nDeployment: Used in certificate deployment and backup.\nContext: Standard format for certificate storage.',
 	},
 	{
 		acronym: 'P2P - Peer to Peer',
 		definition:
-			'A decentralized network model where devices communicate directly with each other without a central server.',
+			'P2P enables direct device communication.\n\nPurpose: Allows decentralized network communication.\nDeployment: Secured through encryption and authentication.\nContext: Network architecture requiring security controls.',
 	},
 	{
 		acronym: 'PaaS - Platform as a Service',
 		definition:
-			'A cloud computing model that provides developers with a platform to build, deploy, and manage applications.',
+			'PaaS provides development and deployment platform.\n\nPurpose: Enables secure application deployment.\nDeployment: Implemented with security controls and monitoring.\nContext: Cloud service model with security considerations.',
 	},
 	{
 		acronym: 'PAC - Proxy Auto Configuration',
 		definition:
-			'A file used by web browsers to automatically determine the appropriate proxy server for a given URL.',
+			'PAC automates proxy settings.\n\nPurpose: Manages proxy configuration securely.\nDeployment: Deployed through group policy or web servers.\nContext: Network security configuration mechanism.',
 	},
 	{
 		acronym: 'PAM - Privileged Access Management',
 		definition:
-			'A security solution that controls and monitors access to critical systems and data by privileged users.',
+			'PAM controls privileged account access.\n\nPurpose: Secures and monitors privileged access.\nDeployment: Implemented through PAM platforms and policies.\nContext: Critical for administrative access control.',
 	},
 	{
 		acronym: 'PAM - Pluggable Authentication Modules',
 		definition:
-			'A flexible framework for authentication that allows system administrators to integrate multiple authentication methods.',
+			'PAM provides flexible authentication.\n\nPurpose: Enables modular authentication mechanisms.\nDeployment: Configured in Linux/Unix systems.\nContext: Framework for authentication services.',
 	},
 	{
 		acronym: 'PAP - Password Authentication Protocol',
 		definition:
-			'A simple authentication protocol that sends passwords in plaintext, making it less secure compared to alternatives.',
+			'PAP performs basic password authentication.\n\nPurpose: Provides simple authentication (insecure).\nDeployment: Legacy protocol avoided in modern systems.\nContext: Example of weak authentication.',
 	},
 	{
 		acronym: 'PAT - Port Address Translation',
 		definition:
-			'A type of NAT that maps multiple private IP addresses to a single public IP address using unique port numbers.',
+			'PAT maps multiple private addresses to one public.\n\nPurpose: Conserves IP addresses while providing security.\nDeployment: Configured on firewalls and routers.\nContext: Network address translation variant.',
 	},
 	{
-		acronym: 'PBKDF2 - Password-based Key Derivation Function 2',
+		acronym: 'PBKDF2 - Password-Based Key Derivation Function 2',
 		definition:
-			'A key stretching algorithm used to strengthen passwords by increasing computational effort during brute-force attacks.',
+			'PBKDF2 strengthens password security.\n\nPurpose: Creates strong keys from passwords.\nDeployment: Used in password storage and encryption.\nContext: Standard for password-based cryptography.',
 	},
 	{
 		acronym: 'PBX - Private Branch Exchange',
 		definition:
-			'A private telephone network used within an organization, allowing internal and external communication.',
+			'PBX manages internal phone systems.\n\nPurpose: Provides secure internal communications.\nDeployment: Protected against toll fraud and attacks.\nContext: Voice communication infrastructure.',
 	},
 	{
 		acronym: 'PCAP - Packet Capture',
 		definition:
-			'A file format used to record and analyze network traffic for troubleshooting or security purposes.',
+			'PCAP captures network traffic.\n\nPurpose: Enables network traffic analysis and investigation.\nDeployment: Used in network monitoring and forensics.\nContext: Important for security analysis.',
 	},
 	{
 		acronym: 'PCI DSS - Payment Card Industry Data Security Standard',
 		definition:
-			'A set of security standards designed to protect cardholder data during transactions and storage.',
+			'PCI DSS protects payment card data.\n\nPurpose: Ensures secure handling of payment information.\nDeployment: Implemented through specific security controls.\nContext: Critical for payment processing security.',
 	},
 	{
 		acronym: 'PDU - Power Distribution Unit',
 		definition:
-			'A device used in data centers to distribute electrical power to connected equipment.',
+			'PDU distributes power to equipment.\n\nPurpose: Provides managed power with security features.\nDeployment: Secured against unauthorized access.\nContext: Critical infrastructure component.',
 	},
 	{
 		acronym: 'PEAP - Protected Extensible Authentication Protocol',
 		definition:
-			'A wireless network authentication protocol that provides encryption and protection for transmitted credentials.',
+			'PEAP secures EAP authentication.\n\nPurpose: Provides secure tunnel for authentication.\nDeployment: Used in wireless and network authentication.\nContext: Enhanced wireless security protocol.',
 	},
 	{
 		acronym: 'PED - Personal Electronic Device',
 		definition:
-			'A device such as a smartphone, tablet, or laptop used for personal or work-related tasks.',
+			'PED encompasses personal computing devices.\n\nPurpose: Requires security controls for organizational use.\nDeployment: Managed through MDM and security policies.\nContext: End-user device security concern.',
 	},
 	{
 		acronym: 'PEM - Privacy Enhanced Mail',
 		definition:
-			'A file format for storing and transmitting cryptographic keys and certificates in a base64-encoded text format.',
+			'PEM formats cryptographic objects.\n\nPurpose: Stores and transmits security objects.\nDeployment: Used in certificate and key management.\nContext: Standard format for security data.',
 	},
 	{
 		acronym: 'PFS - Perfect Forward Secrecy',
 		definition:
-			'A cryptographic feature that ensures session keys are unique and not derived from long-term keys, protecting past communications.',
+			'PFS protects past communications.\n\nPurpose: Ensures security of previous sessions.\nDeployment: Implemented in modern encryption protocols.\nContext: Advanced security feature in communications.',
 	},
 	{
 		acronym: 'PGP - Pretty Good Privacy',
 		definition:
-			'A data encryption program used to secure emails and files, ensuring confidentiality and integrity.',
+			'PGP provides email and file encryption.\n\nPurpose: Enables secure communication and storage.\nDeployment: Used for email encryption and file security.\nContext: Standard for end-to-end encryption.',
 	},
 	{
-		acronym: 'PHI - Personal Health Information',
+		acronym: 'PHI - Protected Health Information',
 		definition:
-			'Medical information that is protected under privacy laws such as HIPAA in the United States.',
+			'PHI includes protected medical data.\n\nPurpose: Requires specific security controls by law.\nDeployment: Protected through HIPAA compliance measures.\nContext: Regulated healthcare information.',
 	},
 	{
 		acronym: 'PII - Personally Identifiable Information',
 		definition:
-			'Any data that can identify an individual, such as names, Social Security numbers, or biometric data.',
+			'PII is data that can identify individuals.\n\nPurpose: Requires protection to prevent identity theft and fraud.\nDeployment: Protected through encryption, access controls, and data handling policies.\nContext: Regulated data type requiring specific security controls.',
 	},
 	{
 		acronym: 'PIV - Personal Identity Verification',
 		definition:
-			'A smart card used by federal employees for secure access to government systems and facilities.',
+			'PIV provides federal identity credentials.\n\nPurpose: Ensures secure identification for federal employees.\nDeployment: Implemented through smart cards with certificates.\nContext: Federal security standard for identity verification.',
 	},
 	{
 		acronym: 'PKCS - Public Key Cryptography Standards',
 		definition:
-			'A set of standards for public key cryptography to ensure interoperability between cryptographic systems.',
+			'PKCS defines cryptography standards.\n\nPurpose: Ensures compatibility in cryptographic implementations.\nDeployment: Used in certificate management and encryption.\nContext: Critical standards for cryptographic operations.',
 	},
 	{
 		acronym: 'PKI - Public Key Infrastructure',
 		definition:
-			'A framework for managing digital certificates and cryptographic keys to secure electronic communications.',
+			'PKI manages digital certificates and keys.\n\nPurpose: Provides framework for certificate-based security.\nDeployment: Implemented through CAs, certificates, and policies.\nContext: Foundation for certificate-based security.',
 	},
 	{
 		acronym: 'POP - Post Office Protocol',
 		definition:
-			'A protocol used for retrieving emails from a mail server, typically downloading them for local storage.',
+			'POP retrieves email from servers.\n\nPurpose: Enables email access with basic security.\nDeployment: Secured through SSL/TLS encryption.\nContext: Basic email protocol requiring security.',
 	},
 	{
 		acronym: 'POTS - Plain Old Telephone Service',
 		definition:
-			'The traditional analog voice telephone service used for communication over copper wires.',
+			'POTS provides basic telephone service.\n\nPurpose: Delivers voice communication with inherent security.\nDeployment: Protected through physical security measures.\nContext: Legacy voice communication infrastructure.',
 	},
 	{
 		acronym: 'PPP - Point-to-Point Protocol',
 		definition:
-			'A protocol used to establish a direct connection between two network nodes, commonly used in dial-up internet.',
+			'PPP connects two network nodes.\n\nPurpose: Provides direct network connectivity with security.\nDeployment: Implemented with authentication and encryption.\nContext: Basic network protocol with security features.',
 	},
 	{
 		acronym: 'PPTP - Point-to-Point Tunneling Protocol',
 		definition:
-			'A VPN protocol that allows secure data transfer over public networks, now considered outdated due to security vulnerabilities.',
+			'PPTP creates VPN tunnels.\n\nPurpose: Enables VPN connections (considered insecure).\nDeployment: Legacy protocol replaced by more secure options.\nContext: Outdated VPN protocol with vulnerabilities.',
 	},
 	{
 		acronym: 'PSK - Pre-shared Key',
 		definition:
-			'A shared secret key used for authentication in wireless networks, commonly associated with WPA/WPA2 security.',
+			'PSK provides shared secret for authentication.\n\nPurpose: Enables simple but effective authentication.\nDeployment: Used in WPA/WPA2 and VPN configurations.\nContext: Basic security mechanism for authentication.',
 	},
 	{
-		acronym: 'PTZ - Pan-tilt-zoom',
+		acronym: 'PTZ - Pan-Tilt-Zoom',
 		definition:
-			'A camera feature that allows remote control of camera movement and zoom capabilities, often used in surveillance.',
+			'PTZ enables camera movement control.\n\nPurpose: Provides flexible physical security monitoring.\nDeployment: Used in security camera systems.\nContext: Physical security surveillance technology.',
 	},
 	{
 		acronym: 'PUP - Potentially Unwanted Program',
 		definition:
-			'Software that is not necessarily malicious but may be unwanted by the user, often bundled with other applications.',
+			'PUP describes questionable software.\n\nPurpose: Identifies software requiring security consideration.\nDeployment: Detected by security software and policies.\nContext: Security concern in software management.',
 	},
 	{
 		acronym: 'RA - Recovery Agent',
 		definition:
-			'A user or system with permissions to recover encrypted data in case of key loss.',
+			'RA enables data recovery access.\n\nPurpose: Provides authorized access to encrypted data.\nDeployment: Configured in encryption systems.\nContext: Important for data recovery scenarios.',
 	},
 	{
 		acronym: 'RA - Registration Authority',
 		definition:
-			'An entity in a PKI that verifies user identities and forwards certificate requests to a Certificate Authority (CA).',
-	},
-	{
-		acronym:
-			'RACE - Research and Development in Advanced Communications Technologies in Europe',
-		definition:
-			'An initiative focused on advancing telecommunications and information technologies in Europe.',
+			'RA validates certificate requests.\n\nPurpose: Verifies identity for certificate issuance.\nDeployment: Part of PKI infrastructure.\nContext: Critical role in certificate management.',
 	},
 	{
 		acronym: 'RAD - Rapid Application Development',
 		definition:
-			'A software development methodology emphasizing quick prototyping and iterative testing.',
+			'RAD accelerates software development.\n\nPurpose: Enables quick development with security integration.\nDeployment: Includes security in development cycle.\nContext: Development methodology requiring security focus.',
 	},
 	{
 		acronym: 'RADIUS - Remote Authentication Dial-in User Service',
 		definition:
-			'A protocol that provides centralized authentication, authorization, and accounting for network access.',
+			'RADIUS provides centralized authentication.\n\nPurpose: Manages network access authentication.\nDeployment: Implemented for network access control.\nContext: Standard protocol for network authentication.',
 	},
 	{
-		acronym: 'RAID - Redundant Array of Inexpensive Disks',
+		acronym: 'RAID - Redundant Array of Independent Disks',
 		definition:
-			'A data storage technology that combines multiple physical disks into a single logical unit to improve performance and reliability.',
+			'RAID provides disk redundancy.\n\nPurpose: Ensures data availability and integrity.\nDeployment: Implemented in storage systems.\nContext: Data protection through redundancy.',
 	},
 	{
 		acronym: 'RAS - Remote Access Server',
 		definition:
-			'A server that provides remote users with access to a network over the internet or other connections.',
+			'RAS enables remote network access.\n\nPurpose: Provides secure remote connectivity.\nDeployment: Implemented with authentication and encryption.\nContext: Infrastructure for remote access.',
 	},
 	{
 		acronym: 'RAT - Remote Access Trojan',
 		definition:
-			"A type of malware that allows attackers to remotely control a victim's computer.",
+			'RAT enables unauthorized remote control.\n\nPurpose: Malicious software for remote system access.\nDeployment: Detected and blocked by security controls.\nContext: Common malware threat.',
 	},
 	{
 		acronym: 'RBAC - Role-based Access Control',
 		definition:
-			"An access control model that restricts access based on users' roles within an organization.",
+			'RBAC manages access through roles.\n\nPurpose: Simplifies access management through roles.\nDeployment: Implemented in identity management systems.\nContext: Standard access control model.',
 	},
 	{
-		acronym: 'RBAC - Rule-based Access Control',
+		acronym: 'RC4 - Rivest Cipher 4',
 		definition:
-			'An access control model that uses rules to determine access permissions based on conditions like time of day or location.',
-	},
-	{
-		acronym: 'RC4 - Rivest Cipher version 4',
-		definition:
-			'A stream cipher that was widely used in protocols like SSL but is now considered insecure.',
+			'RC4 is a stream cipher algorithm.\n\nPurpose: Provides encryption (now considered insecure).\nDeployment: Legacy algorithm avoided in modern systems.\nContext: Example of deprecated encryption.',
 	},
 	{
 		acronym: 'RDP - Remote Desktop Protocol',
 		definition:
-			'A protocol developed by Microsoft that allows users to connect to and control another computer remotely.',
+			'RDP enables remote system control.\n\nPurpose: Provides remote access to systems.\nDeployment: Secured through encryption and authentication.\nContext: Common remote access protocol.',
 	},
 	{
-		acronym: 'RFID - Radio Frequency Identifier',
+		acronym: 'RFID - Radio Frequency Identification',
 		definition:
-			'A technology that uses radio waves to identify and track objects, often used in inventory management and access control.',
+			'RFID enables wireless identification.\n\nPurpose: Provides contactless identification and tracking.\nDeployment: Used in access control and asset tracking.\nContext: Physical security and asset management.',
 	},
 	{
 		acronym: 'RIPEMD - RACE Integrity Primitives Evaluation Message Digest',
 		definition:
-			'A cryptographic hash function designed to ensure data integrity.',
+			'RIPEMD creates cryptographic hashes.\n\nPurpose: Provides message integrity verification.\nDeployment: Used in cryptographic applications.\nContext: Alternative to SHA hash functions.',
 	},
 	{
 		acronym: 'ROI - Return on Investment',
 		definition:
-			'A performance measure used to evaluate the efficiency or profitability of an investment.',
+			'ROI measures security investment value.\n\nPurpose: Justifies security spending and resources.\nDeployment: Calculated for security projects and tools.\nContext: Security investment evaluation metric.',
 	},
 	{
 		acronym: 'RPO - Recovery Point Objective',
 		definition:
-			'The maximum acceptable amount of data loss measured in time during a disaster recovery scenario.',
+			'RPO defines acceptable data loss.\n\nPurpose: Specifies maximum tolerable data loss.\nDeployment: Used in backup and recovery planning.\nContext: Critical disaster recovery metric.',
 	},
 	{
 		acronym: 'RSA - Rivest, Shamir, & Adleman',
 		definition:
-			'An asymmetric cryptographic algorithm widely used for secure data transmission.',
+			'RSA is an asymmetric encryption algorithm.\n\nPurpose: Provides public key encryption and digital signatures.\nDeployment: Used in secure communications and certificate systems.\nContext: Foundational public key cryptography algorithm.',
 	},
 	{
 		acronym: 'RTBH - Remotely Triggered Black Hole',
 		definition:
-			'A network security technique used to mitigate DDoS attacks by dropping malicious traffic.',
+			'RTBH blocks malicious traffic.\n\nPurpose: Mitigates DDoS and other network attacks.\nDeployment: Implemented on border routers and networks.\nContext: Network defense mechanism against attacks.',
 	},
 	{
 		acronym: 'RTO - Recovery Time Objective',
 		definition:
-			'The target time for restoring IT systems and operations after a disruption.',
+			'RTO defines system recovery time goals.\n\nPurpose: Specifies maximum acceptable downtime.\nDeployment: Used in disaster recovery planning.\nContext: Critical business continuity metric.',
 	},
 	{
 		acronym: 'RTOS - Real-time Operating System',
 		definition:
-			'An operating system designed to process data and execute tasks within a strict time frame.',
+			'RTOS manages time-critical operations.\n\nPurpose: Ensures predictable system responses.\nDeployment: Used in embedded and critical systems.\nContext: Specialized OS for time-sensitive applications.',
 	},
 	{
 		acronym: 'RTP - Real-time Transport Protocol',
 		definition:
-			'A protocol used for delivering audio and video over IP networks in real-time.',
+			'RTP streams multimedia content.\n\nPurpose: Enables real-time audio/video transmission.\nDeployment: Secured through SRTP for encryption.\nContext: Multimedia streaming protocol requiring security.',
 	},
 	{
 		acronym: 'S/MIME - Secure/Multipurpose Internet Mail Extensions',
 		definition:
-			'A protocol used for securing email communications through encryption and digital signatures.',
+			'S/MIME secures email communications.\n\nPurpose: Provides email encryption and digital signatures.\nDeployment: Implemented through certificates and encryption.\nContext: Standard for secure email communication.',
 	},
 	{
 		acronym: 'SaaS - Software as a Service',
 		definition:
-			'A cloud computing model that delivers software applications over the internet, eliminating the need for local installation.',
+			'SaaS delivers cloud-based applications.\n\nPurpose: Provides software access with security controls.\nDeployment: Secured through authentication and encryption.\nContext: Cloud service model requiring security measures.',
 	},
 	{
 		acronym: 'SAE - Simultaneous Authentication of Equals',
 		definition:
-			'A secure key exchange protocol used in WPA3 to protect against offline dictionary attacks.',
+			'SAE provides secure key exchange.\n\nPurpose: Enhances WPA3 wireless security.\nDeployment: Implemented in modern wireless networks.\nContext: Advanced wireless security protocol.',
 	},
 	{
-		acronym: 'SAML - Security Assertions Markup Language',
+		acronym: 'SAML - Security Assertion Markup Language',
 		definition:
-			'An open standard for exchanging authentication and authorization data between parties, often used for single sign-on (SSO).',
+			'SAML enables secure authentication exchange.\n\nPurpose: Provides federated authentication and SSO.\nDeployment: Implemented for enterprise authentication.\nContext: Standard for identity federation.',
 	},
 	{
 		acronym: 'SAN - Storage Area Network',
 		definition:
-			'A high-speed network that provides access to consolidated storage resources.',
+			'SAN provides centralized storage access.\n\nPurpose: Enables secure, shared storage resources.\nDeployment: Protected through access controls and encryption.\nContext: Enterprise storage infrastructure.',
 	},
 	{
 		acronym: 'SAN - Subject Alternative Name',
 		definition:
-			'An extension to X.509 certificates that allows multiple domains to be secured with a single certificate.',
+			'SAN extends certificate domain coverage.\n\nPurpose: Allows multiple domains on single certificate.\nDeployment: Used in SSL/TLS certificates.\nContext: Certificate extension for flexibility.',
 	},
 	{
 		acronym: 'SASE - Secure Access Service Edge',
 		definition:
-			'A security framework that combines network and security services in a single cloud-delivered solution.',
+			'SASE combines network and security services.\n\nPurpose: Provides cloud-based security and networking.\nDeployment: Implemented as cloud service with edge security.\nContext: Modern security architecture approach.',
 	},
 	{
 		acronym: 'SCADA - Supervisory Control and Data Acquisition',
 		definition:
-			'A system used to monitor and control industrial processes such as manufacturing, energy, and water treatment.',
+			'SCADA controls industrial processes.\n\nPurpose: Manages industrial systems with security needs.\nDeployment: Protected through specialized security controls.\nContext: Critical infrastructure technology.',
 	},
 	{
 		acronym: 'SCAP - Security Content Automation Protocol',
 		definition:
-			'A suite of standards for automating vulnerability management and compliance.',
+			'SCAP automates security assessment.\n\nPurpose: Standardizes security configuration and assessment.\nDeployment: Used in vulnerability management tools.\nContext: Framework for security automation.',
 	},
 	{
 		acronym: 'SCEP - Simple Certificate Enrollment Protocol',
 		definition:
-			'A protocol used to streamline the issuance and management of digital certificates.',
+			'SCEP manages certificate enrollment.\n\nPurpose: Automates certificate provisioning.\nDeployment: Used in certificate management systems.\nContext: Certificate lifecycle automation.',
 	},
 	{
 		acronym: 'SD-WAN - Software-defined Wide Area Network',
 		definition:
-			'A networking approach that uses software to control connectivity, management, and services between data centers and remote locations.',
+			'SD-WAN manages wide area networks.\n\nPurpose: Provides flexible, secure network connectivity.\nDeployment: Implemented with security controls and encryption.\nContext: Modern WAN technology.',
 	},
 	{
 		acronym: 'SDK - Software Development Kit',
 		definition:
-			'A set of tools and libraries that developers use to create applications for specific platforms or systems.',
+			'SDK provides development tools.\n\nPurpose: Enables secure application development.\nDeployment: Used with security best practices.\nContext: Development tools requiring security.',
 	},
 	{
-		acronym: 'SDLC - Software Development Lifecycle',
+		acronym: 'SDLC - Software Development Life Cycle',
 		definition:
-			'A process used for planning, creating, testing, and deploying information systems.',
+			'SDLC manages software development.\n\nPurpose: Integrates security throughout development.\nDeployment: Implemented with security at each phase.\nContext: Secure development framework.',
 	},
 	{
 		acronym: 'SDLM - Software Development Lifecycle Methodology',
 		definition:
-			'A structured approach to software development, focusing on each phase of the development lifecycle.',
+			'SDLM structures development process.\n\nPurpose: Ensures systematic secure development.\nDeployment: Applied throughout development lifecycle.\nContext: Methodology for secure development.',
 	},
 	{
 		acronym: 'SDN - Software-defined Networking',
 		definition:
-			'A network architecture approach that enables centralized control of network traffic through software applications.',
+			'SDN centralizes network control.\n\nPurpose: Enables flexible network management and security.\nDeployment: Implemented with security controls and policies.\nContext: Modern network architecture.',
 	},
 	{
-		acronym: 'SE Linux - Security-enhanced Linux',
+		acronym: 'SE Linux - Security-Enhanced Linux',
 		definition:
-			'A Linux kernel security module that provides a mechanism for supporting access control policies.',
+			'SE Linux adds mandatory access controls.\n\nPurpose: Provides enhanced Linux security.\nDeployment: Implemented through security policies.\nContext: Advanced Linux security feature.',
 	},
 	{
-		acronym: 'SED - Self-encrypting Drives',
+		acronym: 'SED - Self-encrypting Drive',
 		definition:
-			'Storage devices that automatically encrypt data stored on the drive using a built-in encryption engine.',
+			'SED provides hardware-based encryption.\n\nPurpose: Ensures automatic data encryption.\nDeployment: Used for data protection at rest.\nContext: Storage security technology.',
 	},
 	{
 		acronym: 'SEH - Structured Exception Handler',
 		definition:
-			'A mechanism used in programming to handle exceptions or errors that occur during execution.',
+			'SEH manages program exceptions.\n\nPurpose: Provides error handling with security implications.\nDeployment: Protected against exploitation attempts.\nContext: Programming security consideration.',
 	},
 	{
-		acronym: 'SFTP - Secured File Transfer Protocol',
+		acronym: 'SFTP - SSH File Transfer Protocol',
 		definition:
-			'A secure version of the File Transfer Protocol (FTP) that uses SSH for encryption.',
+			'SFTP enables secure file transfer.\n\nPurpose: Provides encrypted file transfer capability.\nDeployment: Implemented with SSH for security.\nContext: Secure alternative to FTP.',
 	},
 	{
-		acronym: 'SHA - Secure Hashing Algorithm',
+		acronym: 'SHA - Secure Hash Algorithm',
 		definition:
-			'A family of cryptographic hash functions designed to ensure data integrity and security.',
+			'SHA creates cryptographic hashes.\n\nPurpose: Ensures data integrity and authentication.\nDeployment: Used in various security applications.\nContext: Standard cryptographic hash function.',
 	},
 	{
 		acronym: 'SHTTP - Secure Hypertext Transfer Protocol',
 		definition:
-			'An obsolete protocol used to provide security for HTTP communications.',
+			'SHTTP is an alternative to HTTPS.\n\nPurpose: Provides security for web communications.\nDeployment: Rarely used, superseded by HTTPS/TLS.\nContext: Historical secure web protocol.',
 	},
 	{
 		acronym: 'SIEM - Security Information and Event Management',
 		definition:
-			'A system that collects, analyzes, and correlates security data from multiple sources to provide real-time threat detection and response.',
+			'SIEM analyzes security data and events.\n\nPurpose: Provides centralized security monitoring and analysis.\nDeployment: Implemented as central security monitoring platform.\nContext: Critical enterprise security monitoring tool.',
 	},
 	{
 		acronym: 'SIM - Subscriber Identity Module',
 		definition:
-			'A smart card used in mobile devices to store user identity, authentication, and network information.',
+			'SIM authenticates mobile devices.\n\nPurpose: Securely identifies mobile subscribers.\nDeployment: Used in mobile devices with encryption.\nContext: Mobile device security component.',
 	},
 	{
-		acronym: 'SLA - Service-level Agreement',
+		acronym: 'SLA - Service Level Agreement',
 		definition:
-			'A formal agreement between a service provider and a customer defining the level of service expected.',
+			'SLA defines service performance requirements.\n\nPurpose: Establishes security and performance metrics.\nDeployment: Implemented through contracts and monitoring.\nContext: Service management and accountability.',
 	},
 	{
 		acronym: 'SLE - Single Loss Expectancy',
 		definition:
-			'The monetary value of a single loss, calculated as Asset Value × Exposure Factor.',
+			'SLE calculates loss from single incident.\n\nPurpose: Quantifies potential security incident impact.\nDeployment: Used in risk assessment calculations.\nContext: Risk assessment metric.',
 	},
 	{
 		acronym: 'SMS - Short Message Service',
 		definition:
-			'A text messaging service that allows short messages to be sent between mobile devices.',
+			'SMS enables text messaging.\n\nPurpose: Provides mobile messaging with security concerns.\nDeployment: Protected through carrier security measures.\nContext: Mobile communication requiring security.',
 	},
 	{
 		acronym: 'SMTP - Simple Mail Transfer Protocol',
 		definition:
-			'A protocol used to send emails between servers on the internet.',
+			'SMTP transmits email messages.\n\nPurpose: Enables email delivery with security requirements.\nDeployment: Secured through TLS and authentication.\nContext: Core email protocol requiring protection.',
 	},
 	{
 		acronym: 'SMTPS - Simple Mail Transfer Protocol Secure',
 		definition:
-			'A secure version of SMTP that uses SSL/TLS to encrypt email communications.',
+			'SMTPS adds encryption to SMTP.\n\nPurpose: Secures email transmission.\nDeployment: Implemented with TLS encryption.\nContext: Secure email transport protocol.',
 	},
 	{
 		acronym: 'SNMP - Simple Network Management Protocol',
 		definition:
-			'A protocol used to manage and monitor network devices and their performance.',
+			'SNMP manages network devices.\n\nPurpose: Enables network monitoring and management.\nDeployment: Secured through SNMPv3 and access controls.\nContext: Network management protocol requiring security.',
 	},
 	{
 		acronym: 'SOAP - Simple Object Access Protocol',
 		definition:
-			'A protocol used for exchanging structured information in web services.',
+			'SOAP exchanges structured information.\n\nPurpose: Enables web service communication.\nDeployment: Secured through WS-Security standards.\nContext: Web services protocol requiring protection.',
 	},
 	{
-		acronym: 'SOAR - Security Orchestration, Automation, and Response',
+		acronym: 'SOAR - Security Orchestration, Automation and Response',
 		definition:
-			'A platform that integrates and automates security tools and processes to improve incident response.',
+			'SOAR automates security operations.\n\nPurpose: Streamlines security incident response.\nDeployment: Integrated with security tools and workflows.\nContext: Advanced security automation platform.',
 	},
 	{
 		acronym: 'SoC - System on Chip',
 		definition:
-			'An integrated circuit that consolidates all components of a computer or electronic system onto a single chip.',
+			'SoC integrates system components.\n\nPurpose: Provides integrated security features.\nDeployment: Used in mobile and embedded devices.\nContext: Hardware security integration.',
 	},
 	{
 		acronym: 'SOC - Security Operations Center',
 		definition:
-			'A centralized unit that monitors, detects, and responds to cybersecurity threats and incidents within an organization.',
+			'SOC monitors security operations.\n\nPurpose: Provides centralized security monitoring and response.\nDeployment: Staffed 24/7 with security analysts.\nContext: Core security operations facility.',
 	},
 	{
 		acronym: 'SOW - Statement of Work',
 		definition:
-			'A formal document that outlines the scope, deliverables, and timelines for a project or contract.',
+			'SOW defines project requirements.\n\nPurpose: Specifies security requirements and deliverables.\nDeployment: Used in security project planning.\nContext: Project security documentation.',
 	},
 	{
 		acronym: 'SPF - Sender Policy Framework',
 		definition:
-			"An email authentication protocol that helps prevent email spoofing by verifying the sender's IP address.",
+			'SPF prevents email spoofing.\n\nPurpose: Validates email sender authenticity.\nDeployment: Implemented through DNS records.\nContext: Email authentication protocol.',
 	},
 	{
 		acronym: 'SPIM - Spam over Internet Messaging',
 		definition:
-			'Unsolicited messages sent over instant messaging services, similar to email spam.',
+			'SPIM describes instant message spam.\n\nPurpose: Identifies messaging-based attacks.\nDeployment: Blocked through messaging security controls.\nContext: Messaging security threat.',
 	},
 	{
 		acronym: 'SQL - Structured Query Language',
 		definition:
-			'A standard language used for managing and manipulating relational databases.',
+			'SQL manages database operations.\n\nPurpose: Enables database interaction requiring security.\nDeployment: Protected against injection and abuse.\nContext: Database technology requiring protection.',
 	},
 	{
 		acronym: 'SQLi - SQL Injection',
 		definition:
-			'A type of cyberattack where malicious SQL code is injected into a query to manipulate or access a database.',
+			'SQLi attacks database security.\n\nPurpose: Exploits database input vulnerabilities.\nDeployment: Prevented through input validation and parameterization.\nContext: Common web application vulnerability.',
 	},
 	{
-		acronym: 'SRTP - Secure Real-Time Protocol',
+		acronym: 'SRTP - Secure Real-time Transport Protocol',
 		definition:
-			'An extension of the Real-Time Protocol (RTP) that provides encryption, message authentication, and integrity for real-time communications.',
+			'SRTP secures multimedia streams.\n\nPurpose: Provides encryption for real-time communications.\nDeployment: Used in VoIP and video conferencing.\nContext: Secure multimedia protocol.',
 	},
 	{
 		acronym: 'SSD - Solid State Drive',
 		definition:
-			'A data storage device that uses flash memory for faster read and write speeds compared to traditional hard drives.',
+			'SSD stores data electronically.\n\nPurpose: Provides fast storage requiring security controls.\nDeployment: Protected through encryption and secure erasure.\nContext: Modern storage technology.',
 	},
 	{
 		acronym: 'SSH - Secure Shell',
 		definition:
-			'A cryptographic network protocol used to securely access and manage devices over an unsecured network.',
+			'SSH enables secure remote access.\n\nPurpose: Provides encrypted remote system access.\nDeployment: Used for secure administration and file transfer.\nContext: Standard for secure remote access.',
 	},
 	{
 		acronym: 'SSL - Secure Sockets Layer',
 		definition:
-			'A deprecated protocol used to secure communications over a computer network, replaced by TLS.',
+			'SSL secures network communications.\n\nPurpose: Provided encrypted communications (now obsolete).\nDeployment: Replaced by TLS for security.\nContext: Legacy security protocol.',
 	},
 	{
-		acronym: 'SSO - Single Sign-on',
+		acronym: 'SSO - Single Sign-On',
 		definition:
-			'An authentication method that allows users to access multiple applications with one set of login credentials.',
+			'SSO enables unified authentication.\n\nPurpose: Simplifies secure access to multiple systems.\nDeployment: Implemented through identity providers.\nContext: Enterprise authentication mechanism.',
 	},
 	{
 		acronym: 'STIX - Structured Threat Information eXchange',
 		definition:
-			'A standardized format for sharing threat intelligence data across organizations.',
+			'STIX standardizes threat intelligence.\n\nPurpose: Enables sharing of threat information.\nDeployment: Used in threat intelligence platforms.\nContext: Threat intelligence sharing standard.',
 	},
 	{
 		acronym: 'SWG - Secure Web Gateway',
 		definition:
-			'A security solution that filters and monitors web traffic to protect against threats and enforce policies.',
+			'SWG controls web access.\n\nPurpose: Protects organizations from web-based threats.\nDeployment: Implemented at network edge or cloud.\nContext: Web security control point.',
 	},
 	{
 		acronym: 'TACACS+ - Terminal Access Controller Access Control System Plus',
 		definition:
-			'A protocol used to provide centralized authentication and authorization for network devices.',
+			'TACACS+ provides centralized authentication.\n\nPurpose: Enables centralized AAA services for network devices.\nDeployment: Implemented for network device administration.\nContext: Enterprise network security protocol.',
 	},
 	{
 		acronym: 'TAXII - Trusted Automated eXchange of Indicator Information',
 		definition:
-			'A protocol for securely sharing threat intelligence data between organizations.',
+			'TAXII enables threat intelligence sharing.\n\nPurpose: Provides standard for sharing threat data.\nDeployment: Used with STIX for threat intelligence exchange.\nContext: Threat intelligence sharing protocol.',
 	},
 	{
 		acronym: 'TCP/IP - Transmission Control Protocol/Internet Protocol',
 		definition:
-			'A suite of communication protocols used to interconnect network devices on the internet.',
+			'TCP/IP enables network communication.\n\nPurpose: Provides foundation for network connectivity.\nDeployment: Secured through various network controls.\nContext: Core internet protocol suite.',
 	},
 	{
 		acronym: 'TGT - Ticket Granting Ticket',
 		definition:
-			'A temporary credential issued by the Kerberos authentication system, used to obtain access to services.',
+			'TGT enables Kerberos authentication.\n\nPurpose: Provides initial authentication credential.\nDeployment: Used in Kerberos authentication systems.\nContext: Enterprise authentication component.',
 	},
 	{
 		acronym: 'TKIP - Temporal Key Integrity Protocol',
 		definition:
-			'A security protocol used in WPA to provide improved encryption for wireless networks, now deprecated.',
+			'TKIP secures wireless networks.\n\nPurpose: Provided enhanced WEP security (now deprecated).\nDeployment: Replaced by more secure protocols.\nContext: Legacy wireless security protocol.',
 	},
 	{
 		acronym: 'TLS - Transport Layer Security',
 		definition:
-			'A cryptographic protocol that provides secure communication over a network, replacing SSL.',
+			'TLS encrypts network communications.\n\nPurpose: Provides secure communication channel.\nDeployment: Implemented in web and application security.\nContext: Standard for secure communications.',
 	},
 	{
-		acronym: 'TOC - Time-of-check',
+		acronym: 'TOC - Time of Check',
 		definition:
-			'A concept in software testing and security that ensures operations are performed as intended at a specific point in time.',
+			'TOC relates to race condition vulnerabilities.\n\nPurpose: Identifies security timing vulnerabilities.\nDeployment: Addressed in secure coding practices.\nContext: Security programming consideration.',
 	},
 	{
-		acronym: 'TOTP - Time-based One-time Password',
+		acronym: 'TOTP - Time-based One-Time Password',
 		definition:
-			'A temporary passcode generated using the current time and a shared secret, commonly used in two-factor authentication.',
-	},
-	{
-		acronym: 'TOU - Time-of-use',
-		definition:
-			'A concept in energy management or billing that varies charges based on the time of day energy is used.',
+			'TOTP generates time-based codes.\n\nPurpose: Provides dynamic authentication codes.\nDeployment: Used in multi-factor authentication.\nContext: Strong authentication mechanism.',
 	},
 	{
 		acronym: 'TPM - Trusted Platform Module',
 		definition:
-			'A hardware-based security module used to secure cryptographic operations and store sensitive data like encryption keys.',
+			'TPM provides hardware security.\n\nPurpose: Enables secure key storage and platform integrity.\nDeployment: Integrated in system hardware.\nContext: Hardware security foundation.',
 	},
 	{
 		acronym: 'TTP - Tactics, Techniques, and Procedures',
 		definition:
-			'The behavior patterns of cyber adversaries used to describe their methods, actions, and strategies.',
+			'TTP describes attacker behavior.\n\nPurpose: Characterizes threat actor methods.\nDeployment: Used in threat intelligence analysis.\nContext: Threat analysis framework.',
 	},
 	{
 		acronym: 'TSIG - Transaction Signature',
 		definition:
-			'A mechanism used to secure DNS messages by providing message integrity and authentication.',
+			'TSIG secures DNS updates.\n\nPurpose: Authenticates DNS transactions.\nDeployment: Implemented in DNS security.\nContext: DNS security mechanism.',
 	},
 	{
 		acronym: 'UAT - User Acceptance Testing',
 		definition:
-			'The final phase of software testing where end-users validate that the system meets their requirements.',
-	},
-	{
-		acronym: 'UAV - Unmanned Aerial Vehicle',
-		definition:
-			'A drone or aircraft controlled remotely or autonomously without a human pilot onboard.',
+			'UAT validates system functionality.\n\nPurpose: Ensures security requirements are met.\nDeployment: Performed before system deployment.\nContext: Security testing phase.',
 	},
 	{
 		acronym: 'UDP - User Datagram Protocol',
 		definition:
-			'A connectionless protocol used in networking that prioritizes speed over reliability, often used in video streaming and gaming.',
+			'UDP provides fast network communication.\n\nPurpose: Enables connectionless data transfer.\nDeployment: Secured through application controls.\nContext: Network protocol requiring protection.',
 	},
 	{
 		acronym: 'UEFI - Unified Extensible Firmware Interface',
 		definition:
-			'A modern firmware interface between the operating system and platform firmware, replacing BIOS with more features and security.',
+			'UEFI manages system boot process.\n\nPurpose: Provides secure boot capabilities.\nDeployment: Implemented in modern hardware.\nContext: Secure boot technology.',
 	},
 	{
 		acronym: 'UEM - Unified Endpoint Management',
 		definition:
-			'A framework for managing and securing all endpoint devices in an organization, such as desktops, laptops, and mobile devices.',
+			'UEM manages all endpoint devices.\n\nPurpose: Provides centralized device security management.\nDeployment: Implemented across organization devices.\nContext: Enterprise device management.',
 	},
 	{
-		acronym: 'UPS - Uninterruptable Power Supply',
+		acronym: 'UPS - Uninterruptible Power Supply',
 		definition:
-			'A device that provides backup power and surge protection for electronic equipment during power outages.',
+			'UPS provides backup power.\n\nPurpose: Ensures continuous system operation.\nDeployment: Installed for critical systems.\nContext: Infrastructure protection component.',
 	},
 	{
 		acronym: 'URI - Uniform Resource Identifier',
 		definition:
-			'A string of characters used to identify a resource on the internet, such as a URL or URN.',
+			'URI identifies network resources.\n\nPurpose: Provides resource location and naming.\nDeployment: Used in web and application security.\nContext: Resource identification standard.',
 	},
 	{
-		acronym: 'URL - Universal Resource Locator',
+		acronym: 'URL - Uniform Resource Locator',
 		definition:
-			'The address used to access a specific resource on the internet, such as a website or file.',
+			'URL specifies resource locations.\n\nPurpose: Enables web resource access.\nDeployment: Protected against manipulation attacks.\nContext: Web addressing mechanism.',
 	},
 	{
 		acronym: 'USB - Universal Serial Bus',
 		definition:
-			'A standard interface for connecting peripheral devices to a computer, such as keyboards, mice, and external drives.',
-	},
-	{
-		acronym: 'USB OTG - USB On the Go',
-		definition:
-			'A feature that allows a USB device to act as a host, enabling other USB devices to connect to it.',
+			'USB enables device connectivity.\n\nPurpose: Provides peripheral connection capability.\nDeployment: Controlled through security policies.\nContext: Physical connection security concern.',
 	},
 	{
 		acronym: 'UTM - Unified Threat Management',
 		definition:
-			'A comprehensive security solution that integrates multiple security features, such as firewalls, antivirus, and intrusion prevention.',
+			'UTM combines security functions.\n\nPurpose: Provides integrated security services.\nDeployment: Implemented at network boundaries.\nContext: Comprehensive security appliance.',
 	},
 	{
 		acronym: 'UTP - Unshielded Twisted Pair',
 		definition:
-			'A type of cabling commonly used in Ethernet networks, consisting of pairs of wires twisted together to reduce electromagnetic interference.',
+			'UTP carries network signals.\n\nPurpose: Provides network connectivity medium.\nDeployment: Protected against physical threats.\nContext: Network infrastructure component.',
 	},
 	{
 		acronym: 'VBA - Visual Basic for Applications',
 		definition:
-			'A programming language developed by Microsoft used for automating tasks and customizing functionality in applications like Excel.',
+			'VBA enables application automation.\n\nPurpose: Provides macro programming capability.\nDeployment: Controlled due to security risks.\nContext: Application security concern.',
 	},
 	{
 		acronym: 'VDE - Virtual Desktop Environment',
 		definition:
-			'A virtualized computing environment that allows users to access their desktop and applications remotely.',
+			'VDE provides isolated desktop environments.\n\nPurpose: Enables secure desktop virtualization.\nDeployment: Implemented for secure remote access.\nContext: Secure desktop delivery platform.',
 	},
 	{
 		acronym: 'VDI - Virtual Desktop Infrastructure',
 		definition:
-			'A virtualization technology that hosts desktop environments on a centralized server and provides remote access to them.',
+			'VDI hosts virtual desktops.\n\nPurpose: Provides centralized desktop management.\nDeployment: Implemented with security controls.\nContext: Enterprise desktop virtualization.',
 	},
 	{
 		acronym: 'VLAN - Virtual Local Area Network',
 		definition:
-			'A logical grouping of network devices that allows for segmentation and isolation within a physical network.',
+			'VLAN segments network traffic.\n\nPurpose: Enables logical network separation.\nDeployment: Configured for network segmentation.\nContext: Network security control.',
 	},
 	{
 		acronym: 'VLSM - Variable Length Subnet Masking',
 		definition:
-			'A technique that allows different subnet masks within the same network, improving IP address allocation efficiency.',
+			'VLSM optimizes IP address allocation.\n\nPurpose: Enables efficient network segmentation.\nDeployment: Implemented in subnet design.\nContext: Network design security consideration.',
 	},
 	{
 		acronym: 'VM - Virtual Machine',
 		definition:
-			'A software-based emulation of a physical computer that runs an operating system and applications.',
+			'VM provides isolated computing environment.\n\nPurpose: Enables system isolation and sandboxing.\nDeployment: Implemented with hypervisor security controls.\nContext: Virtualization security component.',
 	},
 	{
 		acronym: 'VoIP - Voice over IP',
 		definition:
-			'A technology that enables voice communication and multimedia sessions over the internet instead of traditional phone lines.',
+			'VoIP enables voice communication over IP.\n\nPurpose: Provides voice services requiring security.\nDeployment: Protected through encryption and QoS.\nContext: Network voice communication service.',
 	},
 	{
 		acronym: 'VPC - Virtual Private Cloud',
 		definition:
-			"A secure, isolated section of a cloud provider's network where users can deploy resources and run applications.",
+			'VPC creates isolated cloud environments.\n\nPurpose: Provides secure cloud network isolation.\nDeployment: Configured with security groups and ACLs.\nContext: Cloud security architecture component.',
 	},
 	{
 		acronym: 'VPN - Virtual Private Network',
 		definition:
-			'A technology that creates a secure and encrypted connection over a less secure network, such as the internet.',
+			'VPN creates secure network tunnels.\n\nPurpose: Enables secure remote network access.\nDeployment: Implemented with encryption and authentication.\nContext: Remote access security solution.',
 	},
 	{
 		acronym: 'VTC - Video Teleconferencing',
 		definition:
-			'A technology that allows people in different locations to communicate via video and audio in real-time.',
+			'VTC enables video communication.\n\nPurpose: Provides secure video conferencing.\nDeployment: Protected through encryption and access controls.\nContext: Remote communication platform.',
 	},
 	{
 		acronym: 'WAF - Web Application Firewall',
 		definition:
-			'A security solution that monitors, filters, and blocks HTTP traffic to and from a web application to protect against attacks.',
+			'WAF protects web applications.\n\nPurpose: Filters malicious web traffic.\nDeployment: Implemented at application edge.\nContext: Web security control point.',
 	},
 	{
 		acronym: 'WAP - Wireless Access Point',
 		definition:
-			'A networking device that allows wireless devices to connect to a wired network using Wi-Fi.',
+			'WAP provides wireless connectivity.\n\nPurpose: Enables secure wireless network access.\nDeployment: Secured through encryption and authentication.\nContext: Wireless network infrastructure.',
 	},
 	{
 		acronym: 'WEP - Wired Equivalent Privacy',
 		definition:
-			'An outdated wireless network security protocol that has been replaced by WPA due to vulnerabilities.',
+			'WEP was early wireless security.\n\nPurpose: Provided basic wireless encryption (now broken).\nDeployment: Completely deprecated and unsafe.\nContext: Example of obsolete security.',
 	},
 	{
 		acronym: 'WIDS - Wireless Intrusion Detection System',
 		definition:
-			'A system that monitors wireless networks for malicious activities or policy violations.',
+			'WIDS monitors wireless networks.\n\nPurpose: Detects wireless security threats.\nDeployment: Implemented through sensors and analysis.\nContext: Wireless security monitoring.',
 	},
 	{
 		acronym: 'WIPS - Wireless Intrusion Prevention System',
 		definition:
-			'A system that proactively detects and prevents unauthorized access to or attacks on a wireless network.',
+			'WIPS actively protects wireless networks.\n\nPurpose: Prevents wireless attacks actively.\nDeployment: Implemented with prevention capabilities.\nContext: Active wireless security control.',
 	},
 	{
 		acronym: 'WO - Work Order',
 		definition:
-			'A document that outlines the tasks and details of a job or project to be completed.',
+			'WO documents required work.\n\nPurpose: Tracks security-related tasks.\nDeployment: Used in change management process.\nContext: Security operation documentation.',
 	},
 	{
 		acronym: 'WPA - Wi-Fi Protected Access',
 		definition:
-			'A security protocol designed to secure wireless networks, providing stronger encryption than WEP.',
+			'WPA secures wireless networks.\n\nPurpose: Provides wireless network security.\nDeployment: Implemented with various encryption options.\nContext: Standard wireless security protocol.',
 	},
 	{
 		acronym: 'WPS - Wi-Fi Protected Setup',
 		definition:
-			'A network security standard that allows users to quickly and securely connect devices to a wireless network.',
+			'WPS simplifies wireless setup.\n\nPurpose: Enables easy wireless configuration (security concerns).\nDeployment: Often disabled due to vulnerabilities.\nContext: Convenience feature with security risks.',
 	},
 	{
-		acronym: 'WTLS - Wireless TLS',
+		acronym: 'WTLS - Wireless Transport Layer Security',
 		definition:
-			'A security protocol used to provide encryption and secure communication for wireless networks.',
+			'WTLS secures wireless communications.\n\nPurpose: Provides security for wireless protocols.\nDeployment: Used in mobile and wireless systems.\nContext: Wireless security protocol.',
 	},
 	{
 		acronym: 'XDR - Extended Detection and Response',
 		definition:
-			'A cybersecurity solution that integrates and correlates data from multiple security tools for enhanced threat detection and response.',
+			'XDR provides comprehensive threat detection.\n\nPurpose: Enables unified security visibility and response.\nDeployment: Integrated across security tools.\nContext: Advanced security monitoring platform.',
 	},
 	{
 		acronym: 'XML - Extensible Markup Language',
 		definition:
-			'A markup language used for encoding and structuring data in a format that is both human-readable and machine-readable.',
+			'XML structures data exchange.\n\nPurpose: Enables structured data sharing.\nDeployment: Protected against injection attacks.\nContext: Data format requiring security.',
 	},
 	{
-		acronym: 'XOR - Exclusive Or',
+		acronym: 'XOR - Exclusive OR',
 		definition:
-			'A logical operation that outputs true only when the inputs are different, commonly used in cryptographic algorithms.',
+			'XOR performs binary operations.\n\nPurpose: Used in encryption and security operations.\nDeployment: Implemented in cryptographic functions.\nContext: Basic cryptographic operation.',
 	},
 	{
 		acronym: 'XSRF - Cross-site Request Forgery',
 		definition:
-			'A web security vulnerability where an attacker tricks a user into performing actions on a website without their consent.',
+			'XSRF exploits web trust relationships.\n\nPurpose: Executes unauthorized actions through user trust.\nDeployment: Prevented through tokens and validation.\nContext: Web application vulnerability.',
 	},
 	{
 		acronym: 'XSS - Cross-site Scripting',
 		definition:
-			'A web application vulnerability that allows attackers to inject malicious scripts into webpages viewed by other users.',
+			'XSS injects malicious scripts.\n\nPurpose: Executes unauthorized code in browsers.\nDeployment: Prevented through input validation and encoding.\nContext: Common web security vulnerability.',
+	},
+	{
+		acronym: 'ZKP - Zero Knowledge Proof',
+		definition:
+			'ZKP proves knowledge without revelation.\n\nPurpose: Enables verification without data exposure.\nDeployment: Used in advanced authentication systems.\nContext: Privacy-preserving security mechanism.',
+	},
+	{
+		acronym: 'ZT - Zero Trust',
+		definition:
+			'ZT assumes no implicit trust.\n\nPurpose: Provides continuous security validation.\nDeployment: Implemented through various security controls.\nContext: Modern security architecture model.',
+	},
+	{
+		acronym: 'ZTNA - Zero Trust Network Access',
+		definition:
+			'ZTNA enforces zero trust principles.\n\nPurpose: Enables secure access based on identity and context.\nDeployment: Implemented through identity-based controls.\nContext: Modern access control framework.',
+	},
+	{
+		acronym: 'RBAC - Rule-based Access Control',
+		definition:
+			'RBAC enforces rule-based permissions.\n\nPurpose: Controls access based on predefined rules.\nDeployment: Implemented in access control systems.\nContext: Access control mechanism.',
+	},
+	{
+		acronym: 'SABSA - Sherwood Applied Business Security Architecture',
+		definition:
+			'SABSA is a security architecture framework.\n\nPurpose: Provides enterprise security architecture methodology.\nDeployment: Used in security design and planning.\nContext: Security architecture framework.',
 	},
 ];
 
@@ -1687,8 +1681,14 @@ function updateCard() {
 		cardAcronym.textContent = acronymParts[0];
 	}
 
+	// First, convert \n to <br> tags
+	const definitionWithBreaks = cards[currentIndex].definition.replace(
+		/\n/g,
+		'<br>'
+	);
+
 	const tempDiv = document.createElement('div');
-	tempDiv.innerHTML = cards[currentIndex].definition;
+	tempDiv.innerHTML = definitionWithBreaks;
 	const allowedTags = ['br', 'b'];
 
 	const sanitizedDefinition = tempDiv.innerHTML.replace(/<[^>]*>/g, (match) => {
