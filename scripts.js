@@ -1628,9 +1628,6 @@ const flashcards = [
 	},
 ];
 
-// console.log('Flashcards loaded:', flashcards.length);
-// console.log('First card:', flashcards[0]);
-
 let currentIndex = 0;
 let isFlipped = false;
 let cards = [...flashcards];
